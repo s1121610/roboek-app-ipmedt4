@@ -1,0 +1,14 @@
+.bookcard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    width: 75vw;
+    margin: 5rem 0;
+}
+
+.bookcard__cover{
+    position: relative;
+    width: 25rem;
+}
+
