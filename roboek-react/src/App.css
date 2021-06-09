@@ -27,21 +27,6 @@ body{
 }
 
 /* ################## UTILITY CLASSES ########################*/
-.u-slider{
-  display: flex;
-  flex-direction: row;
-  overflow-x: scroll;
-
-  list-style: none;
-}
-
-.u-slider:nth-child(1){
-  margin-left: 5rem;
-}
-
-.u-slider:nth-last-child(){
-  margin-right: 5rem;
-}
 
 /* ################## BUTTON ########################*/
 .u-buttonSection{
