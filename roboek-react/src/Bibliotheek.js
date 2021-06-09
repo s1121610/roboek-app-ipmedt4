@@ -1,6 +1,7 @@
 import React from 'react';
 import './Bibliotheek.css';
 import axios from "axios";
+import Slider from "react-slick";
 
 class Searchbar extends React.Component{
     state = {
@@ -16,26 +17,27 @@ class Searchbar extends React.Component{
       }
 
     render(){
-        return(
-        <section>
-            {/* <section>
-                { this.state.persons.map(boek => <p>
-                    {boek.genre_naam}
-                </p>)}
-            </section> */}
-            <ul className="u-slider">
-            { this.state.persons.map(boek => <li>
+        const settings = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        };
+        return (
+      <section>
+        <Slider {...settings}>
+            {this.state.persons.map(boek => <article>
                 <article className="bookcard">
                     <img className="bookcard__cover" src={boek.image} alt="cover {boek.titel}"/>
                     <section className="u-buttonSection">
                         <a href="/details" className="u-button">Ontdek mij</a>
                     </section>
                 </article>
-            </li>)}
-        </ul>
-        </section>
-        
-        );
+            </article>)}
+        </Slider>
+      </section>
+    );
     }
 }
 export default Searchbar;
