@@ -47,7 +47,7 @@
 }
 
 .genre__naam[data-genre="Avontuur"] {
-    background-color: #CA4838;
+    background-color: var(--tertiary-color);
 }
 
 @media(min-width: 550px){

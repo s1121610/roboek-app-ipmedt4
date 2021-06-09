@@ -6,12 +6,24 @@
   box-sizing: border-box;
 }
 
+:root{
+  --primary-color: #90C2C4;
+  --secondary-color: #369093;
+  --tertiary-color: #CA4838;
+  --success-color: #A1EDA5;
+  --try-again-color: #FF8847;
+  --disabled1-color: #909494;
+  --disabled2-color: #B4B4B4;
+  --background-color: #F7F7F7;
+}
+
 html{
   font-size: 62.5%;
 }
 
 body{
   font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
 }
 
 /* ################## UTILITY CLASSES ########################*/
