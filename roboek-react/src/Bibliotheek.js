@@ -26,15 +26,19 @@ class Searchbar extends React.Component{
         };
         return (
       <section>
+        <h1>Bibliotheek</h1>
+        <section className="genre">
+            <p data-genre="Avontuur" className="genre__naam">Avontuur</p>
+        </section>
         <Slider {...settings}>
-            {this.state.persons.map(boek => <article>
+            {this.state.persons.map(boek => <div>
                 <article className="bookcard">
                     <img className="bookcard__cover" src={boek.image} alt="cover {boek.titel}"/>
                     <section className="u-buttonSection">
                         <a href="/details" className="u-button">Ontdek mij</a>
                     </section>
                 </article>
-            </article>)}
+            </div>)}
         </Slider>
       </section>
     );
