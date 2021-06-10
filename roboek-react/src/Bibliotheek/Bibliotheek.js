@@ -8,13 +8,13 @@ class Searchbar extends React.Component{
         persons: []
       }
     
-      componentDidMount() {
-        axios.get(`http://127.0.0.1:8000/api/bibliotheek`)
-          .then(res => {
-            const persons = res.data;
-            this.setState({ persons });
-          })
-      }
+    componentDidMount() {
+      axios.get(`http://127.0.0.1:8000/api/bibliotheek/Avontuur`)
+        .then(res => {
+          const persons = res.data;
+          this.setState({ persons });
+        })
+    }
 
     render(){
         const settings = {
