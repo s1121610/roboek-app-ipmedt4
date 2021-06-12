@@ -50,6 +50,30 @@
     background-color: var(--tertiary-color);
 }
 
+.genre__naam[data-genre="Dieren%20en%20natuur"] {
+    background-color: var(--success-color);
+}
+
+.genre__naam[data-genre="Griezelverhaal"] {
+    background-color: var(--secondary-color);
+}
+
+.genre__naam[data-genre="Humor"] {
+    background-color: var(--primary-color);
+}
+
+.genre__naam[data-genre="Spanning"] {
+    background-color: var(--try-again-color);
+}
+
+.genre__naam[data-genre="Sprookjes"] {
+    background-color: var(--tertiary-color);
+}
+
+.genre__naam[data-genre="Vriendschap%20en%20Verliefd"] {
+    background-color: var(--tertiary-color);
+}
+
 @media(min-width: 550px){
     .slick-list{
         height: 110vh;

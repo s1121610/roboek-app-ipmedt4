@@ -24,6 +24,7 @@ class Genre extends React.Component{
                     {this.state.genres.map(genre => <li>
                         <Link to={'/bibliotheek/' + genre.naam}>{genre.naam}</Link>
                     </li>)}
+                    <li><Link to={'/bibliotheek/'}>Alle boeken</Link></li>
                 </ul>
             </main>
         );

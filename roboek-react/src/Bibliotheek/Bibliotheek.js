@@ -5,11 +5,16 @@ import Slider from "react-slick";
 
 class Searchbar extends React.Component{
     state = {
-        persons: []
-      }
+      genre: "",
+      persons: []
+    }
     
     componentDidMount() {
-      axios.get(`http://127.0.0.1:8000/api/bibliotheek/Avontuur`)
+      this.setState({
+        genre: window.location.pathname.split('/')[2]
+      })
+      let genreReq = window.location.pathname.split('/')[2];
+      axios.get(`http://127.0.0.1:8000/api/bibliotheek/` + genreReq)
         .then(res => {
           const persons = res.data;
           this.setState({ persons });
@@ -28,7 +33,7 @@ class Searchbar extends React.Component{
       <section>
         <h1>Bibliotheek</h1>
         <section className="genre">
-            <p data-genre="Avontuur" className="genre__naam">Avontuur</p>
+            <p data-genre={this.state.genre} className="genre__naam">{this.state.genre}</p>
         </section>
         <Slider {...settings}>
             {this.state.persons.map(boek => <div>

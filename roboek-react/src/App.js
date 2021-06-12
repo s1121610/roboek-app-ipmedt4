@@ -15,8 +15,8 @@ class App extends React.Component{
               <Link to="/">Terug</Link>
               <Genre />
             </Route>
-            <Route path="/bibliotheek/Avontuur">
-              <Link to="/">Terug</Link>
+            <Route path="/bibliotheek/">
+              <Link to="/genre">Terug</Link>
               <Bibliotheek />
             </Route>
             <Route path="/">
