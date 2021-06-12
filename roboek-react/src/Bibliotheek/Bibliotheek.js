@@ -3,6 +3,9 @@ import './Bibliotheek.css';
 import axios from "axios";
 import Slider from "react-slick";
 
+import { Link } from "react-router-dom";
+
+
 class Searchbar extends React.Component{
     state = {
       genre: "",
@@ -38,9 +41,11 @@ class Searchbar extends React.Component{
         <Slider {...settings}>
             {this.state.persons.map(boek => <div>
                 <article className="bookcard">
-                    <img className="bookcard__cover" src={boek.image} alt="cover {boek.titel}"/>
+                    <Link to={"/details/" + boek.id}>
+                      <img className="bookcard__cover" src={boek.image} alt="cover {boek.titel}"/>
+                    </Link>
                     <section className="u-buttonSection">
-                        <a href="/details" className="u-button">Ontdek mij</a>
+                        <Link to={"/details/" + boek.id} className="u-button">Ontdek mij</Link>
                     </section>
                 </article>
             </div>)}

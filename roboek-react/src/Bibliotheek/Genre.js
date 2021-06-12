@@ -1,5 +1,6 @@
 import React from 'react';
 import './Genre.css';
+import './Bibliotheek.css'
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -19,12 +20,12 @@ class Genre extends React.Component{
     render(){
         return(
             <main>
-                <h1>Bibliotheek</h1>
+                <h2>Kies een genre</h2>
                 <ul>
-                    {this.state.genres.map(genre => <li>
-                        <Link to={'/bibliotheek/' + genre.naam}>{genre.naam}</Link>
+                    {this.state.genres.map(genre => <li className="genre">
+                        <Link className="genre__naam" data-genre={genre.naam} to={'/bibliotheek/' + genre.naam}>{genre.naam}</Link>
                     </li>)}
-                    <li><Link to={'/bibliotheek/'}>Alle boeken</Link></li>
+                    <li className="genre"><Link className="genre__naam" data-genre="Alle_boeken" to={'/bibliotheek/'}>Alle boeken</Link></li>
                 </ul>
             </main>
         );

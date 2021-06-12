@@ -2,6 +2,7 @@ import React from "react";
 import './App.css';
 import Genre from "./Bibliotheek/Genre";
 import Bibliotheek from "./Bibliotheek/Bibliotheek";
+import Details from "./Bibliotheek/Details";
 
 import { Switch, Route, BrowserRouter as Router, Link } from "react-router-dom";
 
@@ -18,6 +19,10 @@ class App extends React.Component{
             <Route path="/bibliotheek/">
               <Link to="/genre">Terug</Link>
               <Bibliotheek />
+            </Route>
+            <Route path="/details/">
+              <Link to="/genre">Terug</Link>
+              <Details />
             </Route>
             <Route path="/">
               <h1>Roboek</h1>
