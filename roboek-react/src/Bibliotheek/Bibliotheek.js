@@ -3,12 +3,13 @@ import './Bibliotheek.css';
 import axios from "axios";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-import './components/Favoriet';
+import Favoriet from './components/Favoriet';
 
 class Searchbar extends React.Component{
   state = {
     genre: "",
-    persons: []
+    persons: [], 
+    boek_id: ''
   }
   
   componentDidMount() {
@@ -33,8 +34,6 @@ class Searchbar extends React.Component{
       prevArrow: <Arrow type="prev" />
     };
 
-    
-
     function Arrow(props) {
       let className = props.type === "next" ? "nextArrow" : "prevArrow";
       className += " arrow";
@@ -46,7 +45,30 @@ class Searchbar extends React.Component{
         </span>
       );
     }
+    
+    const addToFavorites = (id) =>{
+      this.setState({ boek_id: id })
+      console.log("boek id = " + this.state.boek_id);
+      axios.post('http://127.0.0.1:8000/api/bibliotheek/favorite/' + id, {"id": id})
+        .then(res => {  
+          const favorite = res.data
+          this.setState({ boek_id: favorite })
+          console.log(this.state.boek_id);
+          console.log(res);
+        });
+    }
 
+    const DeleteFromFavorites = (id) =>{
+      this.setState({ boek_id: id })
+      console.log("boek id = " + this.state.boek_id);
+      axios.delete('http://127.0.0.1:8000/api/bibliotheek/favorite/' + id, {"id": id})
+        .then(res => {  
+          const favorite = res.data
+          this.setState({ boek_id: favorite })
+          console.log(this.state.boek_id);
+          console.log(res);
+        });
+    }
 
     return (
       <section>
@@ -57,11 +79,11 @@ class Searchbar extends React.Component{
         <Slider {...settings}>
             {this.state.persons.map(boek => <div>
                 <article className="bookcard">
-                    <figure className="like">
-                      <form method="POST" onsubmit="/add/favoriet">
-                        <button type="submit" className="hartje"></button>
-                      </form>
-                    </figure>
+                    <Favoriet 
+                      favoriet={boek.id}
+                      clickHandler={addToFavorites}
+                      key={boek.id}
+                    />
                     <Link to={"/details/" + boek.id}>
                       <img className="bookcard__cover" src={boek.image} alt="cover {boek.titel}"/>
                     </Link>

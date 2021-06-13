@@ -161,11 +161,16 @@ li > .genre__naam[data-genre="Avontuur"] {
   z-index: 2;
 }
 
+.arrow:hover{
+    cursor: pointer;
+}
+
 .prevArrow{
     justify-content: flex-start;
     align-items: center;
     top: 20.5rem;
     padding-left: 2rem;
+    width: 50%;
 }
 
 .nextArrow{
@@ -173,6 +178,8 @@ li > .genre__naam[data-genre="Avontuur"] {
   align-items: center;
   bottom: 40rem;
   padding-right: 2rem;
+  width: 50%;
+  float: right;
 }
 
 @media(min-width: 550px){
