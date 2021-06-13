@@ -1,6 +1,6 @@
 import React from 'react';
 import './Genre.css';
-import './Bibliotheek.css'
+import './Bibliotheek.css';
 import axios from "axios";
 import { Link } from "react-router-dom";
 

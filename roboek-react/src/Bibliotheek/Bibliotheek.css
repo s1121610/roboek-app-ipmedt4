@@ -27,16 +27,17 @@
     justify-content: center;
     align-items: center;    
     width: 100%;
-    height: 90vh;
+    height: 50vh;
     margin: 5% auto;
 }
 
-.slick-track{
-    height: 100%;
+.slick-slider{
+    padding: 0;
+    height: 55rem;
 }
 
 .slick-list{
-    height: 100vh;
+    height: 55rem;
 }
 
 .bookcard__cover{
@@ -125,7 +126,11 @@ li > .genre__naam[data-genre="Avontuur"] {
 
 @media(min-width: 550px){
     .slick-list{
-        height: 110vh;
+        height: 60rem;
+    }
+
+    .slick-slider{
+        height: 65rem;
     }
 
     .bookcard__cover{
@@ -135,7 +140,11 @@ li > .genre__naam[data-genre="Avontuur"] {
 
 @media(min-width: 700px){
     .slick-list{
-        height: 130vh;
+        height: 70rem;
+    }
+
+    .slick-slider{
+        height: 72rem;
     }
 
     .bookcard__cover{
@@ -143,5 +152,167 @@ li > .genre__naam[data-genre="Avontuur"] {
     }
 }
 
+/* ################## Pijltjes ########################*/
 
+.arrow{
+  font-size: 4rem;
+  display: flex;
+  position: relative;
+  z-index: 2;
+}
 
+.prevArrow{
+    justify-content: flex-start;
+    align-items: center;
+    top: 20.5rem;
+    padding-left: 2rem;
+}
+
+.nextArrow{
+  justify-content: flex-end;
+  align-items: center;
+  bottom: 40rem;
+  padding-right: 2rem;
+}
+
+@media(min-width: 550px){
+    .arrow{
+        font-size: 5rem;
+    }
+
+    .prevArrow{
+        top: 25rem;
+        padding-left: 3rem;
+    }
+
+    .nextArrow{
+        bottom: 42rem;
+        padding-left: 3rem; 
+    }
+}
+
+@media(min-width: 700px){
+    .prevArrow{
+        top: 30rem;
+        padding-left: 5rem;
+    }
+
+    .nextArrow{
+        bottom: 47rem;
+        padding-left: 10rem; 
+    }
+}
+
+/*###################### CSS ART - HARTJE ######################################*/
+.like{
+    padding: 1rem;
+    border-radius: 50%;
+    z-index: 2;
+    top: 6.5rem;
+    left: 9rem;
+    background-color: var(--primary-color);
+    border: .3rem solid var(--secondary-color);
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.like:hover{
+    cursor: pointer;
+}
+
+.hartje{
+    float: right;
+    padding: .2rem;
+    border: none;
+    margin: 0.6rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: white;
+    display: flex;
+    position: relative;
+    transform: rotate(45deg);
+    border: none;
+}
+
+.hartje::before{
+    content:"";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-50%);
+    background-color: white;
+    border-radius: 50%;
+}
+
+.hartje::after{
+    content:"";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: white;
+    border-radius: 50%;
+}
+
+.hartje:hover, .hartje:hover::after, .hartje:hover::before{
+    background-color: pink;
+    cursor: pointer;
+}
+
+.hartje--rood{
+    float: right;
+    padding: .5rem;
+    border: none;
+    margin: 0.3rem;
+    width: 5px;
+    height: 5px;
+    background-color: red;
+    display: flex;
+    position: relative;
+    transform: rotate(45deg);
+}
+
+.hartje--rood::before{
+    content:"";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-50%);
+    background-color: red;
+    border-radius: 50%;
+
+}
+
+.hartje--rood::after{
+    content:"";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: red;
+    border-radius: 50%;
+}
+
+@media (min-width:550px){
+    .like{
+        top: 6.5rem;
+        left: 11.5rem;
+    }
+}
+
+@media (min-width:700px){
+    .like{
+        top: 6.5rem;
+        left: 14rem;
+    }
+}
