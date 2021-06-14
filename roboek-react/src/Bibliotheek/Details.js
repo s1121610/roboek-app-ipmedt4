@@ -15,13 +15,13 @@ class Details extends React.Component{
         axios.get(`http://127.0.0.1:8000/api/bibliotheek/details/` + idReq)
           .then(res => {
             const persons = res.data;
-            this.setState({ persons });
+            this.setState({ persons: persons });
           })
       }
 
     render(){
         return (
-      <main>
+      <section>
         <h1>Bibliotheek</h1>
         {this.state.persons.map(boek => <div>
           <article className="bookcard">
@@ -41,7 +41,7 @@ class Details extends React.Component{
               </section>
           </article>
         </div>)}
-      </main>
+      </section>
     );
     }
 }

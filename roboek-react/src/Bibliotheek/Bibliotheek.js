@@ -9,7 +9,8 @@ class Searchbar extends React.Component{
   state = {
     genre: "",
     persons: [], 
-    boek_id: ''
+    boek_id: '',
+    bgColor: ""
   }
   
   componentDidMount() {
@@ -47,8 +48,8 @@ class Searchbar extends React.Component{
     }
     
     const addToFavorites = (id) =>{
-      this.setState({ boek_id: id })
-      console.log("boek id = " + this.state.boek_id);
+      this.setState({ boek_id: id, bgColor: "red" })
+      console.log(this.state.bgColor);
       axios.post('http://127.0.0.1:8000/api/bibliotheek/favorite/' + id, {"id": id})
         .then(res => {  
           const favorite = res.data

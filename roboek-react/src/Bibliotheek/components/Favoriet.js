@@ -10,6 +10,7 @@ const Favoriet = (props) => {
                 className="hartje"
                 id="js--hartje"
                 onClick={() => props.clickHandler(id)}
+                data-liked = "true"
             ></button>    
         </figure>
     );
