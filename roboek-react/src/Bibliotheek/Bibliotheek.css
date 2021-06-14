@@ -267,10 +267,10 @@ li > .genre__naam[data-genre="Avontuur"] {
     border-radius: 50%;
 }
 
-.hartje:hover, .hartje:hover::after, .hartje:hover::before{
-    background-color: pink;
-    cursor: pointer;
+.hartje[data-liked=true], .hartje[data-liked=true]::before, .hartje[data-liked=true]::after {
+    background-color: var(--tertiary-color);
 }
+
 
 .hartje--rood{
     float: right;

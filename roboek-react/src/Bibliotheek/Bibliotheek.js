@@ -10,7 +10,8 @@ class Searchbar extends React.Component{
     genre: "",
     persons: [], 
     boek_id: '',
-    bgColor: ""
+    bgColor: "",
+    liked: []
   }
   
   componentDidMount() {
@@ -20,8 +21,10 @@ class Searchbar extends React.Component{
     let genreReq = window.location.pathname.split('/')[2];
     axios.get(`http://127.0.0.1:8000/api/bibliotheek/` + genreReq)
       .then(res => {
-        const persons = res.data;
-        this.setState({ persons });
+        const boeken = res.data.boeken;
+        const favorieten = res.data.favorieten;
+        this.setState({ persons: boeken, liked: favorieten });
+        console.log(this.state.liked);
       })
   }
   render(){
@@ -56,6 +59,8 @@ class Searchbar extends React.Component{
           this.setState({ boek_id: favorite })
           console.log(this.state.boek_id);
           console.log(res);
+
+
         });
     }
 
@@ -82,6 +87,7 @@ class Searchbar extends React.Component{
                 <article className="bookcard">
                     <Favoriet 
                       favoriet={boek.id}
+                      liked={this.state.liked}
                       clickHandler={addToFavorites}
                       key={boek.id}
                     />
