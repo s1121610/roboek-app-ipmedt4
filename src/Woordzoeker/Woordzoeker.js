@@ -2,6 +2,7 @@ import React from 'react';
 import "./Woordzoeker.css";
 import WoordzoekerMatrix from "./WoordzoekerMatrix";
 import WoordzoekerInvoer from "./WoordzoekerInvoer";
+import WoordzoekerGevonden from "./WoordzoekerGevonden";
 
 const letters = "abcdefghijklmnopqrstuvwxyz";
 const woorden = "weerwolf maan dolfje timmie noura leo rood bril";
@@ -28,17 +29,17 @@ class WoordzoekerPuzzel extends React.Component {
 
   checkWoord = () => {
     var ingevoerdeWoord = document.getElementById("woord").value;
-
     for(var i = 0; i < aantalWoorden; i++){
       if(teGeradenWoorden[i] === ingevoerdeWoord){
         if(geradenWoorden.includes(ingevoerdeWoord)){
-
+          
         } else {
           document.getElementById("woord").value = null;
           this.setState({
+            list: [...this.state.list, ingevoerdeWoord],
             gevonden: this.state.gevonden + 1
-          })
-
+          });
+          geradenWoorden.push(ingevoerdeWoord);
         }
       } else {
 
@@ -57,6 +58,7 @@ class WoordzoekerPuzzel extends React.Component {
       <article className="woordzoeker">
         <WoordzoekerMatrix matrix={woordzoekerMatrix}/>
         <WoordzoekerInvoer gevonden={this.state.gevonden} aantal={aantalWoorden} functie={this.checkWoord}/>
+        <WoordzoekerGevonden list={this.state.list}/>
       </article>
     )
   }
