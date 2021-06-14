@@ -22,6 +22,10 @@ input.naamInput__form__input {
   border: 0.2rem solid var(--disabled1-color);
 }
 
+input.naamInput__form__input::placeholder {
+  color: var(--disabled2-color);
+}
+
 button.submitBtn {
   width: 100%;
   background-color: var(--primary-color);
@@ -37,4 +41,5 @@ button.submitBtn:hover {
 button.submitBtn:active {
   transform: translateY(0.4rem);
   box-shadow: 0 0 0 0;
+  transition: 0.2s;
 }
