@@ -13,8 +13,28 @@ form.naamInput__form {
 input.naamInput__form__input, button.submitBtn {
   font-family: var(--fnt-assistant);
   font-size: 1.8rem;
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 1.2rem;
 }
 
 input.naamInput__form__input {
+  border: 0.2rem solid var(--disabled1-color);
+}
 
+button.submitBtn {
+  width: 100%;
+  background-color: var(--primary-color);
+  border: 0.2rem solid var(--primary-color);
+  border-radius: 2rem;
+  box-shadow: 0 0.4rem 0 0 var(--secondary-color);
+}
+
+button.submitBtn:hover {
+  cursor: pointer;
+}
+
+button.submitBtn:active {
+  transform: translateY(0.4rem);
+  box-shadow: 0 0 0 0;
 }

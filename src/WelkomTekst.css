@@ -15,7 +15,7 @@ section.welkomtekst p:nth-of-type(1) {
 }
 
 section.welkomtekst__tekstbox {
-  border: 0.2rem solid var(--primary-color);
+  border: 0.2rem solid var(--secondary-color);
   border-radius: 1.2rem;
   position: relative;
 }
@@ -26,8 +26,8 @@ section.welkomtekst__tekstbox {
   height: 0px;
   position: absolute;
   border-left: 10px solid transparent;
-  border-right: 10px solid var(--primary-color);
-  border-top: 10px solid var(--primary-color);
+  border-right: 10px solid var(--secondary-color);
+  border-top: 10px solid var(--secondary-color);
   border-bottom: 10px solid transparent;
   right: 3rem;
   bottom: -2rem;

@@ -2,7 +2,7 @@ import React from "react";
 
 import Titel from "./WelkomTitel";
 import WelkomTekst from "./WelkomTekst";
-import WelkomButtonList from "./WelkomButtonList.js"
+import WelkomButtonList from "./WelkomButtonList"
 import './App.css';
 
 class App extends React.Component {
