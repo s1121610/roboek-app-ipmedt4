@@ -1,0 +1,22 @@
+.woordzoeker{
+  max-width: 50rem;
+}
+
+.woordzoeker__matrix__lijst{
+  width: 100%;
+  border: solid .1rem black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  list-style: none
+}
+
+.woordzoeker__matrix_letter{
+  border: solid .1rem black;
+  font-size: 1.8rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.woordzoeker__bericht_fout,.woordzoeker__bericht_goed,.woordzoeker__bericht_gedaan{
+  display: none;
+}
