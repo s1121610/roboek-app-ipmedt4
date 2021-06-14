@@ -1,0 +1,42 @@
+.boekenkaart{
+    background-color: var(--background-color);
+    display: grid;
+    width: 99%;
+    padding: 1.5rem;
+    grid-template-areas: 
+    'image header header'
+    'image voortgang verder';
+}
+
+.boekenkaart__header{
+    background-color: aquamarine;
+    grid-area: header;
+}
+
+.boekenkaart__header__titel{
+    font-size: 1.8rem;
+}
+
+.boekenkaart__header__auteur{
+    font-size: 1.8rem;
+    font-weight: 100;
+}
+
+.boekenkaart__image{
+    grid-area: image;
+    background-color: red;
+    padding: 2rem;
+    margin-right: 1rem;
+    border-radius: 2rem;
+}
+
+.boekenkaart__voortgang{
+    grid-area: voortgang;
+}
+
+.boekenkaart__verder{
+    grid-area: verder;
+    color: black;
+    font-size: 2rem;
+}
+

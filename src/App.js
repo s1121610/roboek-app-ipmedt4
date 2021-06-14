@@ -1,13 +1,18 @@
 import React from "react";
 import './App.css';
+import BoekenlijstList from "./BoekenlijstList";
 
 class App extends React.Component {
 
+  cardClicked = id => {
+    console.log("kaart " + id);
+  }
   render(){
     return (
-      <h1>Running</h1>
+      <BoekenlijstList cardClicked = {this.cardClicked}/>
     );
   }
 }
+
 
 export default App;
