@@ -1,0 +1,20 @@
+section.naamInput {
+  width: 80%;
+  margin: 0 auto;
+}
+
+form.naamInput__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+input.naamInput__form__input, button.submitBtn {
+  font-family: var(--fnt-assistant);
+  font-size: 1.8rem;
+}
+
+input.naamInput__form__input {
+
+}

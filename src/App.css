@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
 
 *, *::before, *::after{
   margin: 0;
@@ -15,6 +16,9 @@
   --disabled1-color: #909494;
   --disabled2-color: #B4B4B4;
   --background-color: #F7F7F7;
+
+  --fnt-roboto: 'Roboto', sans-serif;
+  --fnt-assistant: 'Assistant', sans-serif;
 }
 
 html{
@@ -22,7 +26,6 @@ html{
 }
 
 body{
-  font-family: 'Roboto', sans-serif;
   background-color: var(--background-color);
 }
 
@@ -69,4 +72,3 @@ body{
   background-color:#2B1800;
   border-radius: 5rem;
 }
-
