@@ -13,6 +13,8 @@ const aantalWoorden = teGeradenWoorden.length;
 var geradenWoorden = [];
 var aantalGeradenWoorden = geradenWoorden.length;
 var woordzoekerMatrix = [];
+var aantalFout = 0;
+var telOp = true;
 
 for(var i = 0; i < woordenMatrix.length; i++){
   var letter;
@@ -28,6 +30,16 @@ for(var i = 0; i < woordenMatrix.length; i++){
 class WoordzoekerPuzzel extends React.Component {
   state = { bericht: "", list: [], gevonden: 0};
 
+  showHint = () => {
+    if(aantalFout === 2){
+      document.getElementById("js--hint-button").style.display = "block";
+      aantalFout = 0
+    } else {
+      aantalFout += 1;
+    }
+    console.log(aantalFout);
+  }
+
   checkWoord = () => {
     var ingevoerdeWoord = document.getElementById("woord").value;
 
@@ -37,6 +49,7 @@ class WoordzoekerPuzzel extends React.Component {
         this.setState({
           bericht: "Je hebt niks ingevoerd. Probeer opnieuw!"
         });
+        telOp = false;
         break;
       } else {
         if(teGeradenWoorden[i] === ingevoerdeWoord){
@@ -44,6 +57,7 @@ class WoordzoekerPuzzel extends React.Component {
             this.setState({
               bericht: "Je hebt dat woord al ingevoerd. Probeer opnieuw!"
             });
+            telOp = false;
             break;
           } else {
             document.getElementById("woord").value = null;
@@ -53,14 +67,20 @@ class WoordzoekerPuzzel extends React.Component {
               bericht: "Hoera! dat woord zit er in, ga zo door!"
             });
             geradenWoorden.push(ingevoerdeWoord);
+            aantalFout = 0;
             break;
           }
         } else {
           this.setState({
             bericht: "Dit woord zit er niet in. Probeer opnieuw!"
-          })
+          });
+          telOp = true;
         }
       }
+    }
+
+    if(telOp){
+      {this.showHint()};
     }
   }
 

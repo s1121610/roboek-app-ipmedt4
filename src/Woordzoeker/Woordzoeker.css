@@ -20,3 +20,7 @@
 .woordzoeker__bericht_fout,.woordzoeker__bericht_goed,.woordzoeker__bericht_gedaan{
   display: none;
 }
+
+.woordzoeker__bericht__hint{
+  display: none;
+}
