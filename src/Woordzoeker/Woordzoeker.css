@@ -3,17 +3,18 @@
 }
 
 .woordzoeker__matrix__lijst{
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   border: solid .1rem black;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  list-style: none
+  list-style: none;
 }
 
 .woordzoeker__matrix_letter{
   border: solid .1rem black;
   font-size: 1.8rem;
-  padding: 1rem;
+  padding: .5rem 0rem;
   text-align: center;
 }
 
@@ -23,4 +24,30 @@
 
 .woordzoeker__bericht__hint{
   display: none;
+}
+
+.woordzoeker__bericht__tekst{
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.woordzoeker__bericht, .woordzoeker__geraden{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.woordzoeker__invoer{
+  text-align: center;
+  padding: 1rem;
+}
+
+.woordzoeker__geraden{
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.woordzoeker__geraden__lijst{
+  list-style: none;
 }

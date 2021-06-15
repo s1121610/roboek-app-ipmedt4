@@ -6,8 +6,8 @@ const gevonden = (props) => {
 
   return (
     <section className="woordzoeker__geraden">
-      <h3>Gevonden woorden</h3>
-      <ul>{gevondenLijst}</ul>
+      <h3>Gevonden woorden:</h3>
+      <ul className="woordzoeker__geraden__lijst">{gevondenLijst}</ul>
     </section>
   )
 
