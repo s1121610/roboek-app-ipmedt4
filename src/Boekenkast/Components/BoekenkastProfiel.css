@@ -1,0 +1,40 @@
+.profielSection{
+  height: 100%;
+}
+
+.profielSection__header{
+  text-align: center;
+  font-size: 3rem;
+  color: var(--secondary-color);
+  background: var(--background-color);
+  border-radius: 1rem;
+}
+
+.profielSection__list{
+  margin-top: 1rem;
+  background: var(--background-color);
+}
+
+.profielSection__listItem{
+  padding: 1rem;
+}
+
+.profielSection__listItem__heading{
+  display: flex;
+  gap: 1rem;
+
+  font-size: 2.2rem;
+  color: var(--primary-color);
+}
+
+.profielSection__listItem__figure{
+
+}
+
+.profielSection__listItem__image{
+
+}
+
+.profielSection__listItem__text{
+  font-size: 2rem;
+}

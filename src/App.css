@@ -3,6 +3,7 @@
 *, *::before, *::after{
   margin: 0;
   padding: 0;
+  list-style: none;
   box-sizing: border-box;
 }
 
@@ -15,6 +16,12 @@
   --disabled1-color: #909494;
   --disabled2-color: #B4B4B4;
   --background-color: #F7F7F7;
+
+  --book-color-red: linear-gradient(180deg, #FF6363 0%, #CC2A2A 100%);
+  --book-color-yellow: linear-gradient(180deg, #FFF170 0%, #AE8F3E 100%);
+  --book-color-green: linear-gradient(180deg, #4EE06E 0%, #34A44C 100%);
+  --book-color-blue: linear-gradient(180deg, #8CF1FF 0%, #52ACB9 100%);
+  --book-color-purple: linear-gradient(180deg, #EB70FF 0%, #AC3EAE 100%);
 }
 
 html{
@@ -24,6 +31,11 @@ html{
 body{
   font-family: 'Roboto', sans-serif;
   background-color: var(--background-color);
+}
+
+main{
+  max-width: 1000px;
+  margin: 2rem auto;
 }
 
 /* ========== UTILITY CLASSES ========== */
@@ -68,4 +80,8 @@ body{
   z-index:-1;
   background-color:#2B1800;
   border-radius: 5rem;
+}
+
+.u-box-shadow{
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
 }
