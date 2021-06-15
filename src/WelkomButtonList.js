@@ -8,6 +8,7 @@ export default class WelkomButtonList extends React.Component {
   constructor (props) {
     super(props);
     this.state = {voornaam: "",leukenaam: ""};
+    // Deze twee zijn voor het nakijken van de state en of het werkt. Dit kan later weggehaald worden.
     this.voornaamHandleChange = this.voornaamHandleChange.bind(this);
     this.leukenaamHandleChange = this.leukenaamHandleChange.bind(this);
 
@@ -73,5 +74,3 @@ export default class WelkomButtonList extends React.Component {
     );
   }
 }
-
-//export default WelkomButtonList;
