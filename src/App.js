@@ -8,7 +8,7 @@ import Boekenkast from "./Boekenkast/Boekenkast";
 class App extends React.Component {
   render(){
     return (
-      <Boekenkast user_id='2'/>
+      <Boekenkast user_id='1'/>
     );
   }
 }
