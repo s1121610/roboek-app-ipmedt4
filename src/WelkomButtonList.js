@@ -32,7 +32,17 @@ export default class WelkomButtonList extends React.Component {
       leukenaam: this.state.leukenaam
     };
 
-    axios.post("http://127.0.0.1:8000/", userObject)
+    let config = {
+      headers: { 
+        "Content-Type": "application/json",
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS'
+       }
+    }
+
+    axios.defaults.headers.post['header1'] = 'value'
+
+    axios.post("http://127.0.0.1:8000/api/user/create", userObject, config)
       .then((res) => {
         console.log(res.data);
       }).catch((error) => {
@@ -42,7 +52,7 @@ export default class WelkomButtonList extends React.Component {
     this.setState({ voornaam: "", leukenaam: "" })
   }
 
-  // Deze twee worden gebruikt voor het laten zien dat de sate werkt
+  // Deze twee worden gebruikt voor het laten zien dat de state werkt
   voornaamHandleChange (e) {
     this.setState({
       voornaam: e.target.value
@@ -59,7 +69,7 @@ export default class WelkomButtonList extends React.Component {
   render() {
     return (
       <section className="naamInput" >
-        <form id="namen" className="naamInput__form" onSubmit={this.onSubmit}>
+        <form className="naamInput__form" onSubmit={this.onSubmit}>
           <input type="text" id="voornaam" placeholder="Voer hier je naam in" className="naamInput__form__input" 
             onChange={this.voornaamHandleChange} 
             value={this.state.voornaam}
@@ -68,8 +78,8 @@ export default class WelkomButtonList extends React.Component {
             onChange={this.leukenaamHandleChange}
             value={this.state.leukenaam}
           />
+          <button type="submit" className="submitBtn">Klaar</button>
         </form>
-        <button type="submit" form="namen" value="Create User" className="submitBtn">Klaar</button>
       </section>
     );
   }
