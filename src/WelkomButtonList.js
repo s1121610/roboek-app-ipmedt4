@@ -71,11 +71,11 @@ export default class WelkomButtonList extends React.Component {
       <section className="naamInput" >
         <form className="naamInput__form" onSubmit={this.onSubmit}>
           <input type="text" id="voornaam" placeholder="Voer hier je naam in" className="naamInput__form__input" 
-            onChange={this.voornaamHandleChange} 
+            onChange={this.onChangeVoornaam} 
             value={this.state.voornaam}
           />
           <input type="text" id="leukenaam" placeholder="Vul een leuke naam in" className="naamInput__form__input" 
-            onChange={this.leukenaamHandleChange}
+            onChange={this.onChangeLeukenaam}
             value={this.state.leukenaam}
           />
           <button type="submit" className="submitBtn">Klaar</button>
