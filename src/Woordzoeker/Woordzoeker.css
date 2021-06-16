@@ -16,6 +16,7 @@
   font-size: 1.8rem;
   padding: .5rem 0rem;
   text-align: center;
+  transition: 1s;
 }
 
 .woordzoeker__bericht_fout,.woordzoeker__bericht_goed,.woordzoeker__bericht_gedaan{

@@ -8,15 +8,66 @@ import WoordzoekerBericht from "./WoordzoekerBericht";
 
 const letters = "abcdefghijklmnopqrstuvwxyz";
 const woorden = "weerwolf maan dolfje timmie noura leo rood bril";
-const woordenMatrix= "0000000000000leon0000weerwolf0000j00u000000f0bril0000l00a00000rood0m00000d000a000timmiea000000000n00";
+const woordenMatrix= "0000000000000leon0000weerwolf0d00000u000o0000bril0l00000a000f0rood0m00j000000a00etimmiea000000000n00";
 const teGeradenWoorden = woorden.split(" ");
 const aantalWoorden = teGeradenWoorden.length;
+const lijst = document.getElementsByClassName("woordzoeker__matrix_letter")
 var geradenWoorden = [];
+var result = ""
 var aantalGevondenWoorden = 0;
 var aantalGeradenWoorden = geradenWoorden.length;
 var woordzoekerMatrix = [];
 var aantalFout = 0;
 var telOp = true;
+var lengteWoord;
+
+
+const flipMatrixAxis = (horizontalMatrix, width = 10, height = 10) => {
+    for (let widthIndex = 0; widthIndex < width; widthIndex++) {
+        for (let heightIndex = 0; heightIndex < height; heightIndex++) {
+            result += horizontalMatrix[(heightIndex * height) + widthIndex]
+        }
+    }
+}
+
+const streepDoorHorizontaal = (woord) => {
+  lengteWoord = woord.length;
+  var plekInHorizontaal = woordenMatrix.search(woord);
+  for(var i = 0; i < lengteWoord; i++){
+      var plekInLijstHorizontaal = plekInHorizontaal + i;
+      if(plekInLijstHorizontaal < 0){
+        break;
+      } else {
+
+        geefKleur(plekInLijstHorizontaal);
+      }
+  }
+}
+
+const geefKleur = (plekInLijst) => {
+  lijst.item(plekInLijst).style.backgroundColor = "#A1EDA5";
+}
+
+const streepDoorVerticaal = (woord) => {
+  var positie;
+  lengteWoord = woord.length;
+  var plekInVerticaal = result.search(woord);
+  var array = plekInVerticaal.toString().split("")
+  if(array.length === 2){
+    positie = array[1] + array[0];
+  } else {
+    positie = array[0] + 0;
+  }
+  positie = parseInt(positie);
+  for(var i = 0; i < lengteWoord; i++){
+    var plekInLijstVerticaal = positie + (i * 10);
+    if(plekInVerticaal < 0){
+      break;
+    } else {
+      lijst.item(plekInLijstVerticaal).style.backgroundColor = "#A1EDA5";
+    }
+  }
+}
 
 for(var i = 0; i < woordenMatrix.length; i++){
   var letter;
@@ -69,6 +120,8 @@ class WoordzoekerPuzzel extends React.Component {
             aantalGeradenWoorden += 1;
             geradenWoorden.push(ingevoerdeWoord);
             {this.veranderKleur("#A1EDA5")};
+            streepDoorHorizontaal(ingevoerdeWoord);
+            streepDoorVerticaal(ingevoerdeWoord);
             aantalFout = 0;
 
             if(aantalGeradenWoorden === aantalWoorden){
@@ -100,6 +153,7 @@ class WoordzoekerPuzzel extends React.Component {
   }
 
   render(){
+    flipMatrixAxis(woordenMatrix)
     return (
       <article className="woordzoeker">
         <WoordzoekerMatrix matrix={woordzoekerMatrix}/>
