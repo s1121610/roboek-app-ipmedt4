@@ -4,7 +4,7 @@ const bericht = (props) => {
   return(
     <section className="woordzoeker__bericht">
       <p className="woordzoeker__bericht__tekst" id="js--bericht">{props.bericht}</p>
-      <button className="woordzoeker__bericht__hint" id="js--hint-button">Geef hint</button>
+      <button className="woordzoeker__bericht__hint" id="js--hint-button" onClick={props.functie}>Geef hint</button>
     </section>
   )
 }

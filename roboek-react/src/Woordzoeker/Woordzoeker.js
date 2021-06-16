@@ -8,10 +8,13 @@ import WoordzoekerBericht from "./WoordzoekerBericht";
 
 const letters = "abcdefghijklmnopqrstuvwxyz";
 const woorden = "weerwolf maan dolfje timmie noura leo rood bril";
+const hintLijst = "weerwolf maan dolfje timmie noura leo rood bril";
 const woordenMatrix= "0000000000000leon0000weerwolf0d00000u000o0000bril0l00000a000f0rood0m00j000000a00etimmiea000000000n00";
 const teGeradenWoorden = woorden.split(" ");
 const aantalWoorden = teGeradenWoorden.length;
 const lijst = document.getElementsByClassName("woordzoeker__matrix_letter")
+
+var hints = hintLijst.split(" ");
 var geradenWoorden = [];
 var result = ""
 var aantalGevondenWoorden = 0;
@@ -30,7 +33,7 @@ const flipMatrixAxis = (horizontalMatrix, width = 10, height = 10) => {
     }
 }
 
-const streepDoorHorizontaal = (woord) => {
+const streepDoorHorizontaal = (woord, hint) => {
   lengteWoord = woord.length;
   var plekInHorizontaal = woordenMatrix.search(woord);
   for(var i = 0; i < lengteWoord; i++){
@@ -38,17 +41,27 @@ const streepDoorHorizontaal = (woord) => {
       if(plekInLijstHorizontaal < 0){
         break;
       } else {
+        if(hint){
+          geefKleur(plekInLijstHorizontaal, "oranje");
+          break;
+        } else {
+          geefKleur(plekInLijstHorizontaal, "groen");
+        }
 
-        geefKleur(plekInLijstHorizontaal);
       }
   }
 }
 
-const geefKleur = (plekInLijst) => {
-  lijst.item(plekInLijst).style.backgroundColor = "#A1EDA5";
+const geefKleur = (plekInLijst, kleur) => {
+  if(kleur === "groen"){
+    lijst.item(plekInLijst).style.backgroundColor = "#A1EDA5";
+  } else {
+    lijst.item(plekInLijst).style.backgroundColor = "#FF8847";
+  }
+
 }
 
-const streepDoorVerticaal = (woord) => {
+const streepDoorVerticaal = (woord, hint) => {
   var positie;
   lengteWoord = woord.length;
   var plekInVerticaal = result.search(woord);
@@ -64,10 +77,19 @@ const streepDoorVerticaal = (woord) => {
     if(plekInVerticaal < 0){
       break;
     } else {
-      lijst.item(plekInLijstVerticaal).style.backgroundColor = "#A1EDA5";
+      if(hint){
+        geefKleur(plekInLijstVerticaal, "oranje");
+        break;
+      } else {
+        geefKleur(plekInLijstVerticaal, "groen");
+      }
     }
   }
 }
+
+
+
+
 
 for(var i = 0; i < woordenMatrix.length; i++){
   var letter;
@@ -88,6 +110,19 @@ class WoordzoekerPuzzel extends React.Component {
       aantalFout = 0
     } else {
       aantalFout += 1;
+    }
+  }
+
+  geefHint = () => {
+    for(var i = 0; i < aantalWoorden; i++){
+      console.log(teGeradenWoorden[i])
+      if(geradenWoorden.includes(teGeradenWoorden[i])){
+      } else {
+        document.getElementById("js--hint-button").style.display = "none";
+        streepDoorHorizontaal(teGeradenWoorden[i], "true");
+        streepDoorVerticaal(teGeradenWoorden[i], "true");
+        break;
+      }
     }
   }
 
@@ -117,6 +152,7 @@ class WoordzoekerPuzzel extends React.Component {
               gevonden: this.state.gevonden + 1,
               bericht: "Hoera! dat woord zit er in, ga zo door!"
             });
+
             aantalGeradenWoorden += 1;
             geradenWoorden.push(ingevoerdeWoord);
             {this.veranderKleur("#A1EDA5")};
@@ -158,7 +194,7 @@ class WoordzoekerPuzzel extends React.Component {
       <article className="woordzoeker">
         <WoordzoekerMatrix matrix={woordzoekerMatrix}/>
         <WoordzoekerInvoer gevonden={this.state.gevonden} aantal={aantalWoorden} functie={this.checkWoord}/>
-        <WoordzoekerBericht bericht={this.state.bericht}/>
+        <WoordzoekerBericht bericht={this.state.bericht} functie={this.geefHint}/>
         <WoordzoekerGevonden list={this.state.list}/>
       </article>
     )
