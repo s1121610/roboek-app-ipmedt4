@@ -8,13 +8,11 @@ import WoordzoekerBericht from "./WoordzoekerBericht";
 
 const letters = "abcdefghijklmnopqrstuvwxyz";
 const woorden = "weerwolf maan dolfje timmie noura leo rood bril";
-const hintLijst = "weerwolf maan dolfje timmie noura leo rood bril";
 const woordenMatrix= "0000000000000leon0000weerwolf0d00000u000o0000bril0l00000a000f0rood0m00j000000a00etimmiea000000000n00";
 const teGeradenWoorden = woorden.split(" ");
 const aantalWoorden = teGeradenWoorden.length;
 const lijst = document.getElementsByClassName("woordzoeker__matrix_letter")
 
-var hints = hintLijst.split(" ");
 var geradenWoorden = [];
 var result = ""
 var aantalGevondenWoorden = 0;
@@ -126,60 +124,67 @@ class WoordzoekerPuzzel extends React.Component {
     }
   }
 
-  checkWoord = () => {
-    var ingevoerdeWoord = document.getElementById("woord").value;
-    for(var i = 0; i < aantalWoorden; i++){
-      if(ingevoerdeWoord === ""){
-        this.setState({
-          bericht: "Je hebt niks ingevoerd. Probeer opnieuw!"
-        });
-        {this.veranderKleur("#FF8847")};
-        telOp = false;
-        break;
-      } else {
-        if(teGeradenWoorden[i] === ingevoerdeWoord){
-          if(geradenWoorden.includes(ingevoerdeWoord)){
+  checkWoord = (event) => {
+    var input = document.getElementById("woord");
+      if(event.key === "Enter" || event === "Enter" ){
+        var ingevoerdeWoord = document.getElementById("woord").value;
+        ingevoerdeWoord = ingevoerdeWoord.toLowerCase();
+        console.log(ingevoerdeWoord)
+        for(var i = 0; i < aantalWoorden; i++){
+          if(ingevoerdeWoord === ""){
             this.setState({
-              bericht: "Je hebt dat woord al ingevoerd. Probeer opnieuw!"
+              bericht: "Je hebt niks ingevoerd. Probeer opnieuw!"
             });
             {this.veranderKleur("#FF8847")};
             telOp = false;
             break;
           } else {
-            document.getElementById("woord").value = null;
-            this.setState({
-              list: [...this.state.list, ingevoerdeWoord],
-              gevonden: this.state.gevonden + 1,
-              bericht: "Hoera! dat woord zit er in, ga zo door!"
-            });
+            if(teGeradenWoorden[i] === ingevoerdeWoord){
+              if(geradenWoorden.includes(ingevoerdeWoord)){
+                this.setState({
+                  bericht: "Je hebt dat woord al ingevoerd. Probeer opnieuw!"
+                });
+                {this.veranderKleur("#FF8847")};
+                telOp = false;
+                break;
+              } else {
+                document.getElementById("woord").value = null;
+                this.setState({
+                  list: [...this.state.list, ingevoerdeWoord],
+                  gevonden: this.state.gevonden + 1,
+                  bericht: "Hoera! dat woord zit er in, ga zo door!"
+                });
 
-            aantalGeradenWoorden += 1;
-            geradenWoorden.push(ingevoerdeWoord);
-            {this.veranderKleur("#A1EDA5")};
-            streepDoorHorizontaal(ingevoerdeWoord);
-            streepDoorVerticaal(ingevoerdeWoord);
-            aantalFout = 0;
+                aantalGeradenWoorden += 1;
+                geradenWoorden.push(ingevoerdeWoord);
+                {this.veranderKleur("#A1EDA5")};
+                streepDoorHorizontaal(ingevoerdeWoord);
+                streepDoorVerticaal(ingevoerdeWoord);
+                aantalFout = 0;
 
-            if(aantalGeradenWoorden === aantalWoorden){
-              console.log("DONE")
+                if(aantalGeradenWoorden === aantalWoorden){
+                  console.log("DONE")
+                } else {
+                  console.log("NOT DONE")
+                }
+
+                break;
+              }
             } else {
-              console.log("NOT DONE")
+              this.setState({
+                bericht: "Dit woord zit er niet in. Probeer opnieuw!"
+              });
+              {this.veranderKleur("#FF8847")};
+              telOp = true;
             }
-
-            break;
           }
-        } else {
-          this.setState({
-            bericht: "Dit woord zit er niet in. Probeer opnieuw!"
-          });
-          {this.veranderKleur("#FF8847")};
-          telOp = true;
         }
+        if(telOp){
+          {this.showHint()};
+        }
+
       }
-    }
-    if(telOp){
-      {this.showHint()};
-    }
+
 
 
   }

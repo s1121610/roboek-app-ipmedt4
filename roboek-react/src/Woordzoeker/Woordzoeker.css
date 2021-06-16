@@ -5,7 +5,6 @@
 .woordzoeker__matrix__lijst{
   width: 90%;
   margin: 0 auto;
-  border: solid .1rem black;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   list-style: none;
