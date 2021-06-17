@@ -10,20 +10,12 @@ class App extends React.Component {
 
   render(){
     return (
-      <article>
-        <header>
+      <main>
           <Titel />
-        </header>
-        <main>
-          <article>
-            <WelkomTekst />
-            <WelkomButtonList />
-          </article>
-        </main>
-        <footer>
+          <WelkomTekst />
+          <WelkomButtonList />
           <Navigatie />
-        </footer>
-      </article>
+      </main>
     );
   }
 }

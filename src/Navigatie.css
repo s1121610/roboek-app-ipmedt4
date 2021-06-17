@@ -39,9 +39,6 @@ article.navigatie {
 .navigatie__modal__content p{
     font-family: var(--fnt-assistant);
     font-size: 1.5rem;
-    font-weight: 400;
-    letter-spacing: 0.1rem;
-    margin-bottom: 2rem;
 }
 
 .close {
