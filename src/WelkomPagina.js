@@ -15,7 +15,7 @@ class WelkomPagina extends React.Component {
                 <Titel />
                 <WelkomTekst />
                 <WelkomButtonList />
-                <Navigatie className="welkom__nav"/>
+                <Navigatie />
             </section>
         );
     }
