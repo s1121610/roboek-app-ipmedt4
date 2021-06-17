@@ -28,24 +28,25 @@
   display: flex;
   justify-content: space-between;
   padding: 2rem;
+  margin: 0 auto;
+
+  max-width: 600px;
 }
 
 .boekenkastButtonSection__button{
   display: block;
-  width: 90px;
-  height: 90px;
+  width: 20rem;
+  padding: 1rem 0;
 
-  text-align: center;
-  line-height: 80px;
-  font-size: 7rem;
+  font-size: 2.4rem;
+  font-weight: bold;
 
-  border-radius: 50%;
+  border-radius: 2rem;
   background-color: var(--primary-color);
   border: 6px solid var(--secondary-color);
 }
 
 .boekenkastButtonSection__button:hover{
-  font-size: 8rem;
   cursor: pointer;
   background-color: var(--secondary-color);
   border: 6px solid var(--primary-color);
