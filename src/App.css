@@ -72,3 +72,9 @@ body{
   background-color:#2B1800;
   border-radius: 5rem;
 }
+
+main{
+  min-height: calc(100% - 7rem);
+}
+
+
