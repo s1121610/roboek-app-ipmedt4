@@ -1,16 +1,26 @@
 import React from "react";
 
 import WelkomPagina from "./WelkomPagina"
-import Navigatie from "./Navigatie";
+import Test from "./Test";
+
 import './App.css';
+
+import { Switch, Route, BrowserRouter as Router, Link } from "react-router-dom";
 
 class App extends React.Component {
 
   render(){
     return (
-      <article>
-          <WelkomPagina />
-      </article>
+      <Router>
+          <Switch>
+            <Route path="/Test/">
+              <Test />
+            </Route>
+            <Route path="/">
+              <WelkomPagina />
+            </Route>
+          </Switch>
+        </Router>
     );
   }
 }
