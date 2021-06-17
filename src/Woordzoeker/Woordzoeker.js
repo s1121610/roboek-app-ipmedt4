@@ -40,9 +40,14 @@ class WoordzoekerPuzzel extends React.Component {
     axios.get(BASE_URL+ puzzelId)
       .then(res => {
         if(res.data){
-          this.setState({matrix: res.data.vraag, antwoorden: res.data.antwoorden})
-          this.flipMatrixAxis(this.state.matrix)
-          this.maakMatrix()
+          if(res.data.soort === "Woordzoeker"){
+            this.setState({matrix: res.data.vraag, antwoorden: res.data.antwoorden})
+            this.flipMatrixAxis(this.state.matrix)
+            this.maakMatrix()
+          } else {
+            window.location.replace("/")
+          }
+
         } else {
           window.location.replace("/")
         }
@@ -121,7 +126,7 @@ class WoordzoekerPuzzel extends React.Component {
                   gevonden: this.state.gevonden + 1,
                   bericht: "Hoera! dat woord zit er in, ga zo door!"
                 });
-
+                document.getElementById("js--hint-button").style.display = "none";
                 aantalGeradenWoorden += 1;
                 geradenWoorden.push(ingevoerdeWoord);
                 {this.veranderKleur("#A1EDA5")};
