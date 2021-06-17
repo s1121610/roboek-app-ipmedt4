@@ -23,10 +23,6 @@ window.onload = () => {
     var btnModal = document.getElementById("js--openModal");
     var figure = document.getElementsByClassName("close")[0];
 
-    console.log(figure);
-    console.log(btnModal);
-    console.log(modal);
-
     btnModal && (btnModal.onclick = function () {
         modal.style.display = "block";
     });
