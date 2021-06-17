@@ -10,12 +10,12 @@ class App extends React.Component {
 
   render(){
     return (
-      <main>
+      <article>
           <Titel />
           <WelkomTekst />
           <WelkomButtonList />
           <Navigatie />
-      </main>
+      </article>
     );
   }
 }
