@@ -18,9 +18,12 @@ class Boekenlijst extends React.Component {
                     {this.props.auteur || "Auteur"}
                 </h3>
             </header>
-            <section className="boekenkaart__image">
-                <figure>
-                    <img>{this.props.image}</img>
+            <section className="boekenkaart__imgsection">
+                <figure className="boekenkaart__imgsection__figure">
+                    <img className="boekenkaart__imgsection__figure__image" src={this.props.img}>{this.props.image}</img>
+                    <figcaption className="boekenkaart__imgsection__figure__figcaption">
+                        {this.props.figcaption || "Geen naam beschikbaar"}
+                    </figcaption>
                 </figure>
             </section>
             <section className="boekenkaart__voortgang">
