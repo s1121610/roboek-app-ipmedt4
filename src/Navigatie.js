@@ -1,5 +1,5 @@
 import React from 'react';
-import Test from './Test'
+import NavItem from './NavItem'
 
 import './Navigatie.css';
 
@@ -22,38 +22,26 @@ const Navigatie = () => {
                             </section>
                         </section>
                     </section>
-                    <section className="navigatie__modal__content__link">
-                        <Link to="/Winkel">
-                            <p>Winkel</p>
-                            <section className="eclipse">
-                                <img className="navigatie__modal__content__link__img" src="/img/Winkel.svg" />
-                            </section>
-                        </Link>
-                    </section>
-                    <section className="navigatie__modal__content__link">
-                        <Link to="/Bibliotheek">
-                            <p>Bibliotheek</p>
-                            <section className="eclipse">
-                                <img className="navigatie__modal__content__link__img" src="/img/Bibliotheek.svg" />
-                            </section>
-                        </Link>
-                    </section>
-                    <section className="navigatie__modal__content__link">
-                        <Link to="/Boekenlijst">
-                            <p>Boekenlijst</p>
-                            <section className="eclipse">
-                                <img className="navigatie__modal__content__link__img" src="/img/Boekenlijst.svg" />
-                            </section>
-                        </Link>
-                    </section>
-                    <section className="navigatie__modal__content__link">
-                        <Link to="/Test">
-                            <p>Mijn Boekenkast</p>
-                            <section className="eclipse">
-                                <img className="navigatie__modal__content__link__img" src="/img/Boekenkast.svg" />
-                            </section>
-                        </Link>
-                    </section>                    
+                    <NavItem
+                        link="/Winkel"
+                        p="Winkel"
+                        imgSrc="/img/Winkel.svg"
+                    />
+                    <NavItem
+                        link="/Bibliotheek"
+                        p="Bibliotheek"
+                        imgSrc="/img/Bibliotheek.svg"
+                    />
+                    <NavItem
+                        link="/Boekenlijst"
+                        p="Mijn Boekenlijst"
+                        imgSrc="/img/Boekenlijst.svg"
+                    />
+                    <NavItem 
+                        link="/Test"
+                        p="Mijn Boekenkast"
+                        imgSrc="/img/Boekenkast.svg"
+                    />                   
                 </section>
             </section>
         </article>

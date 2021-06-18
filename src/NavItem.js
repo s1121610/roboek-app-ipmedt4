@@ -1,0 +1,20 @@
+import React from 'react';
+
+import { Link } from "react-router-dom";
+
+class NavItem extends React.Component {
+    render() {
+        return (
+            <section className="navigatie__modal__content__link">
+                <Link to={ this.props.link }>
+                    <p>{ this.props.p }</p>
+                    <section className="eclipse">
+                        <img className="navigatie__modal__content__link__img" src={ this.props.imgSrc } />
+                    </section>
+                </Link>
+            </section>
+        ); 
+    }
+}
+
+export default NavItem;
