@@ -8,7 +8,6 @@ class BoekenkastMedailles extends React.Component{
     let legeMedailles = [];
     for(var i = 1; i <= 8; i++){
       if(i > this.props.medailles.length){
-        console.log(i);
         legeMedailles.push(
           <li key={i} className="medaillesSection__listItem">
             <figure className="medaillesSection__medailleslot">
@@ -18,7 +17,6 @@ class BoekenkastMedailles extends React.Component{
         );
       }
     }
-    console.log(legeMedailles);
 
     return(
       <React.Fragment>
