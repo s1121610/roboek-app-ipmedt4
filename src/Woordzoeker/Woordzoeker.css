@@ -11,7 +11,6 @@
     'geraden';
   grid-row-gap: 1rem;
   grid-column-gap: 1rem;
-
 }
 
 .container{
@@ -19,8 +18,14 @@
 }
 
 .woordzoeker__matrix{
+  position: relative;
   grid-area: matrix;
+  outline: solid .3rem black;
+  outline-offset: -.1rem;
+  overflow:hidden;
 }
+
+
 
 .woordzoeker__invoer{
   grid-area: invoer;
@@ -42,6 +47,7 @@
 }
 
 .woordzoeker__matrix_letter{
+  background-color: white;
   border: solid .1rem black;
   font-size: 1.8rem;
   height: 100%;
@@ -91,6 +97,7 @@
 }
 
 .woordzoeker__invoer__invoerTekst{
+  background-color: white;
   font-size: 1.6rem;
   width: 75%;
   text-align: left !important;

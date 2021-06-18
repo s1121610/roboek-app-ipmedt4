@@ -9,6 +9,7 @@ import WoordzoekerBericht from "./WoordzoekerBericht";
 
 const letters = "abcdefghijklmnopqrstuvwxyz";
 const lijst = document.getElementsByClassName("woordzoeker__matrix_letter")
+var puzzelId;
 var woordenMatrix;
 var woordzoekerMatrix = [];
 var geradenWoorden = [];
@@ -24,6 +25,7 @@ var aantalWoorden;
 
 class WoordzoekerPuzzel extends React.Component {
   state = {
+    puzzelId: "",
     bericht: "",
     list: [],
     gevonden: 0,
@@ -41,7 +43,7 @@ class WoordzoekerPuzzel extends React.Component {
       .then(res => {
         if(res.data){
           if(res.data.soort === "Woordzoeker"){
-            this.setState({matrix: res.data.vraag, antwoorden: res.data.antwoorden})
+            this.setState({matrix: res.data.vraag, antwoorden: res.data.antwoorden, puzzelId: res.data.id})
             this.flipMatrixAxis(this.state.matrix)
             this.maakMatrix()
           } else {
@@ -56,6 +58,7 @@ class WoordzoekerPuzzel extends React.Component {
 
 
   maakMatrix = () => {
+    puzzelId = this.state.puzzelId
     woordenMatrix = this.state.matrix;
     teGeradenWoorden = this.state.antwoorden.split(" ");
     aantalWoorden = teGeradenWoorden.length;
@@ -134,12 +137,11 @@ class WoordzoekerPuzzel extends React.Component {
                 this.streepDoorVerticaal(ingevoerdeWoord);
                 aantalFout = 0;
 
-                if(aantalGeradenWoorden === this.aantalWoorden){
-                  console.log("DONE")
+                if(aantalGeradenWoorden === aantalWoorden){
+                  setTimeout(function(){ window.location.replace("/gefeliciteerd/" + puzzelId); }, 2000);
                 } else {
-                  console.log("NOT DONE")
+                  console.log(puzzelId)
                 }
-
                 break;
               }
             } else {
@@ -226,6 +228,7 @@ class WoordzoekerPuzzel extends React.Component {
     }
 
   }
+
 
   render(){
     return (

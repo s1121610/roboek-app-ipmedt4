@@ -4,7 +4,8 @@ import './App.css';
 import Genre from "./Bibliotheek/Genre";
 import Bibliotheek from "./Bibliotheek/Bibliotheek";
 import Details from "./Bibliotheek/Details";
-import Woordzoeker from "./Woordzoeker/Woordzoeker"
+import Woordzoeker from "./Woordzoeker/Woordzoeker";
+import Gefeliciteerd from "./Gefeliciteerd/Gefeliciteerd";
 import Boekenkast from "./Boekenkast/Boekenkast";
 
 import { Switch, Route, BrowserRouter as Router, Link } from "react-router-dom";
@@ -29,6 +30,9 @@ class App extends React.Component{
             </Route>
             <Route path="/woordzoeker">
               <Woordzoeker />
+            </Route>
+            <Route path="/gefeliciteerd">
+              <Gefeliciteerd />
             </Route>
             <Route path="/boekenkast">
               <Link to="/">Terug</Link>
