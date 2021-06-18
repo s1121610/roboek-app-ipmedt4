@@ -22,5 +22,5 @@ section.hulpTekst p {
     border-top: 10px solid var(--secondary-color);
     border-bottom: 10px solid transparent;
     right: -2rem;
-    top: 2rem;
+    top: 5rem;
 }
