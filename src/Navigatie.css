@@ -62,7 +62,7 @@ article.navigatie {
     overflow: hidden;
 }
 
-.navigatie__modal__content__link a{
+.navigatie__modal__content__link a, .hulp__section{
     position: relative;
     display: flex;
     align-items: center;
@@ -71,7 +71,7 @@ article.navigatie {
     color: black;
 }
 
-.navigatie__modal__content__link a p{
+.navigatie__modal__content__link a p, .hulp__section p{
     width: 100%;
     padding: 1rem;
 }

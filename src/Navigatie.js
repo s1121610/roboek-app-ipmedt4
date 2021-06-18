@@ -15,12 +15,12 @@ const Navigatie = () => {
                 <section className="navigatie__modal__content">
                     <figure className="close">&times;</figure>
                     <section className="navigatie__modal__content__link">
-                        <Link to="/BestaatNiet!!!!">
+                        <section className="hulp__section">
                             <p>Hulp</p>
                             <section className="eclipse">
                                 <img className="navigatie__modal__content__link__img" src="/img/Help.svg" />
                             </section>
-                        </Link>
+                        </section>
                     </section>
                     <section className="navigatie__modal__content__link">
                         <Link to="/Winkel">
