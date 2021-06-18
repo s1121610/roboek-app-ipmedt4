@@ -1,0 +1,44 @@
+.profielSection{
+  height: 100%;
+}
+
+.profielSection__header{
+  text-align: center;
+  font-size: 3rem;
+  color: var(--secondary-color);
+  background: var(--background-color);
+  border-radius: 1rem;
+}
+
+.profielSection__list{
+  margin-top: 1rem;
+  background: var(--background-color);
+}
+
+.profielSection__listItem{
+  padding: 1rem;
+}
+
+.profielSection__listItem__infoSection{
+  display: flex;
+  gap: 1rem;
+}
+
+.profielSection__listItem__header{
+  font-size: 2.2rem;
+  color: var(--primary-color);
+}
+
+.profielSection__listItem__figure{
+  width: 25%;
+  height: auto;
+}
+
+.profielSection__listItem__image{
+  width: 100%;
+  object-fit: cover;
+}
+
+.profielSection__listItem__text{
+  font-size: 2rem;
+}

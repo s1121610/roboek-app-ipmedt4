@@ -3,6 +3,7 @@
 *, *::before, *::after{
   margin: 0;
   padding: 0;
+  list-style: none;
   box-sizing: border-box;
 }
 
@@ -15,6 +16,25 @@
   --disabled1-color: #909494;
   --disabled2-color: #B4B4B4;
   --background-color: #F7F7F7;
+
+  /*GENRES:*/
+  /* ===== BOEKENKAST ===== */
+  --book-color-red: linear-gradient(180deg, #FF6363 0%, #CC2A2A 100%);
+  --book-color-yellow: linear-gradient(180deg, #FFF170 0%, #AE8F3E 100%);
+  --book-color-green: linear-gradient(180deg, #4EE06E 0%, #34A44C 100%);
+  --book-color-blue: linear-gradient(180deg, #8CF1FF 0%, #52ACB9 100%);
+  --book-color-purple: linear-gradient(180deg, #EB70FF 0%, #AC3EAE 100%);
+
+  /* ===== GENRES ===== */
+  --avontuur: #cb7cff;
+  --humor: #ff8847;
+  --fantasie: #ffeb3e;
+  --sprookjes: #335d2d;
+  --dieren-en-natuur: #a1eda5;
+  --spanning: #fc6c6c;
+  --vriendschap-en-verliefd: #ba135d;
+  --alle-genres: #90c2c4;
+  --mijn-favorieten: #9d9aff;
 }
 
 html{
@@ -26,9 +46,29 @@ body{
   background-color: var(--background-color);
 }
 
-/* ========== UTILITY CLASSES ========== */
+/* ################## UTILITY CLASSES ########################*/
+main{
+  max-width: 1000px;
+  margin: 2rem auto;
+}
 
-/* ===> BUTTONS */
+/* ========== UTILITY CLASSES ========== */
+.u-slider{
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+
+  list-style: none;
+}
+
+.u-slider:nth-child(1){
+  margin-left: 5rem;
+}
+
+.u-slider:nth-last-child(){
+  margin-right: 5rem;
+}
+
 .u-buttonSection{
   position: relative;
   display: inline-block;
@@ -50,6 +90,7 @@ body{
   border-radius: 5rem;
   text-shadow: 0px 1px 0px #336699;
   box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #15487a;
+  border: none;
 }
 
 .u-button:active{
@@ -68,4 +109,8 @@ body{
   z-index:-1;
   background-color:#2B1800;
   border-radius: 5rem;
+}
+
+.u-box-shadow{
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
 }
