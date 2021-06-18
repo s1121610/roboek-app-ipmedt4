@@ -1,1 +1,40 @@
+.medaillesSection{
+  height: 100%;
+}
 
+.medaillesSection__header{
+  text-align: center;
+  font-size: 3rem;
+  color: var(--secondary-color);
+  background: var(--background-color);
+  border-radius: 1rem;
+}
+
+.medaillesSection__list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.4rem;
+
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.medaillesSection__listItem{
+  height: 8rem;
+}
+
+.medaillesSection__medailleslot{
+  width: 100%;
+  height: 100%;
+
+  margin: 0 auto;
+  background: var(--background-color);
+  border-radius: 1rem;
+}
+
+.medaillesSection__medailleslot__image{
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+}
