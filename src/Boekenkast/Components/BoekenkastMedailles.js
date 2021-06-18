@@ -5,6 +5,21 @@ class BoekenkastMedailles extends React.Component{
   state = {}
 
   render(){
+    let legeMedailles = [];
+    for(var i = 1; i <= 8; i++){
+      if(i > this.props.medailles.length){
+        console.log(i);
+        legeMedailles.push(
+          <li key={i} className="medaillesSection__listItem">
+            <figure className="medaillesSection__medailleslot">
+              <img className="medaillesSection__medailleslot__image" src="" alt="" />
+            </figure>
+          </li>
+        );
+      }
+    }
+    console.log(legeMedailles);
+
     return(
       <React.Fragment>
         <article className="boekenkastZijde">
@@ -19,6 +34,7 @@ class BoekenkastMedailles extends React.Component{
                     </figure>
                   </li>
                 )}
+                {legeMedailles}
               </ul>
             </article>
           </section>
