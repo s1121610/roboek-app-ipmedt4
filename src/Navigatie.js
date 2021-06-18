@@ -14,7 +14,7 @@ const Navigatie = () => {
             <section id="js--myModal" className="navigatie__modal">
                 <section className="navigatie__modal__content">
                     <figure className="close">&times;</figure>
-                    <section className="navigatie__modal__content__link">
+                    <section className="navigatie__modal__content__link margintop--groot">
                         <section className="hulp__section">
                             <p>Hulp</p>
                             <section className="eclipse">
