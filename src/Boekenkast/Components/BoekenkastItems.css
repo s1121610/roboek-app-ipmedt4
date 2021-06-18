@@ -90,12 +90,22 @@
 }
 
 .itemsSection__itemslot{
-  display: flex;
-  align-items: flex-end;
-  flex-direction: row;
-
   width: 30%;
   height: 50%;
+}
+
+.itemsSection__button{
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.itemsSection__itemslot__figure{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+
+  width: 100%;
+  height: 100%;
 }
 
 .itemsSection__itemslot__image{
@@ -104,4 +114,107 @@
   object-fit: cover;
 
   color: white;
+}
+
+.itemsPopup{
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.itemsPopup__header{
+  width: 100%;
+
+  text-align: center;
+  font-size: 3rem;
+  color: var(--secondary-color);
+  background: var(--background-color);
+  border-radius: 1rem 1rem 0 0;
+}
+
+.itemsPopup__list{
+  overflow-x: hidden;
+  overflow-y: scroll;
+  border-radius: 0 0 1rem 1rem;
+  margin-bottom: 2%;
+}
+
+.itemsPopup__list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.itemsPopup__list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.itemsPopup__list::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.itemsPopup__list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.itemsPopup__listItem{
+  width: 100%;
+  padding: 1rem 0;
+  background-color: var(--background-color);
+  border-bottom: 2px solid black;
+}
+
+.itemsPopup__listItem:hover{
+  cursor: pointer;
+  background: #d9f8ff;
+}
+
+.itemsPopup__itemCard{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.itemsPopup__itemCard__figure{
+  width: 26%;
+  height: 100%;
+}
+
+.itemsPopup__itemCard__image{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.itemsPopup__itemCard__beschrijving{
+  width: 70%;
+}
+
+.itemsPopup__itemCard__beschrijving__header{
+  font-size: 1.4rem;
+  color: var(--secondary-color);
+}
+
+.itemsPopup__itemCard__beschrijving__text{
+  font-size: 1.2rem;
+}
+
+.itemsPopup__button{
+  display: block;
+  width: 100%;
+  height: 10%;
+  align-self: flex-end;
+
+  font-size: 2.4rem;
+  font-weight: bold;
+
+  border-radius: 2rem;
+  background-color: var(--cancel-color-primary);
+  border: 6px solid var(--cancel-color-secondary);
+}
+
+.itemsPopup__button:hover{
+  cursor: pointer;
+  background-color: var(--cancel-color-secondary);
+  border: 6px solid var(--cancel-color-primary);
 }
