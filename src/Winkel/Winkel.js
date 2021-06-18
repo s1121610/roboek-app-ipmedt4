@@ -40,6 +40,7 @@ class Winkel extends React.Component {
         
         return (
             <article className = "winkelSection">
+                <Preview item = {this.state.item} />
                 <Buttons onButtonClicked = {this.onButtonClicked}/>
                 <Items soort = {this.state.soort} items = {this.state} allItems = {this.state.allItems} onItemClick = {this.onItemClick} />
             </article>
