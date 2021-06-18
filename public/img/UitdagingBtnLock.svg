@@ -1,0 +1,5 @@
+<svg id="Secondary_Button_Neutraal" data-name="Secondary Button Neutraal" xmlns="http://www.w3.org/2000/svg" width="74" height="25" viewBox="0 0 74 25">
+  <rect id="Rectangle_8" data-name="Rectangle 8" width="74" height="22" rx="11" transform="translate(0 3)" fill="#369093"/>
+  <rect id="Rectangle_2" data-name="Rectangle 2" width="74" height="22" rx="11" fill="#90c2c4"/>
+  <path id="Icon_awesome-unlock-alt" data-name="Icon awesome-unlock-alt" d="M15.2,9.92H5.777v-4a2.738,2.738,0,1,1,5.473-.035v4.6l3.041-.2V5.89A5.84,5.84,0,0,0,8.5,0,5.874,5.874,0,0,0,2.737,5.948V9.92H1.824A1.843,1.843,0,0,0,0,11.78v6.2a1.843,1.843,0,0,0,1.824,1.86H15.2a1.843,1.843,0,0,0,1.824-1.86v-6.2A1.843,1.843,0,0,0,15.2,9.92Zm-5.169,5.89a1.521,1.521,0,1,1-3.041,0V13.95a1.521,1.521,0,1,1,3.041,0Z" transform="translate(28.486 1)"/>
+</svg>

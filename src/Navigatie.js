@@ -1,5 +1,7 @@
 import React from 'react';
 import NavItem from './NavItem'
+import Test from './Test'
+import HulpBoekenLijst from './Hulp/HulpBoekenlijst';
 
 import './Navigatie.css';
 
@@ -19,6 +21,7 @@ const Navigatie = () => {
                                 <img className="navigatie__modal__content__link__img" src="/img/Help.svg" />
                             </section>
                         </section>
+                        <HulpBoekenLijst />
                     </section>
                     <NavItem
                         link="/Winkel"
