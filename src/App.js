@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css';
-import Items from './Winkel/Items';
+import Winkel from './Winkel/Winkel';
 
 class App extends React.Component {
 
@@ -9,7 +9,7 @@ class App extends React.Component {
     return ([
       <section>
         <h1>Running</h1>
-        <Items />
+        <Winkel />
       </section>
     ]);
   }
