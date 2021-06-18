@@ -20,7 +20,6 @@ class Boekenkast extends React.Component{
   componentDidMount() {
     const BASE_URL = "http://localhost:8000/api/boekenkast/";
     axios.get(BASE_URL + this.props.user_id).then(res => {
-      console.log("Dit is de data die boekenkast.js terug krijgt:", res.data);
       this.setState({
         boekenkast: res.data.boekenkast,
         eigenaar: res.data.eigenaar,
