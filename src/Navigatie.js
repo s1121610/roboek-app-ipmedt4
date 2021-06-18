@@ -74,6 +74,8 @@ const openModal = () => {
 
 const dropDown = () => {
     console.log("Geklikt");
+    const keuzes = document.getElementsByClassName("hulp__section__keuze");
+    console.log(keuzes);
 }
 
 export default Navigatie;
