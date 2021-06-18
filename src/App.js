@@ -5,7 +5,7 @@ import Test from "./Test";
 
 import './App.css';
 
-import { Switch, Route, BrowserRouter as Router, Link } from "react-router-dom";
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 
 class App extends React.Component {
 

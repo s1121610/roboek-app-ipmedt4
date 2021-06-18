@@ -9,7 +9,7 @@ class NavItem extends React.Component {
                 <Link to={ this.props.link }>
                     <p>{ this.props.p }</p>
                     <section className="eclipse">
-                        <img className="navigatie__modal__content__link__img" src={ this.props.imgSrc } />
+                        <img className="navigatie__modal__content__link__img" src={ this.props.imgSrc } alt="img van een nav item"/>
                     </section>
                 </Link>
             </section>

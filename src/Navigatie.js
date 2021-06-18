@@ -1,6 +1,5 @@
 import React from 'react';
 import NavItem from './NavItem'
-import Test from './Test'
 import HulpBoekenLijst from './Hulp/HulpBoekenlijst';
 
 import './Navigatie.css';
@@ -15,13 +14,19 @@ const Navigatie = () => {
                 <section className="navigatie__modal__content">
                     <figure className="close">&times;</figure>
                     <section className="navigatie__modal__content__link margintop--groot">
-                        <section className="hulp__section">
+                        <section className="hulp__section" onClick={dropDown}>
                             <p>Hulp</p>
                             <section className="eclipse">
-                                <img className="navigatie__modal__content__link__img" src="/img/Help.svg" />
+                                <img className="navigatie__modal__content__link__img" src="/img/Help.svg" alt="img van een nav item"/>
                             </section>
                         </section>
-                        <HulpBoekenLijst />
+                        <section className="hulp__section__keuze"> {/*Deze is op none*/}
+                            <section className="hulp__section__keuze__boekenlijst">
+                                <h2>Mijn Boekenlijst</h2>
+                                <HulpBoekenLijst /> {/*Deze is op none*/}
+                            </section>
+                            {/*Hieronder komen de anderen keuzes*/}
+                        </section>
                     </section>
                     <NavItem
                         link="/Winkel"
@@ -65,6 +70,10 @@ const openModal = () => {
             modal.style.display = "none";
         }
     }
+}
+
+const dropDown = () => {
+    console.log("Geklikt");
 }
 
 export default Navigatie;

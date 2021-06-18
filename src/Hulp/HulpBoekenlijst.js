@@ -7,8 +7,8 @@ import './HulpBoekenlijst.css';
 class HulpBoekenLijst extends React.Component {
     render() {
         return (
-            <section>
-                <section className="onderdeel">
+            <section className="section__hulpBoekenlijst">
+                <section className="section__hulpBoekenlijst__onderdeel">
                     <h2>Uitdaging knop</h2>
                     <HulpItem
                         imgSrc="../img/UitdagingBtnLock.svg"
@@ -26,7 +26,7 @@ class HulpBoekenLijst extends React.Component {
                         className="section__contentHulp"
                     />
                 </section>
-                <section className="onderdeel">
+                <section className="section__hulpBoekenlijst__onderdeel">
                     <h2>Afvinken hoofdstukken</h2>
                     <HulpItem
                         imgSrc="../img/Checkbox.svg"
@@ -41,7 +41,7 @@ class HulpBoekenLijst extends React.Component {
                         id="width--klein"
                     />
                 </section>
-                <section className="onderdeel">
+                <section className="section__hulpBoekenlijst__onderdeel">
                     <h2>Voortgang boek  </h2>
                     <HulpItem
                         imgSrc="../img/ProgressieBalk.svg"

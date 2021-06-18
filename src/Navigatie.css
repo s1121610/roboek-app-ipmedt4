@@ -97,3 +97,11 @@ article.navigatie {
 .margintop--groot {
     margin-top: 6rem;;
 }
+
+.section__hulpBoekenlijst__onderdeel {
+    display: none;
+}
+
+.hulp__section__keuze {
+    display: none;
+}
