@@ -15,10 +15,42 @@ const Navigatie = () => {
                 <section className="navigatie__modal__content">
                     <figure className="close">&times;</figure>
                     <section className="navigatie__modal__content__link">
+                        <Link to="/BestaatNiet!!!!">
+                            <p>Hulp</p>
+                            <section className="eclipse">
+                                <img className="navigatie__modal__content__link__img" src="/img/Help.svg" />
+                            </section>
+                        </Link>
+                    </section>
+                    <section className="navigatie__modal__content__link">
+                        <Link to="/Winkel">
+                            <p>Winkel</p>
+                            <section className="eclipse">
+                                <img className="navigatie__modal__content__link__img" src="/img/Winkel.svg" />
+                            </section>
+                        </Link>
+                    </section>
+                    <section className="navigatie__modal__content__link">
+                        <Link to="/Bibliotheek">
+                            <p>Bibliotheek</p>
+                            <section className="eclipse">
+                                <img className="navigatie__modal__content__link__img" src="/img/Bibliotheek.svg" />
+                            </section>
+                        </Link>
+                    </section>
+                    <section className="navigatie__modal__content__link">
+                        <Link to="/Boekenlijst">
+                            <p>Boekenlijst</p>
+                            <section className="eclipse">
+                                <img className="navigatie__modal__content__link__img" src="/img/Boekenlijst.svg" />
+                            </section>
+                        </Link>
+                    </section>
+                    <section className="navigatie__modal__content__link">
                         <Link to="/Test">
                             <p>Mijn Boekenkast</p>
                             <section className="eclipse">
-                                <img className="navigatie__modal__content__link__img" src="/img/BoekenLijst.svg" />
+                                <img className="navigatie__modal__content__link__img" src="/img/Boekenkast.svg" />
                             </section>
                         </Link>
                     </section>                    
