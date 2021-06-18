@@ -8,28 +8,29 @@ import axios from "axios";
 class Boekenlijst extends React.Component {
 
     state = {
-        naam: "",
-        auteur: "",
-        voortgang: "",
-        img: "",
-        figcaption: ""
+        boeken: [],
     };
 
     cardClicked = id => {
         console.log("Hallo kaart " + id);
     }
 
+    //informatie ophalen voor de boekcards
     componentDidMount() {
-        const BASE_URL = 'http://127.0.0.1:8000/api/boekenlijst'
-        axios.get(BASE_URL).then(res =>{
+        const BASE_URL = 'http://127.0.0.1:8000/api/boekenlijst/'
+        axios.get(BASE_URL + this.props.user_id).then(res =>{
             console.log(res.data);
+            this.setState({
+                boeken: res.data.boeken,
+            })
         });
       }
 
 
     render(){
+        //meegeven van state boeken naar de boekcard
         return(
-            <BoekcardList naam={this.state.naam} auteur={this.state.auteur} voortgang={this.state.voortgang} img={this.state.img} figcaption={this.state.figcaption} cardClicked = {this.cardClicked}/>
+            <BoekcardList boeken={this.state.boeken}  cardClicked = {this.cardClicked}/>
         );
     }
 

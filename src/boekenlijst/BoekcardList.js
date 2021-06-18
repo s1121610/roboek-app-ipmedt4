@@ -8,53 +8,24 @@ class BoekcardList extends React.Component {
         this.props.cardClicked(id);
     }
 
+    //elk boek krijgt een boekcard met alle informatie
     render(){
+        console.log(this.props.boeken)
         return (
             <section className="boekcardlist">
-                <Boekcard
-                    titel=""
-                    auteur=""
+                {this.props.boeken.map(boek =>
+                    <Boekcard 
+                    key={boek.id}
+                    titel={boek.titel}
+                    auteur={boek.auteur}
                     voortgang=""
                     buttonTekst=">"
-                    img=""
-                    figcaption=""
+                    img= {"/bibliotheek/" + boek.image}
+                    figcaption= {"Het boek " + boek.titel}
                     cardClicked= {this.cardClicked}
-                    id="1"
+                    id={boek.id}
                 />
-
-                <Boekcard
-                    titel=""
-                    auteur=""
-                    voortgang=""
-                    buttonTekst=">"
-                    img=""
-                    figcaption=""
-                    cardClicked= {this.cardClicked}
-                    id="2"
-                />
-                <Boekcard
-                    titel=""
-                    auteur=""
-                    voortgang=""
-                    buttonTekst=">"
-                    img=""
-                    figcaption=""
-                    cardClicked= {this.cardClicked}
-                    id="1"
-                />
-
-                <Boekcard
-                    titel=""
-                    auteur=""
-                    voortgang=""
-                    buttonTekst=">"
-                    img=""
-                    figcaption=""
-                    cardClicked= {this.cardClicked}
-                    id="2"
-                />
-
-                
+                )}
             </section>
         );
     }

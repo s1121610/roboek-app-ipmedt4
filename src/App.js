@@ -6,7 +6,7 @@ class App extends React.Component {
 
   render(){
     return (
-      <Boekenlijst />
+      <Boekenlijst user_id='1'/>
     );
   }
 }

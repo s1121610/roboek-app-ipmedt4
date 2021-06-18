@@ -73,6 +73,7 @@
     box-shadow: none;
 }
 
+/* van lijst naar kaartjes op grotere schermen */
 @media only screen and (min-width: 58rem) and (max-width: 70rem){
 
     .boekcardlist{
