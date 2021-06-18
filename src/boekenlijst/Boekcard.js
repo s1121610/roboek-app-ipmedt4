@@ -1,10 +1,7 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 class Boekcard extends React.Component {
-
-    onCardClicked = () => {
-        this.props.cardClicked(this.props.id);
-    }
 
     render(){
         return(
@@ -23,7 +20,7 @@ class Boekcard extends React.Component {
                     <p className="boekencard__voortgangsectie__hoofdstukken"> {this.props.voortgang || "Voortgang hoofdstukken"} </p>
                 </section>
                 <section className="boekencard__buttonsection">
-                    <button className="boekencard__buttonsection__button" onClick = {this.onCardClicked}> {this.props.buttonTekst || "naar detail boek"} </button>
+                    <Link to={"/boekenlijst/" + this.props.id} className="boekencard__buttonsection__button"> {this.props.buttonTekst || "naar detail boek"} </Link>
                 </section>
             </article>
         );

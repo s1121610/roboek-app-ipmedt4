@@ -2,11 +2,19 @@ import React from "react";
 import './App.css';
 import Boekenlijst from "./boekenlijst/Boekenlijst";
 
+import { Switch, Route, BrowserRouter as Router, Link } from "react-router-dom";
+
 class App extends React.Component {
 
   render(){
     return (
-      <Boekenlijst user_id='1'/>
+      <Router>
+        <Switch>
+          <Route path="/boekenlijst/">
+            <Boekenlijst user_id='4'/>
+          </Route>
+        </Switch>
+      </Router>
     );
   }
 }

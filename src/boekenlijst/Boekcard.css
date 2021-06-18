@@ -13,17 +13,29 @@
 }
 
 .boekencard__imagesection{
-    display: block;
-    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
     grid-area: image;
-    object-fit: cover;
     width: auto;
-    height: 10rem;
+}
+
+.boekencard__imagesection__figure{
+    overflow: hidden;
+
+}
+
+.boekencard__imagesection__figure__img{
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
 }
 
 .boekencard__header{
-    padding-bottom: 1rem;
     grid-area: header;
+
+    padding-bottom: 1rem;
 }
 
 .boekencard__header__titel{
@@ -36,8 +48,9 @@
 }
 
 .boekencard__voortgangsectie{
-    background-color: green;
     grid-area: voortgang;
+
+    background-color: green;
 }
 
 .boekencard__voortgangsectie__hoofdstukken{
@@ -46,19 +59,28 @@
 
 .boekencard__buttonsection{
     grid-area: verder;
+
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .boekencard__buttonsection__button{
-    background-color: var(--primary-color);
-    font-size: 2.5rem;
-    font-weight: bold;
-    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     width: 4rem;
     height: 4rem;
+
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+
+    background-color: var(--primary-color);
     border: solid 0.3rem var(--secondary-color);
+    border-radius: 50%;
     box-shadow: 0.1rem 0.2rem 0 #2B7679;
 }
 
@@ -78,22 +100,23 @@
 
     .boekcardlist{
         display: grid;
-        grid-gap: 1rem;
         grid-template-columns: repeat(5, minmax(0, 1fr) );
         grid-template-columns: repeat(2, minmax(0, 1fr) );
+        grid-gap: 1rem;
     }
 
     .boekencard{
-        grid-template-columns: 100%;
         grid-template-areas:
         'image image'
         'header header'
         'voortgang voortgang'
-        'verder verder'
-        ;
+        'verder verder';
+        grid-template-columns: 100%;
+
         margin: 0 auto;
         width: 50%;
         padding: 1rem 1rem 2rem 1rem;
+
         border: solid 0.3rem var(--primary-color);
         border-radius: 1rem;
     }
@@ -111,31 +134,33 @@
     }
 
     .boekencard__buttonsection__button{
-        border-radius: 2rem;
         width: 8rem;
         height: 3rem;
+
+        border-radius: 2rem;
     }
 }
 
 @media only screen and (min-width: 70rem) and (max-width: 84rem){
     .boekcardlist{
         display: grid;
-        grid-gap: 1rem;
         grid-template-columns: repeat(5, minmax(0, 1fr) );
         grid-template-columns: repeat(3, minmax(0, 1fr) );
+        grid-gap: 1rem;
     }
 
     .boekencard{
-        grid-template-columns: 100%;
         grid-template-areas:
         'image image'
         'header header'
         'voortgang voortgang'
-        'verder verder'
-        ;
+        'verder verder';
+        grid-template-columns: 100%;
+
         margin: 0 auto;
         width: 60%;
         padding: 1rem 1rem 2rem 1rem;
+
         border: solid 0.3rem var(--primary-color);
         border-radius: 1rem;
     }
@@ -153,31 +178,33 @@
     }
 
     .boekencard__buttonsection__button{
-        border-radius: 2rem;
         width: 8rem;
         height: 3rem;
+
+        border-radius: 2rem;
     }
 }
 
 @media only screen and (min-width: 84rem){
     .boekcardlist{
         display: grid;
-        grid-gap: 1rem;
         grid-template-columns: repeat(5, minmax(0, 1fr) );
         grid-template-columns: repeat(4, minmax(0, 1fr) );
+        grid-gap: 1rem;
     }
 
     .boekencard{
-        grid-template-columns: 100%;
         grid-template-areas:
         'image image'
         'header header'
         'voortgang voortgang'
-        'verder verder'
-        ;
+        'verder verder';
+        grid-template-columns: 100%;
+
         margin: 0 auto;
         width: 60%;
         padding: 1rem 1rem 2rem 1rem;
+
         border: solid 0.3rem var(--primary-color);
         border-radius: 1rem;
     }
@@ -195,9 +222,10 @@
     }
 
     .boekencard__buttonsection__button{
-        border-radius: 2rem;
         width: 8rem;
         height: 3rem;
+        
+        border-radius: 2rem;
     }
     
 }

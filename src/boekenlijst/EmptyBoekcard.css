@@ -1,0 +1,50 @@
+.emptyBoekcard_section{
+    display: border-box;
+
+    margin: 0 auto;
+    width: 80%;
+}
+
+.emptyBoekcard_section__titel{
+    padding-bottom: 1rem;
+
+    font-size: 2rem;
+    text-align: center;
+}
+
+.emptyBoekcard_section__linksection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.emptyBoekcard_section__linksection__link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 16rem;
+    height: 4rem;
+
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+
+    background-color: var(--primary-color);
+    border: solid 0.3rem var(--secondary-color);
+    border-radius: 2rem;
+    box-shadow: 0.1rem 0.2rem 0 #2B7679;
+}
+
+.emptyBoekcard_section__linksection__link:hover{
+    background-color: var(--secondary-color);
+    border-color: var(--primary-color);
+}
+
+.emptyBoekcard_section__linksection__link:active{
+    background-color: var(--secondary-color);
+    border-color: var(--primary-color);
+    box-shadow: none;
+}

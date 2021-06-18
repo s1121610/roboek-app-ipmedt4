@@ -2,6 +2,8 @@ import React from "react";
 import "../App.css"
 import "./Boekcard.css";
 import BoekcardList from "./BoekcardList";
+import EmptyBoekcard from "./EmptyBoekcard";
+
 
 import axios from "axios";
 
@@ -10,10 +12,6 @@ class Boekenlijst extends React.Component {
     state = {
         boeken: [],
     };
-
-    cardClicked = id => {
-        console.log("Hallo kaart " + id);
-    }
 
     //informatie ophalen voor de boekcards
     componentDidMount() {
@@ -29,9 +27,15 @@ class Boekenlijst extends React.Component {
 
     render(){
         //meegeven van state boeken naar de boekcard
-        return(
-            <BoekcardList boeken={this.state.boeken}  cardClicked = {this.cardClicked}/>
-        );
+        if(this.state.boeken.length === 0){
+           return (<EmptyBoekcard />);
+
+        } else{
+            
+            return(
+                <BoekcardList boeken={this.state.boeken}/>
+            );
+        }
     }
 
 }

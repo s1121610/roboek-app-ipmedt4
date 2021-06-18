@@ -4,10 +4,6 @@ import Boekcard from "./Boekcard";
 
 class BoekcardList extends React.Component {
 
-    cardClicked = (id) => {
-        this.props.cardClicked(id);
-    }
-
     //elk boek krijgt een boekcard met alle informatie
     render(){
         console.log(this.props.boeken)
@@ -22,7 +18,6 @@ class BoekcardList extends React.Component {
                     buttonTekst=">"
                     img= {"/bibliotheek/" + boek.image}
                     figcaption= {"Het boek " + boek.titel}
-                    cardClicked= {this.cardClicked}
                     id={boek.id}
                 />
                 )}
