@@ -5,8 +5,6 @@ import WelkomTekst from "./WelkomPagina/WelkomTekst";
 import WelkomButtonList from "./WelkomPagina/WelkomButtonList"
 import Navigatie from "./Navigatie";
 
-import "./WelkomPagina.css";
-
 class WelkomPagina extends React.Component {
 
     render() {

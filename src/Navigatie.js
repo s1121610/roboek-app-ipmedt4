@@ -17,6 +17,9 @@ const Navigatie = () => {
                     <section className="navigatie__modal__content__link">
                         <Link to="/Test">
                             <p>Mijn Boekenkast</p>
+                            <section className="eclipse">
+                                <img className="navigatie__modal__content__link__img" src="/img/BoekenLijst.svg" />
+                            </section>
                         </Link>
                     </section>                    
                 </section>
