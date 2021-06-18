@@ -2,8 +2,11 @@ import React from "react";
 
 import Titel from "./WelkomPagina/WelkomTitel";
 import WelkomTekst from "./WelkomPagina/WelkomTekst";
-import WelkomButtonList from "./WelkomPagina/WelkomButtonList"
+import WelkomButtonList from "./WelkomPagina/WelkomButtonList";
+import SpeechBubble from "./WelkomPagina/SpeechBubble";
 import Navigatie from "./Navigatie";
+
+import './WelkomPagina.css'
 
 class WelkomPagina extends React.Component {
 
@@ -13,7 +16,10 @@ class WelkomPagina extends React.Component {
                 <Titel />
                 <WelkomTekst />
                 <WelkomButtonList />
-                <Navigatie />
+                <section className="flex--row">
+                    <SpeechBubble />
+                    <Navigatie />
+                </section>
             </section>
         );
     }

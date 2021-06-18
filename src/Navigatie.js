@@ -3,8 +3,6 @@ import NavItem from './NavItem'
 
 import './Navigatie.css';
 
-import { Switch, Route, BrowserRouter as Router, Link } from "react-router-dom";
-
 const Navigatie = () => {
     return (
         <article className="navigatie">
