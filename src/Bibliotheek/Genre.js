@@ -3,6 +3,7 @@ import './Genre.css';
 import './Bibliotheek.css';
 import axios from "axios";
 import { Link } from "react-router-dom";
+import BibliotheekDesktop from './BibliotheekDesktop';
 
 class Genre extends React.Component{
     state = {
@@ -20,7 +21,7 @@ class Genre extends React.Component{
         if(window.innerWidth <= 900){
             return(
                 <main>
-                    <h2>Kies een genre</h2>
+                    <h2>Kies een genre!</h2>
                     <ul>
                         {this.state.genres.map(genre => <li className="genre">
                             <Link className="genre__naam" data-genre={genre.naam} to={'/bibliotheek/' + genre.naam}>{genre.naam}</Link>
@@ -30,7 +31,9 @@ class Genre extends React.Component{
                 </main>
             );
         }else{
-            
+            return(
+                <BibliotheekDesktop />
+            );
         }
         
     }
