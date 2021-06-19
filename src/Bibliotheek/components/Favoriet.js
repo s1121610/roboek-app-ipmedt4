@@ -2,29 +2,36 @@ import React from 'react';
 import '../Genre.css';
 import '../Bibliotheek.css'
 
-const Favoriet = (props) => {
-    const id = props.favoriet;
-    console.log(id);
-    const favos = props.liked;
-    console.log(favos);
-    let liked;
-    if(favos.includes(id) === true){
-        liked = true;
-        console.log(true);
-    }else{
-        liked = false;
-        console.log(false)
+class Favoriet extends React.Component{
+    state = {
+        favoriete_boeken: [],
+        boek_id: '',
+        heartColor: false
     }
-    return (
-        <figure className="like">
-            <button 
-                className="hartje"
-                id="js--hartje"
-                onClick={() => props.clickHandler(id)}
-                data-liked = {liked}
-            ></button>   
-        </figure>
-    );
+
+    updateHeart = (props) => {
+        const boekId = 1;
+        const favos = this.state.favoriete_boeken;
+        if(favos.includes(boekId) === true){
+            this.setState({heartColor: true});
+        }else{
+            this.setState({heartColor: false});
+        }
+    };
+    
+
+    render(){
+        return (
+            <figure className="like">
+                <button 
+                    className="hartje"
+                    id="js--hartje"
+                    data-liked = {this.state.heartColor}
+                ></button>   
+            </figure>
+        );
+    }
+    
 }
 
 export default Favoriet;

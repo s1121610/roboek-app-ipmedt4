@@ -5,12 +5,12 @@ import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import Favoriet from './components/Favoriet';
 
-class Searchbar extends React.Component{
+class Bibliotheek extends React.Component{
   state = {
     genre: "",
     persons: [], 
-    boek_id: '',
-    bgColor: "",
+    boek_id: 0,
+    heartColor: false,
     liked: []
   }
   
@@ -23,10 +23,44 @@ class Searchbar extends React.Component{
       .then(res => {
         const boeken = res.data.boeken;
         const favorieten = res.data.favorieten;
-        this.setState({ persons: boeken, liked: favorieten });
+        this.setState({ persons: boeken, liked: favorieten});
         console.log(this.state.liked);
       })
   }
+
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    console.log(this.state.genre);
+    if(this.state.liked.includes(this.state.boek_id)){
+      console.log("id ==" + this.state.boek_id);
+      axios.post('http://127.0.0.1:8000/api/bibliotheek/favorite/' + this.state.boek_id, {"id": this.state.boek_id, "genre": this.state.genre}).then(res => {
+        console.log(res);
+        const favos = res.data;
+        const id = favos.boeken.id;
+        if(favos.favorieten.includes(id) === true){
+          this.setState({heartColor: true});
+        }else{
+          this.setState({heartColor: ""});
+        }
+      });
+    }else{
+      axios.delete('http://127.0.0.1:8000/api/bibliotheek/favorite/delete/' + this.state.boek_id, {id: this.state.boek_id, genre: this.state.genre}).then(res => {
+        console.log(res);
+        const boeken = res.data;
+        const id = boeken.boeken[0].id;
+        if(boeken.favorieten.includes(id) === true){
+          this.setState({heartColor: true});
+        }else{
+          this.setState({heartColor: ""});
+        }
+      });
+    }
+  };
+
   render(){
     const settings = {
       dots: true,
@@ -41,7 +75,6 @@ class Searchbar extends React.Component{
     function Arrow(props) {
       let className = props.type === "next" ? "nextArrow" : "prevArrow";
       className += " arrow";
-      console.log(className);
       const char = props.type === "next" ? "👉" : "👈";
       return (
         <span className={className} onClick={props.onClick}>
@@ -59,8 +92,6 @@ class Searchbar extends React.Component{
           this.setState({ boek_id: favorite })
           console.log(this.state.boek_id);
           console.log(res);
-
-
         });
     }
 
@@ -76,6 +107,11 @@ class Searchbar extends React.Component{
         });
     }
 
+    const setBoekIdState = (id) => {
+      console.log(id);
+      this.setState({boek_id: id});
+    }
+
     return (
       <section>
         <h1>Bibliotheek</h1>
@@ -85,23 +121,24 @@ class Searchbar extends React.Component{
         <Slider {...settings}>
             {this.state.persons.map(boek => <div>
                 <article className="bookcard">
-                    <Favoriet 
-                      favoriet={boek.id}
-                      liked={this.state.liked}
-                      clickHandler={addToFavorites}
-                      key={boek.id}
-                    />
-                    <Link to={"/details/" + boek.id}>
-                      <img className="bookcard__cover" src={boek.image} alt="cover {boek.titel}"/>
-                    </Link>
-                    <section className="u-buttonSection">
-                        <Link to={"/details/" + boek.id} className="u-button">Ontdek mij</Link>
-                    </section>
-                </article>
+                <figure className="like">
+                  <button 
+                    className="hartje"
+                    id="js--hartje"
+                    data-liked = {this.state.heartColor}
+                    onClick={() => {setBoekIdState(boek.id); this.handleClick();}}
+                  ></button></figure>
+                  <Link to={"/details/" + boek.id}>
+                    <img className="bookcard__cover" src={boek.image} alt="cover {boek.titel}" />
+                  </Link>
+                  <section className="u-buttonSection">
+                      <Link to={"/details/" + boek.id} className="u-button">Ontdek mij</Link>
+                  </section>
+                  </article>
             </div>)}
         </Slider>
       </section>
     );
   }
 }
-export default Searchbar;
+export default Bibliotheek;
