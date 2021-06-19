@@ -15,17 +15,28 @@ class Bibliotheek extends React.Component{
   }
   
   componentDidMount() {
-    this.setState({
-      genre: window.location.pathname.split('/')[2]
-    })
-    let genreReq = window.location.pathname.split('/')[2];
-    axios.get(`http://127.0.0.1:8000/api/bibliotheek/` + genreReq)
+    let pathname = window.location.pathname.split('/')[2];
+    if(pathname !== undefined){
+      this.setState({
+        genre: window.location.pathname.split('/')[2]
+      })
+      let genreReq = window.location.pathname.split('/')[2];
+      axios.get(`http://127.0.0.1:8000/api/bibliotheek/` + genreReq)
+        .then(res => {
+          const boeken = res.data.boeken;
+          const favorieten = res.data.favorieten;
+          this.setState({ persons: boeken, liked: favorieten});
+          console.log(this.state.liked);
+        })
+    }else{
+      axios.get(`http://127.0.0.1:8000/api/bibliotheek/`)
       .then(res => {
         const boeken = res.data.boeken;
         const favorieten = res.data.favorieten;
         this.setState({ persons: boeken, liked: favorieten});
         console.log(this.state.liked);
       })
+    }
   }
 
   constructor(props) {
