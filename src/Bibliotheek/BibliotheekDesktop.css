@@ -25,11 +25,21 @@
     .bookcard{
         max-width: 15rem;
         height: 10vh;
+        transition: .5s all;
+    }
+
+    .bookcard:hover{
+        transform: scale(1.2);
     }
 
     .bookcard__cover{
         max-width: 18rem;
         height: 25rem;
+        transition: .5s all;
+    }
+
+    .bookcard__cover--details:hover{
+        transform: scale(1.2);
     }
 
     .like{
@@ -50,5 +60,27 @@
     
     .slick-list{
         height: 40rem;
+    }
+
+    .slick-prev:before{
+        color: #212121;
+    }
+
+    .slick-next:before{
+        color: white;
+        z-index: 3;
+    }
+
+    .slick-next{
+        margin-right: 3.5rem;
+        margin-top: .4rem;
+        padding: 12.5rem 5rem;
+        background-color: #212121;
+        opacity: .8;
+    }
+
+    .slick-next:hover, .slick-list:active{
+        background-color: #212121;
+        opacity: .8;
     }
 }

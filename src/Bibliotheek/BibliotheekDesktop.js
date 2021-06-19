@@ -13,9 +13,6 @@ import Spanning from "./components/DesktopSpanning";
 import Sprookjes from "./components/DesktopSprookjes";
 import VriendschapEnVerliefd from "./components/DesktopVriendschapEnVerliefd";
 
-
-
-
 class BibliotheekDesktop extends React.Component{
     
     render(){
@@ -30,7 +27,6 @@ class BibliotheekDesktop extends React.Component{
                 <Sprookjes />
                 <VriendschapEnVerliefd />
             </article>
-            
         );
     }
 }
