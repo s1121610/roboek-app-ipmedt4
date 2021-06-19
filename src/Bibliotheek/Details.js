@@ -5,26 +5,84 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 
+
 class Details extends React.Component{
     state = {
-        persons: []
+        gekozen_boeken: [],
+        persons: [],
+        boek_id: '',
+        buttonText: ""
       }
-    
-      componentDidMount() {
+      updateButton = (props) =>{
+        const id = this.state.boek_id;
+        const gekozen = this.state.gekozen_boeken;
+        if(gekozen.includes(id) === true){
+          this.setState({buttonText: "Dit boek niet meer lezen"});
+        }else{
+          this.setState({buttonText: "Dit boek lezen"});
+        }
+      }
+     
+      componentDidMount = (props) => {
         let idReq = window.location.pathname.split('/')[2];
         axios.get(`http://127.0.0.1:8000/api/bibliotheek/details/` + idReq)
           .then(res => {
-            const persons = res.data;
-            this.setState({ persons: persons });
-          })
+            const boeken = res.data;
+            this.setState({ persons: boeken.boeken });
+            this.setState({ gekozen_boeken: boeken.gekozen })
+            const id = boeken.boeken[0].id;
+            if(boeken.gekozen.includes(id) === true){
+              this.setState({buttonText: "Dit boek niet meer lezen"});
+            }else{
+              this.setState({buttonText: "Dit boek lezen"});
+            }
+          });
+        
+      }
+    
+    constructor(props) {
+      super(props);
+      this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+      if(this.state.buttonText === "Dit boek lezen"){
+        axios.post('http://127.0.0.1:8000/api/boekenlijst/add/' + this.state.boek_id, {"id": this.state.boek_id}).then(res => {
+          console.log(res);
+          const boeken = res.data;
+          const id = boeken.boeken[0].id;
+          if(boeken.gekozen.includes(id) === true){
+            this.setState({buttonText: "Dit boek niet meer lezen"});
+          }else{
+            this.setState({buttonText: "Dit boek lezen"});
+          }
+        });
+      }else{
+        axios.delete('http://127.0.0.1:8000/api/boekenlijst/delete/' + this.state.boek_id, {"id": this.state.boek_id}).then(res => {
+          console.log(res);
+          const boeken = res.data;
+          const id = boeken.boeken[0].id;
+          if(boeken.gekozen.includes(id) === true){
+            this.setState({buttonText: "Dit boek niet meer lezen"});
+          }else{
+            this.setState({buttonText: "Dit boek lezen"});
+          }
+        });
+      }
+      
+    };
+    render(){
+      let addButton;
+
+      if(this.state.buttonText !== ""){
+        addButton = <button className="u-button" onClick={this.handleClick}>{this.state.buttonText}</button>
       }
 
-    render(){
-        return (
+      return (
       <section>
         <h1>Bibliotheek</h1>
         {this.state.persons.map(boek => <div>
-          <article className="bookcard">
+          <article className="bookcard" onLoad={() =>this.setState({ boek_id: boek.id }) }>
               <header>
                 <div className="genre">
                   <p data-genre={boek.genre_naam} className="genre__naam">{boek.genre_naam}</p>
@@ -37,7 +95,7 @@ class Details extends React.Component{
                 <p>{boek.beschrijving}</p>
               </section>
               <section className="u-buttonSection">
-                <button className="u-button">Dit boek lezen</button>
+                {addButton}
               </section>
           </article>
         </div>)}
