@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import './BoekenkastItems.css';
 
 class BoekenkastItems extends React.Component{
@@ -14,8 +15,14 @@ class BoekenkastItems extends React.Component{
     })
   }
 
-  updateItem = (item_id) => {
+  updateItem = (slot, item_id) => {
+    this.togglePopup(slot);
     console.log("slot" + this.state.selectedSlot + " updaten naar " + item_id);
+    const BASE_URL = "http://localhost:8000/api/boekenkast/update/item/";
+    axios.put(BASE_URL +  this.props.user_id, {"slot": slot, "item_id": item_id, _method: 'patch'})
+      .then(res => {
+        this.props.refreshBoekenkast();
+      });
   }
 
   render(){
@@ -66,7 +73,7 @@ class BoekenkastItems extends React.Component{
               <ul className="itemsPopup__list">
               {this.props.behaalde_items.map((item, index) =>
                 <li slot={index+1} className="itemsPopup__listItem" key={index}>
-                  <a className="itemsPopup__itemCard" onClick={() => this.updateItem(item.id)}>
+                  <a className="itemsPopup__itemCard" onClick={() => this.updateItem(this.state.selectedSlot, item.id)}>
                     <figure className="itemsPopup__itemCard__figure">
                       <img className="itemsPopup__itemCard__image" src={item.image} alt={item.naam + " Medaille"} />
                     </figure>
