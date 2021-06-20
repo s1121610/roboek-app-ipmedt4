@@ -90,22 +90,26 @@
 }
 
 .itemsSection__itemslot{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+
   width: 30%;
   height: 50%;
 }
 
 .itemsSection__button{
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.itemsSection__button:hover{
   cursor: pointer;
   background: rgba(255, 255, 255, 0.3);
 }
 
 .itemsSection__itemslot__figure{
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 .itemsSection__itemslot__image{
@@ -173,6 +177,7 @@
   width: 100%;
   height: 100%;
   display: flex;
+  justify-content: space-around;
 }
 
 .itemsPopup__itemCard__figure{
@@ -187,7 +192,7 @@
 }
 
 .itemsPopup__itemCard__beschrijving{
-  width: 70%;
+  margin-left: 2rem;
 }
 
 .itemsPopup__itemCard__beschrijving__header{
