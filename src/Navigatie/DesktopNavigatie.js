@@ -3,7 +3,7 @@ import React from 'react';
 class DesktopNav extends React.Component {
     render() {
         return (
-            <section className="hidden">
+            <section>
                 <h2>DesktopNav</h2>
             </section>
         );

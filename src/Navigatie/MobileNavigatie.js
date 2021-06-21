@@ -17,7 +17,7 @@ class MobileNavigatie extends React.Component {
         }
 
         return (
-            <article className="navigatie show">
+            <article className="navigatie">
                 <section className="navigatie__knopSectie">
                     <img id="js--openModal" className="navigatie__knopSectie__btn" src="/img/MenuLogo.png" alt="Roboek robot die de navigatie opent" onClick={openModal} />
                 </section>

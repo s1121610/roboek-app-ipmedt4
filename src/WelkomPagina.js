@@ -12,18 +12,27 @@ import './WelkomPagina.css'
 class WelkomPagina extends React.Component {
 
     render() {
-        return (
-            <section>
-                <DesktopNav />
-                <MobileHeader titel="Welkom Bij Roboek" />
-                <WelkomTekst />
-                <WelkomButtonList />
-                <section className="flex--row">
-                    <SpeechBubble />
-                    <MobileNavigatie />
+        if (window.innerWidth > 750) {
+            return (
+                <section>
+                    <DesktopNav />
+                    <WelkomTekst />
+                    <WelkomButtonList />
                 </section>
-            </section>
-        );
+            )
+        } else {
+            return (
+                <section>
+                    <MobileHeader titel="Welkom Bij Roboek" />
+                    <WelkomTekst />
+                    <WelkomButtonList />
+                    <section className="flex--row">
+                        <SpeechBubble />
+                        <MobileNavigatie />
+                    </section>
+                </section>
+            )
+        }
     }
 }
 
