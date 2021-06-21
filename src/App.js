@@ -29,10 +29,11 @@ class App extends React.Component{
               <Details />
             </Route>
             <Route path="/woordzoeker">
-              <Woordzoeker />
+              <Link to="/boekenlijst">Terug</Link>
+              <Woordzoeker/>
             </Route>
             <Route path="/gefeliciteerd">
-              <Gefeliciteerd />
+              <Gefeliciteerd user_id='1' />
             </Route>
             <Route path="/boekenkast">
               <Link to="/">Terug</Link>

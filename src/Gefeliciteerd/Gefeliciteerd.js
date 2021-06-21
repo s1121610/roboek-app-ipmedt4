@@ -4,6 +4,7 @@ import "./Gefeliciteerd.css";
 import axios from "axios";
 import Confetti from 'react-dom-confetti';
 
+//voor de confetti
 const config = {
   angle: 270,
   spread: 180,
@@ -24,10 +25,13 @@ const config = {
 
 class Gefeliciteerd extends React.Component{
   state= {
-    muntjes: 0
+    muntjes: 0,
+    medaille: 0,
+    medaille_naam: ""
   }
 
   componentDidMount() {
+      //haalt de puzzel op en daarbij het aantal muntjes die je kan verdienen
       const BASE_URL = 'http://127.0.0.1:8000/api/puzzel/'
       let puzzelId = window.location.pathname.split('/')[2];
       if(puzzelId === ""){
@@ -39,6 +43,25 @@ class Gefeliciteerd extends React.Component{
               this.setState({
                 muntjes: res.data.beloning
               })
+              if(res.data.medaille_id){
+                this.setState({
+                  medaille: res.data.medaille_id
+                })
+                //haalt de medaille op die je bij deze puzzel eventueel kan verdienen
+                const MEDAILLE_URL = 'http://127.0.0.1:8000/api/medaille/' + this.state.medaille
+                axios.get(MEDAILLE_URL)
+                  .then(res => {
+                    //als er een medaille is gevonden bij de uitdaging, laat dan de melding zien dat de gebruiker deze heeft gekregen
+                    if(res.data){
+                      this.setState({
+                        medaille_naam: res.data.naam
+                      })
+                      document.getElementById("js--medaille").style.display = "block";
+                    }
+                  })
+              } else {
+                document.getElementById("js--medaille").style.display = "none";
+              }
             } else {
               window.location.replace("/");
             }
@@ -46,18 +69,26 @@ class Gefeliciteerd extends React.Component{
       }
   }
 
+  //redirect als gebruiker op knop drukt en voegt de muntjes toe aan gebruiker en geeft eventuele medailles
   redirect = () => {
+    if(this.state.medaille){
+      var VERDIEN_URL = 'http://127.0.0.1:8000/api/verdienmedaille/' + this.props.user_id + "/" + this.state.medaille_id
+      axios.post(VERDIEN_URL);
+    }
+    var URL = 'http://127.0.0.1:8000/api/puzzelklaar/' + this.props.user_id + "/" + this.state.muntjes;
+    axios.patch(URL)
     window.location.replace("/");
   }
 
-
+  //rendert alle html
   render(){
     return(
       <article className="gefeliciteerd">
         <Confetti className="confetti" active={ this.state.muntjes } config={ config }/>
         <h1 className="gefeliciteerd_h1">Gefeliciteerd!</h1>
         <p className="gefeliciteerd_p">De uitdaging is gelukt. <br /> Je hebt {this.state.muntjes} muntjes verdient! </p>
-        <button className="gefeliciteerd__button button" onClick={this.redirect}>Ga verder</button>
+        <p className="gefeliciteerd_p" id="js--medaille">Je hebt ook de [{this.state.medaille_naam}] medaille verdient!</p>
+        <button className="gefeliciteerd__button button_green" onClick={this.redirect}>Ga verder</button>
       </article>
     )}
 }

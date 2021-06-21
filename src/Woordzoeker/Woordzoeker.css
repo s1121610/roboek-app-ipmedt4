@@ -108,6 +108,10 @@
   box-shadow: .2rem .2rem 0 var(--disabled1-color);
 }
 
+.woordzoeker__invoer__invoerTekst:focus{
+  outline-color: blue;
+}
+
 .woordzoeker__invoer__knop{
   background-color: var(--primary-color);
   font-size: 1.6rem;
@@ -121,13 +125,13 @@
   transition: .5s;
 }
 
-.button:hover{
+.button_blue:hover{
   cursor: pointer;
   background-color: var(--secondary-color);
   border-color: var(--primary-color);
 }
 
-.button:active{
+.button_blue:active{
   box-shadow: none;
   transform: translateY(.1rem);
 }
