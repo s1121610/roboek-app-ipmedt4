@@ -6,3 +6,9 @@
     width: 80%;
     margin: 0 auto;
 }
+
+@media  (min-width: 560px){
+    .flex--row {
+        width: 40%;
+    }
+}

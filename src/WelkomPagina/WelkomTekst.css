@@ -44,3 +44,9 @@ section.welkomtekst__tekstbox {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+
+@media (min-width: 1500px) {
+  section.welkomtekst {
+    width: 50%;
+  }
+}

@@ -43,3 +43,30 @@ button.submitBtn:active {
   box-shadow: 0 0 0 0;
   transition: 0.2s;
 }
+
+@media (min-width: 900px) {
+  form.naamInput__form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .naamInput__form__input {
+    width: 45%;
+  }
+  button.submitBtn {
+    width: 45%;
+  }
+}
+
+@media (min-width: 1200px) {
+  form.naamInput__form {
+    flex-direction: row;
+    flex-wrap: nowrap
+  }
+}
+
+@media (min-width: 1500px) {
+  section.naamInput {
+    width: 50%;
+  }
+}
