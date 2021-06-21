@@ -1,6 +1,6 @@
 import React from "react";
 
-import Titel from "./WelkomPagina/WelkomTitel";
+import MobileHeader from "./Components/MobileHeader";
 import WelkomTekst from "./WelkomPagina/WelkomTekst";
 import WelkomButtonList from "./WelkomPagina/WelkomButtonList";
 import SpeechBubble from "./WelkomPagina/SpeechBubble";
@@ -13,7 +13,7 @@ class WelkomPagina extends React.Component {
     render() {
         return (
             <section>
-                <Titel />
+                <MobileHeader titel="Welkom Bij Roboek"/>
                 <WelkomTekst />
                 <WelkomButtonList />
                 <section className="flex--row">
