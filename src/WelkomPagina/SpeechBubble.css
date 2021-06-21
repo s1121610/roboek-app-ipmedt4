@@ -1,0 +1,26 @@
+section.hulpTekst {
+    width: 80%;
+    margin: 0 auto;
+    border: 0.2rem solid var(--secondary-color);
+    border-radius: 1.2rem;
+    position: relative;
+}
+
+section.hulpTekst p {
+    font-family: var(--fnt-assistant);
+    font-size: 1.5rem;
+    padding: 2rem;
+}
+
+.sb2::before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid var(--secondary-color);
+    border-right: 10px solid transparent;
+    border-top: 10px solid var(--secondary-color);
+    border-bottom: 10px solid transparent;
+    right: -2rem;
+    top: 2rem;
+}

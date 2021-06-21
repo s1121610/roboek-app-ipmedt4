@@ -1,5 +1,7 @@
 import React from "react";
 
+import WelkomPagina from "./WelkomPagina"
+
 import './App.css';
 import Boekenlijst from "./boekenlijst/Boekenlijst";
 import Genre from "./Bibliotheek/Genre";
@@ -40,10 +42,7 @@ class App extends React.Component{
               <Boekenlijst user_id='4'/>
             </Route>
             <Route path="/">
-              <h1>Roboek</h1>
-              <h2>Menu:</h2>
-              <Link to="/genre">Bibliotheek</Link>
-              <Link to="/boekenkast">Boekenkast</Link>
+              <WelkomPagina />
             </Route>
           </Switch>
         </Router>

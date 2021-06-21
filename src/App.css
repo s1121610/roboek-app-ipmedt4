@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
 
 *, *::before, *::after{
   margin: 0;
@@ -36,6 +37,10 @@
   --vriendschap-en-verliefd: #ba135d;
   --alle-genres: #90c2c4;
   --mijn-favorieten: #9d9aff;
+
+  /* ==== FONTS ==== */
+  --fnt-roboto: 'Roboto', sans-serif;
+  --fnt-assistant: 'Assistant', sans-serif;
 }
 
 html{
@@ -43,7 +48,6 @@ html{
 }
 
 body{
-  font-family: 'Roboto', sans-serif;
   background-color: var(--background-color);
 }
 
@@ -115,3 +119,6 @@ main{
 .u-box-shadow{
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
 }
+
+
+

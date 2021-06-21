@@ -1,0 +1,7 @@
+<svg id="Checkbox" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+  <g id="Rectangle_22" data-name="Rectangle 22" fill="#fff" stroke="#369093" stroke-width="2">
+    <rect width="18" height="18" rx="5" stroke="none"/>
+    <rect x="1" y="1" width="16" height="16" rx="4" fill="none"/>
+  </g>
+  <path id="Icon_ionic-ios-checkmark" data-name="Icon ionic-ios-checkmark" d="M23.463,13.352l-1.071-1.075a.233.233,0,0,0-.17-.071h0a.223.223,0,0,0-.17.071l-7.421,7.3-2.7-2.637a.239.239,0,0,0-.341,0L10.507,18a.233.233,0,0,0,0,.339l3.406,3.326a1.088,1.088,0,0,0,.712.339,1.139,1.139,0,0,0,.706-.327h.006l8.132-7.982A.249.249,0,0,0,23.463,13.352Z" transform="translate(-7.983 -8.103)"/>
+</svg>
