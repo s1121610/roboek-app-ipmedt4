@@ -11,7 +11,9 @@ class Details extends React.Component{
         gekozen_boeken: [],
         persons: [],
         boek_id: '',
-        buttonText: ""
+        buttonText: "",
+        popup: "none",
+        popupText: ""
       }
       updateButton = (props) =>{
         const id = this.state.boek_id;
@@ -52,9 +54,9 @@ class Details extends React.Component{
           const boeken = res.data;
           const id = boeken.boeken[0].id;
           if(boeken.gekozen.includes(id) === true){
-            this.setState({buttonText: "Dit boek niet meer lezen"});
+            this.setState({buttonText: "Dit boek niet meer lezen", popup: "none"});
           }else{
-            this.setState({buttonText: "Dit boek lezen"});
+            this.setState({buttonText: "Dit boek lezen", popup: "none"});
           }
         });
       }else{
@@ -63,9 +65,9 @@ class Details extends React.Component{
           const boeken = res.data;
           const id = boeken.boeken[0].id;
           if(boeken.gekozen.includes(id) === true){
-            this.setState({buttonText: "Dit boek niet meer lezen"});
+            this.setState({buttonText: "Dit boek niet meer lezen", popup: "none"});
           }else{
-            this.setState({buttonText: "Dit boek lezen"});
+            this.setState({buttonText: "Dit boek lezen", popup: "none"});
           }
         });
       }
@@ -73,14 +75,30 @@ class Details extends React.Component{
     };
     render(){
       let addButton;
+      let popup;
 
       if(this.state.buttonText !== ""){
-        addButton = <button className="u-button" onClick={this.handleClick}>{this.state.buttonText}</button>
+        addButton = <button className="u-button" onClick={() =>this.setState({ popup: "block" }) }>{this.state.buttonText}</button>;
+      }
+
+      if(this.state.buttonText === "Dit boek lezen"){
+        popup = <section className="bibliotheek__popup" style={{display: this.state.popup}}>
+          <button onClick={this.handleClick}>X</button>
+          <h2>Het boek is toegevoegd aan je boekenlijst.</h2>
+          <Link className="u-button" onClick={() => this.handleClick} to="/boekenlijst">Bekijk boekenlijst</Link>
+        </section>;
+      }else{
+        popup = <section className="bibliotheek__popup" style={{display: this.state.popup}}>
+          <h2>Weet je zeker dat je boek niet meer wilt lezen?</h2>
+          <button className="u-button" onClick={this.handleClick}>{this.state.buttonText}</button>
+          <button className="u-button" onClick={() =>this.setState({ popup: "none" }) }>Toch wel!</button>
+        </section>;
       }
 
       return (
       <section>
         <h1>Bibliotheek</h1>
+        {popup}
         {this.state.persons.map(boek => <div>
           <article className="bookcard--details u-grid--bookcard" onLoad={() =>this.setState({ boek_id: boek.id }) }>
                 <div className="u-grid--bookcard__genre genre">

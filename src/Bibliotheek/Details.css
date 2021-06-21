@@ -22,9 +22,9 @@
 }
 
 @media(min-width: 900px){
+
     .bookcard__cover--details{
         max-width: 30rem;
-
     }
 
     .bookcard--details__title{
@@ -49,6 +49,19 @@
     .bookcard__description__text{
         font-size: 1.8rem;
         line-height: 2.4rem;
+    }
+
+    /*------popup-------------*/
+    .bibliotheek__popup{
+        display: flex;
+        position: fixed; 
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: var(--secondary-color);
+        padding: 5rem;
+        border-radius: 2rem;
+        border: .2rem solid var(--tertiary-color);
     }
 
     /*------grid-----------------*/
