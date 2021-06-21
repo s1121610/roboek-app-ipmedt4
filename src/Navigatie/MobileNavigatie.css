@@ -80,8 +80,8 @@ article.navigatie {
 .eclipse {
     border: 0.2rem solid var(--secondary-color);
     border-radius: 50%;
-    position: fixed;
-    right: 15%;
+    position: absolute  ;
+    right: 5%;
     height: 5.5rem;
     width: 5.5rem;
     display: flex;
