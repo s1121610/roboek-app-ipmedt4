@@ -132,13 +132,14 @@ class Bibliotheek extends React.Component{
         <Slider {...settings}>
             {this.state.persons.map(boek => <div>
                 <article className="bookcard">
-                <figure className="like">
+                <Favoriet boek_id={boek.id} favorieten={this.state.liked} allIds={[1,2,3,4,5,6,7,8]}/>
+                {/* <figure className="like">
                   <button 
                     className="hartje"
                     id="js--hartje"
                     data-liked = {this.state.heartColor}
                     onClick={() => {setBoekIdState(boek.id); this.handleClick();}}
-                  ></button></figure>
+                  ></button></figure> */}
                   <Link to={"/details/" + boek.id}>
                     <img className="bookcard__cover" src={boek.image} alt="cover {boek.titel}" />
                   </Link>
