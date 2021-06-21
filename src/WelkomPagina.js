@@ -1,6 +1,6 @@
 import React from "react";
 
-import MobileHeader from "./Components/MobileHeader";
+import MobileHeader from "./UniverseelComponents/MobileHeader";
 import WelkomTekst from "./WelkomPagina/WelkomTekst";
 import WelkomButtonList from "./WelkomPagina/WelkomButtonList";
 import SpeechBubble from "./WelkomPagina/SpeechBubble";
