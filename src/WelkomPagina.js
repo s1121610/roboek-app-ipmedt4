@@ -4,7 +4,7 @@ import MobileHeader from "./Components/MobileHeader";
 import WelkomTekst from "./WelkomPagina/WelkomTekst";
 import WelkomButtonList from "./WelkomPagina/WelkomButtonList";
 import SpeechBubble from "./WelkomPagina/SpeechBubble";
-import Navigatie from "./Navigatie";
+import MobileNavigatie from "./MobileNavigatie";
 
 import './WelkomPagina.css'
 
@@ -18,7 +18,7 @@ class WelkomPagina extends React.Component {
                 <WelkomButtonList />
                 <section className="flex--row">
                     <SpeechBubble />
-                    <Navigatie />
+                    <MobileNavigatie />
                 </section>
             </section>
         );

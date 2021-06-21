@@ -2,9 +2,9 @@ import React from 'react';
 import NavItem from './NavItem'
 import HulpBoekenLijst from './Hulp/HulpBoekenlijst';
 
-import './Navigatie.css';
+import './MobileNavigatie.css';
 
-class Navigatie extends React.Component {
+class MobileNavigatie extends React.Component {
 
     state = {
         visibleKeuzes: false,
@@ -91,4 +91,4 @@ const dropDown = (stateHulpKeuze) => {
     stateHulpKeuze.setState({ visible: true });
 }
 
-export default Navigatie;
+export default MobileNavigatie;

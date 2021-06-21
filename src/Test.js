@@ -1,12 +1,12 @@
 import React from 'react';
-import Navigatie from './Navigatie';
+import MobileNavigatie from './MobileNavigatie';
 
 class Test extends React.Component{
     render() {
         return (
             <article>
                 <h2>Test</h2>
-                <Navigatie />
+                <MobileNavigatie />
             </article>
         );
     }
