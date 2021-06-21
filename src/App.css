@@ -52,10 +52,10 @@ body{
 }
 
 /* ################## UTILITY CLASSES ########################*/
-main{
+/* main{
   max-width: 1000px;
   margin: 2rem auto;
-}
+} */
 
 /* ========== UTILITY CLASSES ========== */
 .u-slider{
