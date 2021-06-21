@@ -4,8 +4,8 @@ import MobileHeader from "./Components/MobileHeader";
 import WelkomTekst from "./WelkomPagina/WelkomTekst";
 import WelkomButtonList from "./WelkomPagina/WelkomButtonList";
 import SpeechBubble from "./WelkomPagina/SpeechBubble";
-import MobileNavigatie from "./MobileNavigatie";
-import DesktopNav from "./DesktopNavigatie";
+import MobileNavigatie from "./Navigatie/MobileNavigatie";
+import DesktopNav from "./Navigatie/DesktopNavigatie";
 
 import './WelkomPagina.css'
 
@@ -15,7 +15,7 @@ class WelkomPagina extends React.Component {
         return (
             <section>
                 <DesktopNav />
-                <MobileHeader titel="Welkom Bij Roboek"/>
+                <MobileHeader titel="Welkom Bij Roboek" />
                 <WelkomTekst />
                 <WelkomButtonList />
                 <section className="flex--row">

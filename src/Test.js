@@ -1,5 +1,5 @@
 import React from 'react';
-import MobileNavigatie from './MobileNavigatie';
+import MobileNavigatie from './Navigatie/MobileNavigatie';
 
 class Test extends React.Component{
     render() {

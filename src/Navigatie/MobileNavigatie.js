@@ -1,6 +1,6 @@
 import React from 'react';
 import MobileNavItem from './MobileNavItem'
-import HulpBoekenLijst from './Hulp/HulpBoekenlijst';
+import HulpBoekenLijst from '../Hulp/HulpBoekenlijst';
 
 import './MobileNavigatie.css';
 
@@ -17,7 +17,7 @@ class MobileNavigatie extends React.Component {
         }
 
         return (
-            <article className="navigatie">
+            <article className="navigatie show">
                 <section className="navigatie__knopSectie">
                     <img id="js--openModal" className="navigatie__knopSectie__btn" src="/img/MenuLogo.png" alt="Roboek robot die de navigatie opent" onClick={openModal} />
                 </section>
