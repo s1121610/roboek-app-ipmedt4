@@ -1,6 +1,6 @@
 import React from "react";
 
-import WelkomPagina from "./WelkomPagina"
+import WelkomPagina from "./WelkomPagina/WelkomPagina"
 
 import './App.css';
 import Boekenlijst from "./boekenlijst/Boekenlijst";
