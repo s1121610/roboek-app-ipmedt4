@@ -98,10 +98,11 @@ article.navigatie {
     margin-top: 6rem;;
 }
 
-.section__hulpBoekenlijst__onderdeel {
+.display--none {
     display: none;
 }
 
-.hulp__section__keuze {
-    display: none;
+.display--block {
+    display: block;
+    opacity: 1;
 }
