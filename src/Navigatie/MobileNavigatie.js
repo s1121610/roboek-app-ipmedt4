@@ -43,22 +43,22 @@ class MobileNavigatie extends React.Component {
                             }
                         </section>
                         <MobileNavItem
-                            link="/Winkel"
+                            link="/winkel"
                             p="Winkel"
                             imgSrc="/img/Winkel.svg"
                         />
                         <MobileNavItem
-                            link="/Bibliotheek"
+                            link="/genre"
                             p="Bibliotheek"
                             imgSrc="/img/Bibliotheek.svg"
                         />
                         <MobileNavItem
-                            link="/Boekenlijst"
+                            link="/boekenlijst"
                             p="Mijn Boekenlijst"
                             imgSrc="/img/Boekenlijst.svg"
                         />
                         <MobileNavItem
-                            link="/Boekenkast"
+                            link="/boekenkast"
                             p="Mijn Boekenkast"
                             imgSrc="/img/Boekenkast.svg"
                         />
