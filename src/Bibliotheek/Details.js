@@ -82,12 +82,12 @@ class Details extends React.Component{
       <section>
         <h1>Bibliotheek</h1>
         {this.state.persons.map(boek => <div>
-          <article className="bookcard" onLoad={() =>this.setState({ boek_id: boek.id }) }>
+          <article className="bookcard--details" onLoad={() =>this.setState({ boek_id: boek.id }) }>
               <header>
                 <div className="genre">
                   <p data-genre={boek.genre_naam} className="genre__naam">{boek.genre_naam}</p>
                 </div>
-                <img className="bookcard__cover" src={"/bibliotheek/" + boek.image} alt="cover {boek.titel}"/>
+                <img className="bookcard__cover bookcard__cover--details" src={"/bibliotheek/" + boek.image} alt="cover {boek.titel}"/>
                 <h2>{boek.titel}</h2>
                 <p>{boek.auteur}</p>
               </header>

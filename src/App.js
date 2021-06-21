@@ -4,6 +4,7 @@ import './App.css';
 import Boekenlijst from "./boekenlijst/Boekenlijst";
 import Genre from "./Bibliotheek/Genre";
 import Bibliotheek from "./Bibliotheek/Bibliotheek";
+import BibliotheekDesktop from './Bibliotheek/BibliotheekDesktop';
 import Details from "./Bibliotheek/Details";
 import Woordzoeker from "./Woordzoeker/Woordzoeker"
 import Boekenkast from "./Boekenkast/Boekenkast";
