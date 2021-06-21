@@ -8,6 +8,7 @@ class DesktopNav extends React.Component {
     render() {
         return (
             <section className="desktopNav">
+                <img className="desktopNav__logo" src="/img/Logo.png" alt="Roboek robot die de navigatie opent"/>
                 <DesktopNavItem link="Boekenlijst" p="Boekenlijst"/>
                 <DesktopNavItem link="Bibliotheek" p="Bibliotheek" />
                 <DesktopNavItem link="Boekenkast" p="Boekenkast" />
