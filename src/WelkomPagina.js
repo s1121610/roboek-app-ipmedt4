@@ -5,6 +5,7 @@ import WelkomTekst from "./WelkomPagina/WelkomTekst";
 import WelkomButtonList from "./WelkomPagina/WelkomButtonList";
 import SpeechBubble from "./WelkomPagina/SpeechBubble";
 import MobileNavigatie from "./MobileNavigatie";
+import DesktopNav from "./DesktopNavigatie";
 
 import './WelkomPagina.css'
 
@@ -13,6 +14,7 @@ class WelkomPagina extends React.Component {
     render() {
         return (
             <section>
+                <DesktopNav />
                 <MobileHeader titel="Welkom Bij Roboek"/>
                 <WelkomTekst />
                 <WelkomButtonList />

@@ -1,5 +1,5 @@
 import React from 'react';
-import NavItem from './NavItem'
+import MobileNavItem from './MobileNavItem'
 import HulpBoekenLijst from './Hulp/HulpBoekenlijst';
 
 import './MobileNavigatie.css';
@@ -42,22 +42,22 @@ class MobileNavigatie extends React.Component {
                                 : null
                             }
                         </section>
-                        <NavItem
+                        <MobileNavItem
                             link="/Winkel"
                             p="Winkel"
                             imgSrc="/img/Winkel.svg"
                         />
-                        <NavItem
+                        <MobileNavItem
                             link="/Bibliotheek"
                             p="Bibliotheek"
                             imgSrc="/img/Bibliotheek.svg"
                         />
-                        <NavItem
+                        <MobileNavItem
                             link="/Boekenlijst"
                             p="Mijn Boekenlijst"
                             imgSrc="/img/Boekenlijst.svg"
                         />
-                        <NavItem
+                        <MobileNavItem
                             link="/Test"
                             p="Mijn Boekenkast"
                             imgSrc="/img/Boekenkast.svg"
