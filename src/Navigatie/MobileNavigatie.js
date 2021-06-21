@@ -58,7 +58,7 @@ class MobileNavigatie extends React.Component {
                             imgSrc="/img/Boekenlijst.svg"
                         />
                         <MobileNavItem
-                            link="/Test"
+                            link="/Boekenkast"
                             p="Mijn Boekenkast"
                             imgSrc="/img/Boekenkast.svg"
                         />
