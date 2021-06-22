@@ -1,0 +1,10 @@
+.winkelSection__previewSection__preview__kastdecoratieFigure {
+    height: 100%;
+}
+
+.winkelSection__previewSection__preview__kastdecoratieImage {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+} 
+  

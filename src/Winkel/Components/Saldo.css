@@ -1,0 +1,10 @@
+.winkelSection__saldoSection {
+    padding: 1.5rem;
+    height: 10vh;
+    display: flex;
+}
+
+.winkelSection__saldoSection__saldo {
+    font-size: 3.7rem;
+    margin-left: auto;
+}

@@ -1,0 +1,11 @@
+.winkelSection__previewSection__preview__figure {
+    height: 100%;
+  }
+  
+  .winkelSection__previewSection__preview__image {
+    height: 100%;
+    width: auto;
+    background-color: var(--primary-color);
+    object-fit: cover;
+  } 
+  

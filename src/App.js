@@ -4,12 +4,12 @@ import Winkel from './Winkel/Winkel';
 
 class App extends React.Component {
 
+
   render(){
 
     return ([
       <section>
-        <h1>Running</h1>
-        <Winkel />
+        <Winkel user_id='1' />
       </section>
     ]);
   }
