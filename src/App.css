@@ -55,7 +55,7 @@ body{
 
 main{
   max-width: 100rem;
-  margin: 10rem auto;
+  margin: 10rem auto 0 auto;
 }
 
 #css--desktopNav{
@@ -70,12 +70,6 @@ main{
   top: 0;
   left: 0;
   width: 100%;
-}
-
-@media(min-width: 900px){
-  main{
-    margin: 10rem auto;
-  }
 }
 
 

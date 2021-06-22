@@ -1,29 +1,29 @@
 .winkelSection__buttonSection {
     height: 10vh;
   }
-  
+
   .winkelSection__buttonSection__button {
     border-style: none;
     border-radius: 15px 15px 0px 0px;
-    width: 6.4rem;
+    height: 100%;
+    width: auto;
   }
-  
+
   .winkelSection__buttonSection__buttonImg {
-    width: 100%;
+    width: auto;
     height: 100%;
     object-fit: cover;
     padding: 0.4rem;
   }
-  
+
   .buttonColor__green {
     background-color: #A1EDA5;
   }
-  
+
   .buttonColor__blue {
     background-color: #369093;
   }
-  
+
   .buttonColor__orange {
     background-color: #E35E16;
   }
-  

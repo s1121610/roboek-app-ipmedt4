@@ -16,13 +16,13 @@ class Items extends React.Component {
         let borderStyle;
         if(soort === "Kastkleur") {
             if(boekenkast.kast_kleur_primary === item.kleur_primary && boekenkast.kast_kleur_secondary === item.kleur_secondary){
-                borderStyle = {border: "5px solid"};
+                borderStyle = {border: ".4rem solid"};
             }else {
                 borderStyle = {};
             }
         }else if(soort === "Robotkleur") {
             if(boekenkast.robot_kleur === item.kleur_primary) {
-                borderStyle = {border: "5px solid"};
+                borderStyle = {border: ".4rem solid"};
             }else {
                 borderStyle = {};
             }

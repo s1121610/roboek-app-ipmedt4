@@ -1,6 +1,7 @@
 .winkelSection__itemsSection {
-  height: 45vh;
+  height: 25vh;
   background-color: #A1EDA5;
+  overflow-y: scroll;
 }
 
 .winkelSection__itemList {
@@ -16,11 +17,8 @@
   height: 8rem;
   align-self: flex-start;
   border-radius: 15px;
-  padding: 1rem;
-}
-
-.figure--padding {
-  padding: 1rem;
+  padding: .4rem;
+  overflow: hidden;
 }
 
 .item__img {
@@ -38,4 +36,23 @@
 
 .img--radius {
   border-radius: 15px;
+}
+
+/* ===== STYLING SCROLLBAR ===== */
+.winkelSection__itemsSection::-webkit-scrollbar {
+  width: 1rem;
+  padding: 2px;
+}
+
+.winkelSection__itemsSection::-webkit-scrollbar-track{
+  background: var(--background-color);
+}
+
+.winkelSection__itemsSection::-webkit-scrollbar-thumb{
+  border-radius: 1rem;
+  background: #252525;
+}
+
+.winkelSection__itemsSection::-webkit-scrollbar-thumb:hover{
+  background: #676767;
 }
