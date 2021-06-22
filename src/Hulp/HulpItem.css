@@ -9,6 +9,8 @@
 
 .section__contentHulp img {
     width: 10%;
+    max-width: 10rem;
+    max-height: 2rem;
 }
 
 .section__contentHulp {

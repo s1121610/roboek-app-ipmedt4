@@ -21,7 +21,7 @@ class HulpBoekenLijst extends React.Component {
                         className="section__contentHulp"
                     />
                     <HulpItem
-                        imgSrc=""
+                        imgSrc="../img/UitdagingBtnUnlock.svg"
                         p="Je hebt de uitdaging gedaan"
                         className="section__contentHulp"
                     />

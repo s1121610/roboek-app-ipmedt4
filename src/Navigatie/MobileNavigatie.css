@@ -99,11 +99,14 @@ article.navigatie {
     margin-top: 6rem;;
 }
 
-.display--none {
-    display: none;
-}
-
-.display--block {
-    display: block;
-    opacity: 1;
+.hulp__section__keuze__boekenlijst__h2,
+.hulp__section__keuze__bibliotheek__h2 {
+    text-decoration: none;
+    background-color: var(--primary-color);
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-radius: 2rem;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
 }
