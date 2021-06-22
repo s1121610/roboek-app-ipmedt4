@@ -101,6 +101,9 @@ article.navigatie {
 .hulp__section__keuze__boekenkast__h2,
 .hulp__section__keuze__winkel__h2 {
     text-decoration: none;
+    font-family: var(--fnt-assistant);
+    font-weight: 400;
+    font-size: 1.5rem;
     background-color: var(--primary-color);
     padding-bottom: 0.5rem;
     padding-top: 0.5rem;
