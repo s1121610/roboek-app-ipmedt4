@@ -5,9 +5,9 @@ import axios from "axios";
 
 class Favoriet extends React.Component{
     state = {
-        favoriete_boeken: [],
+        favoriete_boeken: this.props.favorieten,
         boek_id: '',
-        heartColor: false
+        heartColor: this.props.liked
     }
 
     addToFavorites = (props) =>{

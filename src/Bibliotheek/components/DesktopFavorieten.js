@@ -43,17 +43,6 @@ class BibliotheekDesktop extends React.Component{
             prevArrow: <PrevArrow />
         };
 
-        function Arrow(props) {
-            let className = props.type === "next" ? "nextArrow" : "prevArrow";
-            className += " arrow";
-            const char = props.type === "next" ? "👉" : "👈";
-            return (
-              <span className={className} onClick={props.onClick}>
-                {char}
-              </span>
-            );
-          }
-
         function NextArrow(props) {
             const { className, style, onClick } = props;
             return (
@@ -83,11 +72,14 @@ class BibliotheekDesktop extends React.Component{
             return false;
           }
         }
-
+        let i = 1;
+        if(i === 1){
+            console.log("hoi")
+        }
         return(
             <section>
                 <section className="genre">
-                    <p data-genre="Vriendschap%20en%20Verliefd" className="genre__naam">Vriendschap en verliefd</p>
+                    <p data-genre="Favorieten" className="genre__naam">Favorieten</p>
                 </section>                
                 <Slider {...settings}>
                     {this.state.boeken.map(boek => <ul>

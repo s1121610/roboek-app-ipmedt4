@@ -89,26 +89,32 @@ class Details extends React.Component{
 
       let addButton;
       let popup;
+      let overlay;
 
       if(this.state.buttonText === "Dit boek lezen"){
         addButton = <button className="u-button" onClick={() => this.handleClick()}>{this.state.buttonText}</button>;
+        overlay = <div className="u-overlay" style={{display: this.state.popup}}></div>;
         popup = <section className="bibliotheek__popup" style={{display: this.state.popup}}>
           <button onClick={() =>{setButtonState(); closePopup()}}>X</button>
-          <h2>Het boek is toegevoegd aan je boekenlijst.</h2>
+          <h2 className="bibliotheek__popup__title">Het boek is toegevoegd aan je boekenlijst.</h2>
           <Link className="u-button" onClick={() => setButtonState()} to="/boekenlijst">Bekijk boekenlijst</Link>
         </section>;
       }else{
         addButton = <button className="u-button" onClick={() =>this.setState({ popup: "block" }) }>{this.state.buttonText}</button>;
-        popup = <section className="bibliotheek__popup" style={{display: this.state.popup}}>
-          <h2>Weet je zeker dat je boek niet meer wilt lezen?</h2>
-          <button className="u-button" onClick={this.handleClick}>{this.state.buttonText}</button>
-          <button className="u-button" onClick={() =>this.setState({ popup: "none" }) }>Toch wel!</button>
+        overlay = <div className="u-overlay" style={{display: this.state.popup}}></div>;
+        popup = <section className="bibliotheek__popup" style={{display: this.state.popup}}>;
+          <h2 className="bibliotheek__popup__title">Weet je zeker dat je boek niet meer wilt lezen?</h2>
+          <section className="bibliotheek__popup__buttonsection">
+            <button className="u-button" onClick={this.handleClick}>{this.state.buttonText}</button>
+            <button className="u-button" onClick={() =>this.setState({ popup: "none" }) }>Toch wel!</button>
+          </section>
         </section>;
       }
 
       return (
       <section>
         <h1>Bibliotheek</h1>
+        {overlay}
         {popup}
         {this.state.persons.map(boek => <div>
           <article className="bookcard--details u-grid--bookcard" onLoad={() =>this.setState({ boek_id: boek.id }) }>
