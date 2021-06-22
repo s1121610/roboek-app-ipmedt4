@@ -1,6 +1,7 @@
 .section__hulpBoekenlijst__onderdeel,
 .section__hulpBibliotheek__onderdeel,
-.section__hulpBoekenkast__onderdeel {
+.section__hulpBoekenkast__onderdeel,
+.section__hulpWinkel__onderdeel {
     margin-bottom: 1rem;
     margin-right: 1rem;
 }

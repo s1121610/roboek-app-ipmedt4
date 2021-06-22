@@ -4,10 +4,7 @@ article.navigatie {
 }
 
 .navigatie__knopSectie__btn {
-    height: 10rem;
     width: 10rem;
-    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
     margin-left: auto;
     display: block;
     margin-top: 2rem;
@@ -101,7 +98,8 @@ article.navigatie {
 
 .hulp__section__keuze__boekenlijst__h2,
 .hulp__section__keuze__bibliotheek__h2,
-.hulp__section__keuze__boekenkast__h2 {
+.hulp__section__keuze__boekenkast__h2,
+.hulp__section__keuze__winkel__h2 {
     text-decoration: none;
     background-color: var(--primary-color);
     padding-bottom: 0.5rem;

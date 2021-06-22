@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="73" height="28" viewBox="0 0 73 28">
+  <g id="Group_31" data-name="Group 31" transform="translate(-287 -23)">
+    <path id="Icon_awesome-coins" data-name="Icon awesome-coins" d="M0,28.5v3C0,33.982,6.047,36,13.5,36S27,33.982,27,31.5v-3c-2.9,2.046-8.212,3-13.5,3S2.9,30.544,0,28.5Zm0-7.376V24.75c0,2.482,6.047,4.5,13.5,4.5S27,27.232,27,24.75V21.122c-2.9,2.391-8.22,3.628-13.5,3.628S2.9,23.513,0,21.122ZM13.5,11.25C6.047,11.25,0,13.767,0,16.875S6.047,22.5,13.5,22.5,27,19.983,27,16.875,20.953,11.25,13.5,11.25Z" transform="translate(333 12)" fill="#e6da30"/>
+    <text id="_102" data-name="102" transform="translate(287 46)" font-size="24" font-family="ArialRoundedMTBold, Arial Rounded MT"><tspan x="0" y="0">102</tspan></text>
+  </g>
+</svg>

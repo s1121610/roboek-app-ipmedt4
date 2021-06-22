@@ -3,6 +3,7 @@ import MobileNavItem from './MobileNavItem'
 import HulpBoekenLijst from '../Hulp/HulpBoekenlijst';
 import HulpBibliotheek from '../Hulp/HulpBibliotheek';
 import HulpBoekenkast from '../Hulp/HulpBoekenkast';
+import HulpWinkel from '../Hulp/HulpWinkel';
 
 import './MobileNavigatie.css';
 
@@ -16,16 +17,18 @@ class MobileNavigatie extends React.Component {
         let hulpBoekenLijst;
         let hulpBibliotheek;
         let hulpBoekenkast;
+        let hulpWinkel;
         if (this.state.visibleKeuzes !== false) {
             hulpBoekenLijst = <HulpBoekenLijst />;
             hulpBibliotheek = <HulpBibliotheek />;
             hulpBoekenkast = <HulpBoekenkast />;
+            hulpWinkel = <HulpWinkel />
         }
 
         return (
             <article className="navigatie">
                 <section className="navigatie__knopSectie">
-                    <img id="js--openModal" className="navigatie__knopSectie__btn" src="/img/Logo.png" alt="Roboek robot die de navigatie opent" onClick={openModal} />
+                    <img id="js--openModal" className="navigatie__knopSectie__btn" src="/img/MenuLogo.png" alt="Roboek robot die de navigatie opent" onClick={openModal} />
                 </section>
                 <section id="js--myModal" className="navigatie__modal">
                     <section className="navigatie__modal__content">
@@ -50,6 +53,10 @@ class MobileNavigatie extends React.Component {
                                     <section className="hulp__section__keuze__boekenkast">
                                         <h2 className="hulp__section__keuze__boekenkast__h2">Boekenkast</h2>
                                         {hulpBoekenkast}
+                                    </section>
+                                    <section className="hulp__section__keuze__winkel">
+                                        <h2 className="hulp__section__keuze__winkel__h2">Winkel</h2>
+                                        {hulpWinkel}
                                     </section>
                                     {/*Hieronder komen de anderen keuzes*/}
                                 </section>
