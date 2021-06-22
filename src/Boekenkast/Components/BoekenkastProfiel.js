@@ -7,7 +7,7 @@ class BoekenkastProfiel extends React.Component{
   render(){
     return(
       <React.Fragment>
-        <article className="boekenkastZijde">
+        <article className="boekenkast">
           <section className="boekenkastSection--top" style={{background: this.props.kast_kleur_primary}}>
               <article className="profielSection">
                 <h1 className="profielSection__header"> Profiel </h1>

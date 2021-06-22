@@ -1,12 +1,18 @@
 import React from "react";
 
+import WelkomPagina from "./WelkomPagina/WelkomPagina"
+
 import './App.css';
+import Boekenlijst from "./boekenlijst/Boekenlijst";
 import Genre from "./Bibliotheek/Genre";
 import Bibliotheek from "./Bibliotheek/Bibliotheek";
+import BibliotheekDesktop from './Bibliotheek/BibliotheekDesktop';
 import Details from "./Bibliotheek/Details";
 import Woordzoeker from "./Woordzoeker/Woordzoeker";
 import Gefeliciteerd from "./Gefeliciteerd/Gefeliciteerd";
 import Boekenkast from "./Boekenkast/Boekenkast";
+import Header from "./UniverseelComponents/MobileHeader"
+import DesktopNav from "./Navigatie/DesktopNavigatie"
 
 import { Switch, Route, BrowserRouter as Router, Link } from "react-router-dom";
 
@@ -17,10 +23,11 @@ class App extends React.Component{
         <Router>
           <Switch>
             <Route path="/genre">
-              <Link to="/">Terug</Link>
+              <DesktopNav />
               <Genre />
             </Route>
             <Route path="/bibliotheek/">
+              <Header />
               <Link to="/genre">Terug</Link>
               <Bibliotheek />
             </Route>
@@ -39,11 +46,11 @@ class App extends React.Component{
               <Link to="/">Terug</Link>
               <Boekenkast user_id='1'/>
             </Route>
+            <Route path="/boekenlijst/">
+              <Boekenlijst user_id='4'/>
+            </Route>
             <Route path="/">
-              <h1>Roboek</h1>
-              <h2>Menu:</h2>
-              <Link to="/genre">Bibliotheek</Link>
-              <Link to="/boekenkast">Boekenkast</Link>
+              <WelkomPagina />
             </Route>
           </Switch>
         </Router>

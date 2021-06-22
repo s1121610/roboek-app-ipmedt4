@@ -124,7 +124,7 @@ li > .genre__naam[data-genre="Avontuur"] {
     color: #212121;
 }
 
-@media(min-width: 550px){
+@media(min-width: 550px ){
     .slick-list{
         height: 60rem;
     }
@@ -153,36 +153,38 @@ li > .genre__naam[data-genre="Avontuur"] {
 }
 
 /* ################## Pijltjes ########################*/
+@media only screen and (max-width: 550px) and (min-width: 320px)  {
 
-.arrow{
-  font-size: 4rem;
-  display: flex;
-  position: relative;
-  z-index: 2;
-}
+    .arrow{
+    font-size: 4rem;
+    display: flex;
+    position: relative;
+    z-index: 2;
+    }
 
-.arrow:hover{
-    cursor: pointer;
-}
+    .arrow:hover{
+        cursor: pointer;
+    }
 
-.prevArrow{
-    justify-content: flex-start;
+    .prevArrow{
+        justify-content: flex-start;
+        align-items: center;
+        top: 20.5rem;
+        padding-left: 2rem;
+        width: 50%;
+    }
+
+    .nextArrow{
+    justify-content: flex-end;
     align-items: center;
-    top: 20.5rem;
-    padding-left: 2rem;
+    bottom: 40rem;
+    padding-right: 2rem;
     width: 50%;
+    float: right;
+    }
 }
 
-.nextArrow{
-  justify-content: flex-end;
-  align-items: center;
-  bottom: 40rem;
-  padding-right: 2rem;
-  width: 50%;
-  float: right;
-}
-
-@media(min-width: 550px){
+@media only screen and (max-width: 700px) and (min-width: 550px)  {
     .arrow{
         font-size: 5rem;
     }
@@ -198,7 +200,7 @@ li > .genre__naam[data-genre="Avontuur"] {
     }
 }
 
-@media(min-width: 700px){
+@media only screen and (max-width: 900px) and (min-width: 700px)  {
     .prevArrow{
         top: 30rem;
         padding-left: 5rem;
