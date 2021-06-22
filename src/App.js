@@ -12,8 +12,9 @@ import Details from "./Bibliotheek/Details";
 import Woordzoeker from "./Woordzoeker/Woordzoeker";
 import Gefeliciteerd from "./Gefeliciteerd/Gefeliciteerd";
 import Boekenkast from "./Boekenkast/Boekenkast";
-import Header from "./UniverseelComponents/MobileHeader"
-import DesktopNav from "./Navigatie/DesktopNavigatie"
+import Navigatie from "./Navigatie/Navigatie";
+import Header from "./UniverseelComponents/MobileHeader";
+import DesktopNav from "./Navigatie/DesktopNavigatie";
 
 import { Switch, Route, BrowserRouter as Router, Link } from "react-router-dom";
 
@@ -24,34 +25,39 @@ class App extends React.Component{
         <Router>
           <Switch>
             <Route path="/genre">
-              <DesktopNav />
+              <Navigatie titel="" />
               <Genre />
             </Route>
             <Route path="/bibliotheek/">
+              <Navigatie titel="" />
               <Header />
-              <Link to="/genre">Terug</Link>
               <Bibliotheek />
             </Route>
             <Route path="/details/">
+              <Navigatie titel="" />
               <Link to="/genre">Terug</Link>
               <Details />
             </Route>
             <Route path="/woordzoeker">
+              <Navigatie titel="Woordzoeker" />
               <Link to="/boekenlijst">Terug</Link>
               <Woordzoeker/>
             </Route>
             <Route path="/gefeliciteerd">
+              <Navigatie titel="Uitdaging" />
               <Gefeliciteerd user_id='1' />
             </Route>
             <Route path="/boekenkast">
-              <Link to="/">Terug</Link>
+              <Navigatie titel="Mijn Boekenkast" />
               <Boekenkast user_id='1'/>
             </Route>
             <Route path="/boekenlijst/">
+              <Navigatie titel="" />
               <Boekenlijst user_id='4'/>
             </Route>
             <Route path="/winkel/">
-              <Boekenlijst user_id='1'/>
+              <Navigatie titel="Winkel" />
+              <Winkel user_id='1'/>
             </Route>
             <Route path="/">
               <WelkomPagina />

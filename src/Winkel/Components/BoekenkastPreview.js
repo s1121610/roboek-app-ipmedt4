@@ -1,17 +1,16 @@
 import React from "react";
 
-import "../Winkel.css";
 import "./BoekenkastPreview.css";
 
 class BoekenkastPreview extends React.Component {
 
     render() {
-        
+
         return (
-            <article className="boekenkast">
+            <article className="boekenkastPreview">
                 <section className="boekenkastSection--top" style={{background: this.props.primaryColor}}>
                     <article className="itemsSection__container">
-                        <ul className="itemsSection__bookshelf" style={{background: this.props.secondaryColor}}>
+                        <ul className="itemsSection__bookshelf__preview" style={{background: this.props.secondaryColor}}>
                             <li className="itemSection__shelfBook itemsSection__shelfBook--red">
                                 <div className="itemsSection__shelfBook__Label--high"></div>
                             </li>

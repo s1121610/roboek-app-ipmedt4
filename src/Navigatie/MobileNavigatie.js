@@ -19,7 +19,7 @@ class MobileNavigatie extends React.Component {
         return (
             <article className="navigatie">
                 <section className="navigatie__knopSectie">
-                    <img id="js--openModal" className="navigatie__knopSectie__btn" src="/img/Logo.png" alt="Roboek robot die de navigatie opent" onClick={openModal} />
+                    <img id="js--openModal" className="navigatie__knopSectie__btn" src="/img/MenuLogo.png" alt="Roboek robot die de navigatie opent" onClick={openModal} />
                 </section>
                 <section id="js--myModal" className="navigatie__modal">
                     <section className="navigatie__modal__content">
@@ -43,48 +43,61 @@ class MobileNavigatie extends React.Component {
                             }
                         </section>
                         <MobileNavItem
+                            closeModal={closeModal}
                             link="/winkel"
                             p="Winkel"
                             imgSrc="/img/Winkel.svg"
                         />
                         <MobileNavItem
+                            closeModal={closeModal}
                             link="/genre"
                             p="Bibliotheek"
                             imgSrc="/img/Bibliotheek.svg"
                         />
                         <MobileNavItem
+                            closeModal={closeModal}
                             link="/boekenlijst"
                             p="Mijn Boekenlijst"
                             imgSrc="/img/Boekenlijst.svg"
                         />
                         <MobileNavItem
+                            closeModal={closeModal}
                             link="/boekenkast"
                             p="Mijn Boekenkast"
                             imgSrc="/img/Boekenkast.svg"
                         />
+                        <section className="navigatie__knopSectie navigatie__knopSectie__btn__modal">
+                            <img id="js--openModal" className="navigatie__knopSectie__btn" src="/img/MenuLogo.png" alt="Roboek robot die de navigatie opent" onClick={closeModal} />
+                        </section>
                     </section>
                 </section>
             </article>
         );
-    } 
+    }
 }
 
 const openModal = () => {
-    var modal = document.getElementById("js--myModal");
-    var btnModal = document.getElementById("js--openModal");
-    var figure = document.getElementsByClassName("close")[0];
+  var modal = document.getElementById("js--myModal");
+  var btnModal = document.getElementById("js--openModal");
+  var figure = document.getElementsByClassName("close")[0];
 
-    btnModal && (btnModal.onclick = function () {
-        modal.style.display = "block";
-    });
-    figure && (figure.onclick = function () {
-        modal.style.display = "none";
-    });
-    window.onclick = function (event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    }
+  btnModal && (btnModal.onclick = function () {
+      modal.style.display = "block";
+  });
+  figure && (figure.onclick = function () {
+      modal.style.display = "none";
+  });
+  window.onclick = function (event) {
+      if (event.target === modal) {
+          modal.style.display = "none";
+      }
+  }
+}
+
+const closeModal = () => {
+  console.log("closeModal aangeroepen");
+  var modal = document.getElementById("js--myModal");
+  modal.style.display = "none";
 }
 
 const dropDown = (stateHulpKeuze) => {

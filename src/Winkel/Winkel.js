@@ -4,12 +4,11 @@ import Items from "./Components/Items";
 import Preview from "./Components/Preview";
 import Saldo from "./Components/Saldo";
 
-import "./Winkel.css";
 import axios from "axios";
 
 class Winkel extends React.Component {
 
-    state = { 
+    state = {
         allItems: [],
         kastkleuren: [],
         robotkleuren: [],
@@ -36,13 +35,30 @@ class Winkel extends React.Component {
         })
     };
 
+    refreshWinkel = () => {
+      console.log("refreshWinkel");
+      const BASE_URL = "http://localhost:8000/api/winkel/";
+      axios.get(BASE_URL + this.props.user_id).then(res => {
+          let behaalde_items = res.data.behaalde_items.filter(obj => obj.user_id == this.props.user_id);
+          this.setState({allItems: res.data.items,
+                          kastkleuren: res.data.kastkleuren,
+                          robotkleuren: res.data.robotkleuren,
+                          kastdecoraties: res.data.kastdecoraties,
+                          behaaldeItems: behaalde_items,
+                          user: res.data.user,
+                          boekenkast: res.data.boekenkast});
+      })
+    }
+
     updateColor = (item_id, user_id) => {
         console.log("Boekenkast van " + user_id + " updaten met item_id " + item_id);
         const BASE_URL = "http://localhost:8000/api/winkel/update/color/";
         axios.put(BASE_URL + user_id, {"item_id": item_id, _method: 'patch'})
             .then(res => {
                 console.log("na item geupdate" + res.data)
-            });
+        });
+        setTimeout(this.refreshWinkel, 500);
+
     }
 
     koopItem = (item_id, user_id, item_prijs) => {
@@ -53,7 +69,7 @@ class Winkel extends React.Component {
             .then(res => {
                 console.log("na item gekocht" , res.data);
         });
-
+        setTimeout(this.refreshWinkel, 500);
     }
 
     onButtonClicked = (soort) => {
@@ -66,7 +82,7 @@ class Winkel extends React.Component {
     }
 
     render () {
-        
+
         return (
             <article className = "winkelSection">
                 <Saldo saldo = {this.state.user.saldo} />
