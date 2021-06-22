@@ -86,8 +86,8 @@ class Gefeliciteerd extends React.Component{
       <article className="gefeliciteerd">
         <Confetti className="confetti" active={ this.state.muntjes } config={ config }/>
         <h1 className="gefeliciteerd_h1">Gefeliciteerd!</h1>
-        <p className="gefeliciteerd_p">De uitdaging is gelukt. <br /> Je hebt {this.state.muntjes} muntjes verdient! </p>
-        <p className="gefeliciteerd_p" id="js--medaille">Je hebt ook de [{this.state.medaille_naam}] medaille verdient!</p>
+        <p className="gefeliciteerd_p">De uitdaging is gelukt. <br /> Je hebt {this.state.muntjes} muntjes verdiend! </p>
+        <p className="gefeliciteerd_p" id="js--medaille">Je hebt ook de [{this.state.medaille_naam}] medaille verdiend!</p>
         <button className="gefeliciteerd__button button_green" onClick={this.redirect}>Ga verder</button>
       </article>
     )}

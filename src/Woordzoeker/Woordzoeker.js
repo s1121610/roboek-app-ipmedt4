@@ -11,11 +11,9 @@ const letters = "abcdefghijklmnopqrstuvwxyz";
 const lijst = document.getElementsByClassName("woordzoeker__matrix_letter")
 var puzzelId;
 var woordenMatrix;
-var woordzoekerMatrix = [];
 var geradenWoorden = [];
 var aantalGeradenWoorden = geradenWoorden.length;
 var result = ""
-var aantalGevondenWoorden = 0;
 var aantalFout = 0;
 var telOp = true;
 var lengteWoord;
@@ -102,7 +100,6 @@ class WoordzoekerPuzzel extends React.Component {
 
 //Checkt of het woord in de woordzoeker zit
   checkWoord = (event) => {
-    var input = document.getElementById("woord");
     var antwoorden = this.state.antwoorden.split(" ")
       if(event.key === "Enter" || event === "Enter" ){
         var ingevoerdeWoord = document.getElementById("woord").value;
