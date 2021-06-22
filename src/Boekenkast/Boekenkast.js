@@ -13,8 +13,10 @@ class Boekenkast extends React.Component{
     buttonTextRight: "Profiel",
     boekenkast: [],
     eigenaar: [],
-    items: [],
-    medailles: [],
+    boekenkast_medailles: [],
+    boekenkast_items: [],
+    behaalde_medailles: [],
+    behaalde_items: [],
   }
 
   componentDidMount() {
@@ -23,8 +25,25 @@ class Boekenkast extends React.Component{
       this.setState({
         boekenkast: res.data.boekenkast,
         eigenaar: res.data.eigenaar,
-        items: res.data.items,
-        medailles: res.data.medailles
+        boekenkast_medailles: res.data.boekenkast_medailles,
+        boekenkast_items: res.data.boekenkast_items,
+        behaalde_medailles: res.data.behaalde_medailles,
+        behaalde_items: res.data.behaalde_items,
+      });
+    })
+  }
+
+  refreshBoekenkast = () => {
+    console.log("refreshBoekenkast");
+    const BASE_URL = "http://localhost:8000/api/boekenkast/";
+    axios.get(BASE_URL + this.props.user_id).then(res => {
+      this.setState({
+        boekenkast: res.data.boekenkast,
+        eigenaar: res.data.eigenaar,
+        boekenkast_medailles: res.data.boekenkast_medailles,
+        boekenkast_items: res.data.boekenkast_items,
+        behaalde_medailles: res.data.behaalde_medailles,
+        behaalde_items: res.data.behaalde_items,
       });
     })
   }
@@ -48,12 +67,12 @@ class Boekenkast extends React.Component{
       case(1):
         buttonTextLeft = "Profiel";
         buttonTextRight = "Voorwerpen";
-        boekenkast = <BoekenkastMedailles kast_kleur_primary={this.state.boekenkast.kast_kleur_primary || "#38290f"} kast_kleur_secondary={this.state.boekenkast.kast_kleur_secondary || "#110d05"} medailles={this.state.medailles}/>;
+        boekenkast = <BoekenkastMedailles kast_kleur_primary={this.state.boekenkast.kast_kleur_primary || "#38290f"} kast_kleur_secondary={this.state.boekenkast.kast_kleur_secondary || "#110d05"} boekenkast_medailles={this.state.boekenkast_medailles} behaalde_medailles={this.state.behaalde_medailles} user_id={this.props.user_id} refreshBoekenkast={this.refreshBoekenkast} />;
         break;
       case(2):
         buttonTextLeft = "Medailles";
         buttonTextRight = "Profiel";
-        boekenkast = <BoekenkastItems kast_kleur_primary={this.state.boekenkast.kast_kleur_primary || "#38290f"} kast_kleur_secondary={this.state.boekenkast.kast_kleur_secondary || "#110d05"} items={this.state.items} />;
+        boekenkast = <BoekenkastItems kast_kleur_primary={this.state.boekenkast.kast_kleur_primary || "#38290f"} kast_kleur_secondary={this.state.boekenkast.kast_kleur_secondary || "#110d05"} boekenkast_items={this.state.boekenkast_items} behaalde_items={this.state.behaalde_items} user_id={this.props.user_id} refreshBoekenkast={this.refreshBoekenkast}/>;
         break;
       case(3):
         buttonTextLeft = "Voorwerpen";

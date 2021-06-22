@@ -1,0 +1,31 @@
+.section__contentHulp {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;;
+}
+
+.section__contentHulp img {
+    width: 10%;
+}
+
+.section__contentHulp {
+    font-family: var(--fnt-assistant);
+    font-size: 1.5rem;
+}
+
+.flex--column {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#width--klein {
+    width: 5%;
+}
+
+#width--groot {
+    width: 60%;
+}
