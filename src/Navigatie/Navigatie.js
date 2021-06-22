@@ -32,10 +32,10 @@ class Navigatie extends React.Component{
     let navigatie;
 
     if(this.state.width < 750){
-      navigatie = <section> <MobileHeader titel={this.props.titel} /> <MobileNavigatie /> </section>;
+      navigatie = <section> <MobileHeader titel={this.props.titel} link={this.props.link} classNames={this.props.classNames}/> <MobileNavigatie /> </section>;
     }
     else{
-      navigatie = <section> <DesktopNav /> </section>;
+      navigatie = <section> <DesktopNav link={this.props.link} /> </section>;
     }
 
     return(

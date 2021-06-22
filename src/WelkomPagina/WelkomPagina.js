@@ -23,7 +23,7 @@ class WelkomPagina extends React.Component {
         } else {
             return (
                 <section>
-                    <MobileHeader titel="Welkom Bij Roboek" />
+                    <MobileHeader titel="Welkom Bij Roboek" classNames="titel__figure__img titel__figure__img--displaynone"/>
                     <MobileNavigatie />
                     <WelkomTekst />
                     <WelkomButtonList />
