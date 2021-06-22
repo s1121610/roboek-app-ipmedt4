@@ -36,7 +36,8 @@ class WoordzoekerPuzzel extends React.Component {
 
   componentDidMount() {
     const BASE_URL = 'http://127.0.0.1:8000/api/puzzel/'
-    let puzzelId = window.location.pathname.split('/')[2];
+    let puzzelId = window.location.pathname.split('/')[4];
+    console.log(BASE_URL + puzzelId);
     axios.get(BASE_URL+ puzzelId)
       .then(res => {
         if(res.data){
@@ -45,11 +46,11 @@ class WoordzoekerPuzzel extends React.Component {
             this.flipMatrixAxis(this.state.matrix)
             this.maakMatrix()
           } else {
-            window.location.replace("/")
+            //window.location.replace("/")
           }
 
         } else {
-          window.location.replace("/")
+          //window.location.replace("/")
         }
       })
   }

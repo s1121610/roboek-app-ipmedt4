@@ -1,5 +1,7 @@
 import React from "react";
 import DetailHoofdstuk from "./DetailHoofdstuk";
+import DetailUitdaging from "./DetailUitdaging";
+import "./DetailHoofdstuk.css";
 
 
 class DetailBoekHoofdstuk extends React.Component {
@@ -21,21 +23,28 @@ class DetailBoekHoofdstuk extends React.Component {
     render(){
         
         return(
-            <section>
-                <h2>Hoofdstukken</h2>
-                <ol>
+            <section className="detailboekhoofdstuk">
+                <h2 className="detailboekhoofdstuk__titel">Hoofdstukken</h2>
+                <ol className="detailboekhoofdstuk__lijst">
                     {this.props.hoofdstukken.map(hoofdstuk =>
-                    <li key={hoofdstuk.id}>
+                    <li className="detailboekhoofdstuk__lijst__element" key={hoofdstuk.id}>
                         <DetailHoofdstuk
+                            key={hoofdstuk.id}
                             titel={hoofdstuk.titel}
                             id={hoofdstuk.id}
                             cardClicked={this.cardClicked}
                         />
 
-
                         {this.props.uitdagingen.map(uitdaging =>
-                            {if(hoofdstuk.id == uitdaging.hoofdstuk_id){
-                                return <button onClick={() => this.checkAfgevinkt(hoofdstuk.id, uitdaging.soort, uitdaging.id)} id={hoofdstuk.id + "K"}>&#128274;</button>
+                            
+                            {if(hoofdstuk.id === uitdaging.hoofdstuk_id){
+                                return <DetailUitdaging 
+                                        key={hoofdstuk.id}
+                                        checkAfgevinkt={this.checkAfgevinkt}
+                                        id={hoofdstuk.id}
+                                        soort={uitdaging.soort}
+                                        uitdagingId={uitdaging.id}
+                                />
                             }}
                         )} 
                     </li>

@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
+import "../../App.css";
 import "./EmptyBoekcard.css";
 
 class EmptyBoekcard extends React.Component {

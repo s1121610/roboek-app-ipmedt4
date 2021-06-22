@@ -35,7 +35,7 @@ class App extends React.Component{
               <Link to="/genre">Terug</Link>
               <Details />
             </Route>
-            <Route path="/boekenlijst/detail/Woordzoeker/">
+            <Route path="/boekenlijst/detail/woordzoeker">
               <Woordzoeker />
             </Route>
             <Route path="/boekenkast">

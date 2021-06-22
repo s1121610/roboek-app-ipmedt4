@@ -1,4 +1,5 @@
 import React from 'react';
+import "./DetailHoofdstuk.css";
 
 class DetailVerwijder extends React.Component {
     verwijderBoek = (id) => {
@@ -7,7 +8,7 @@ class DetailVerwijder extends React.Component {
 
     render(){
         return(
-            <button onClick={() => this.verwijderBoek(this.props.id)}>Verwijder boek</button>
+            <button className="verwijderboek" onClick={() => this.verwijderBoek(this.props.id)}>Verwijder boek</button>
         );
     }
 }

@@ -1,231 +1,145 @@
-/* grid met template collumns om de positie te geven in procent. de punt staat voor een lege plek */
-.boekencard{
-    box-sizing: border-box;
-    display: grid;
-    grid-template-columns: 20% 1% 66% 1% 12%;
-    grid-template-areas:
-    'image . header . verder'
-    'image . voortgang . verder'
-    ;
+.boekcardlist{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+
     margin: 0 auto;
-    width: 90%;
-    padding-bottom: 2rem;
+    width: 95%;
+}
+
+.boekencard{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    max-width: 100%;
+    height: max-content;
+
+    font-family: var(--fnt-assistant);
 }
 
 .boekencard__imagesection{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    grid-area: image;
-    width: auto;
-}
+    order: 1;
+    flex-grow: 1;
 
-.boekencard__imagesection__figure{
-    overflow: hidden;
-
+    padding-right: 1rem;
+    max-width: 30%;
 }
 
 .boekencard__imagesection__figure__img{
-    object-fit: contain;
-    height: 100%;
-    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 .boekencard__header{
-    grid-area: header;
-
-    padding-bottom: 1rem;
+    order: 2;
+    flex-grow: 6;
 }
 
 .boekencard__header__titel{
-    font-size: 1.8rem;
+    font-size: 2.2rem;
+
 }
 
 .boekencard__header__auteur{
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     font-weight: lighter;
 }
 
-.boekencard__voortgangsectie{
-    grid-area: voortgang;
-
-    background-color: green;
-}
-
-.boekencard__voortgangsectie__hoofdstukken{
-    font-size: 1rem;
-}
-
 .boekencard__buttonsection{
-    grid-area: verder;
+    order: 3;
+    flex-grow: 1;
 
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0.6rem;
+    top: 40%;
+
+    margin: 0 auto;
+    
 }
 
-.boekencard__buttonsection__button{
+.boekencard__buttonsection__link{
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    margin: 0 auto;
+    width: 4.5rem;
+    height: 4.5rem;
 
-    width: 4rem;
-    height: 4rem;
-
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: bold;
+    text-align: center;
     text-decoration: none;
     color: black;
 
     background-color: var(--primary-color);
     border: solid 0.3rem var(--secondary-color);
-    border-radius: 50%;
+    border-radius: 100%;
     box-shadow: 0.1rem 0.2rem 0 #2B7679;
 }
 
-.boekencard__buttonsection__button:hover{
+.boekencard__buttonsection__link:hover{
     background-color: var(--secondary-color);
     border-color: var(--primary-color);
 }
 
-.boekencard__buttonsection__button:active{
+.boekencard__buttonsection__link:active{
     background-color: var(--secondary-color);
     border-color: var(--primary-color);
     box-shadow: none;
 }
 
-/* van lijst naar kaartjes op grotere schermen */
-@media only screen and (min-width: 58rem) and (max-width: 70rem){
-
+@media (min-width: 650px) {
     .boekcardlist{
         display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr) );
-        grid-template-columns: repeat(2, minmax(0, 1fr) );
-        grid-gap: 1rem;
-    }
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+    }  
 
     .boekencard{
-        grid-template-areas:
-        'image image'
-        'header header'
-        'voortgang voortgang'
-        'verder verder';
-        grid-template-columns: 100%;
+        flex-direction: column;
 
-        margin: 0 auto;
-        width: 50%;
-        padding: 1rem 1rem 2rem 1rem;
-
-        border: solid 0.3rem var(--primary-color);
-        border-radius: 1rem;
-    }
-    
-    .boekencard__imagesection{
-        height: 30rem;
-    }
-
-    .boekencard__header{
-        padding-top: 1rem;
-    }
-
-    .boekencard__buttonsection{
-        padding-top: 1rem;
-    }
-
-    .boekencard__buttonsection__button{
-        width: 8rem;
-        height: 3rem;
+        width: 35rem;
+        height: 35rem;
 
         border-radius: 2rem;
-    }
-}
-
-@media only screen and (min-width: 70rem) and (max-width: 84rem){
-    .boekcardlist{
-        display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr) );
-        grid-template-columns: repeat(3, minmax(0, 1fr) );
-        grid-gap: 1rem;
+        border: solid 0.8rem var(--primary-color);
     }
 
-    .boekencard{
-        grid-template-areas:
-        'image image'
-        'header header'
-        'voortgang voortgang'
-        'verder verder';
-        grid-template-columns: 100%;
-
-        margin: 0 auto;
-        width: 60%;
-        padding: 1rem 1rem 2rem 1rem;
-
-        border: solid 0.3rem var(--primary-color);
-        border-radius: 1rem;
-    }
-    
     .boekencard__imagesection{
-        height: 30rem;
+        padding-right: 0;
+
+        max-width: 100%;
+        height: auto;
+
+        overflow: hidden;
+
+        border-radius: 1rem 1rem 0 0;
     }
 
     .boekencard__header{
-        padding-top: 1rem;
+        padding: 0.5rem 1rem;
     }
 
     .boekencard__buttonsection{
-        padding-top: 1rem;
-    }
-
-    .boekencard__buttonsection__button{
-        width: 8rem;
-        height: 3rem;
-
-        border-radius: 2rem;
-    }
-}
-
-@media only screen and (min-width: 84rem){
-    .boekcardlist{
-        display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr) );
-        grid-template-columns: repeat(4, minmax(0, 1fr) );
-        grid-gap: 1rem;
-    }
-
-    .boekencard{
-        grid-template-areas:
-        'image image'
-        'header header'
-        'voortgang voortgang'
-        'verder verder';
-        grid-template-columns: 100%;
-
-        margin: 0 auto;
-        width: 60%;
-        padding: 1rem 1rem 2rem 1rem;
-
-        border: solid 0.3rem var(--primary-color);
-        border-radius: 1rem;
-    }
-    
-    .boekencard__imagesection{
-        height: 30rem;
-    }
-
-    .boekencard__header{
-        padding-top: 1rem;
-    }
-    
-    .boekencard__buttonsection{
-        padding-top: 1rem;
-    }
-
-    .boekencard__buttonsection__button{
-        width: 8rem;
-        height: 3rem;
+        right: 0.5rem;
+        bottom: -14rem;
         
-        border-radius: 2rem;
     }
+}
+
+@media (min-width: 900px) {
+    .boekcardlist{
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.5rem;
+    }    
+
     
 }

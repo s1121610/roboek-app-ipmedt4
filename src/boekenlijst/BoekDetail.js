@@ -1,5 +1,6 @@
 import React from "react";
 import "../App.css";
+import "./Components/DetailBoekcard.css";
 import DetailBoekcard from "./Components/DetailBoekcard";
 import DetailBoekHoofdstuk from "./Components/DetailBoekHoofdstuk";
 import DetailVerwijder from "./Components/DetailVerwijder";
@@ -74,13 +75,17 @@ class BoekDetail extends React.Component {
         //check=true, is toevoegen, check=false, is verwijderen
         //gelezenHoofdstukkenTeller wordt geupdate bij elke checkbox die aangeklikt wordt
         if(document.getElementById(id).checked){
-            document.getElementById(id + "K").innerHTML="uitdaging";
+            if(document.getElementById(id + "K")){
+                document.getElementById(id + "K").innerHTML="uitdaging";
+            }
             axios.post(AFVINKEN_URL);
             this.setState({
                 gelezenHoofdstukkenTeller: this.state.gelezenHoofdstukkenTeller + 1
             })
         }  else {
-            document.getElementById(id + "K").innerHTML="&#128274;";
+            if(document.getElementById(id + "K")){
+                document.getElementById(id + "K").innerHTML="&#128274;";
+            }
             axios.delete(AFVINKEN_URL);
             this.setState({
                 gelezenHoofdstukkenTeller: this.state.gelezenHoofdstukkenTeller - 1
@@ -102,11 +107,11 @@ class BoekDetail extends React.Component {
 
     render(){
         return(
-            <article>
+            <article className="detailboek">
                 <DetailBoekcard
                 titel={this.state.titel}
                 auteur={this.state.auteur}
-                image={this.state.image}
+                image={"/bibliotheek/" + this.state.image}
                 hoofdstukken={this.state.aantalHoofdstukken}
                 gelezenHoofdstukkenTeller={this.state.gelezenHoofdstukkenTeller}
                 />
@@ -114,6 +119,7 @@ class BoekDetail extends React.Component {
                 <DetailBoekHoofdstuk
                 hoofdstukken={this.state.hoofdstukken}
                 uitdagingen={this.state.uitdagingen}
+                uitdagingId={this.state.uitdagingen.id}
                 cardClicked={this.cardClicked}
                 />
 
