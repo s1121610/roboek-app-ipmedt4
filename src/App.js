@@ -2,6 +2,7 @@ import React from "react";
 
 import './App.css';
 import Boekenlijst from "./boekenlijst/Boekenlijst";
+import BoekDetail from "./boekenlijst/BoekDetail";
 import Genre from "./Bibliotheek/Genre";
 import Bibliotheek from "./Bibliotheek/Bibliotheek";
 import Details from "./Bibliotheek/Details";
@@ -28,21 +29,26 @@ class App extends React.Component{
               <Link to="/genre">Terug</Link>
               <Details />
             </Route>
-            <Route path="/woordzoeker">
+            <Route path="/boekenlijst/detail/Woordzoeker/">
               <Woordzoeker />
             </Route>
             <Route path="/boekenkast">
               <Link to="/">Terug</Link>
               <Boekenkast user_id='1'/>
             </Route>
+            <Route path="/boekenlijst/detail/">
+              <BoekDetail  user_id='1'/>
+            </Route>
             <Route path="/boekenlijst/">
-              <Boekenlijst user_id='4'/>
+              <Link to="/{id}"></Link>
+              <Boekenlijst user_id='1'/>
             </Route>
             <Route path="/">
               <h1>Roboek</h1>
               <h2>Menu:</h2>
               <Link to="/genre">Bibliotheek</Link>
               <Link to="/boekenkast">Boekenkast</Link>
+              <Link to="/boekenlijst/">Boekenlijst</Link>
             </Route>
           </Switch>
         </Router>

@@ -1,8 +1,8 @@
 import React from "react";
 import "../App.css"
-import "./Boekcard.css";
-import BoekcardList from "./BoekcardList";
-import EmptyBoekcard from "./EmptyBoekcard";
+import "./Components/Boekcard.css";
+import BoekcardList from "./Components/BoekcardList";
+import EmptyBoekcard from "./Components/EmptyBoekcard";
 
 
 import axios from "axios";
@@ -22,18 +22,24 @@ class Boekenlijst extends React.Component {
                 boeken: res.data.boeken,
             })
         });
-      }
+
+        
+    }
 
 
     render(){
-        //meegeven van state boeken naar de boekcard
+        
+        //checken of de user boeken heeft
         if(this.state.boeken.length === 0){
-           return (<EmptyBoekcard />);
+           return (<EmptyBoekcard />
+            );
 
         } else{
             
             return(
-                <BoekcardList boeken={this.state.boeken}/>
+                <BoekcardList 
+                    boeken={this.state.boeken}
+                />
             );
         }
     }
