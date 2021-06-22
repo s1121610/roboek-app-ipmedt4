@@ -1,0 +1,90 @@
+:root{
+    --primary-color: #90C2C4;
+    --secondary-color: #369093;
+    --tertiary-color: #CA4838;
+    --success-color: #A1EDA5;
+    --try-again-color: #FF8847;
+    --disabled1-color: #909494;
+    --disabled2-color: #B4B4B4;
+    --background-color: #F7F7F7;
+
+    /*GENRES:*/
+    --avontuur: #cb7cff;
+    --humor: #ff8847;
+    --fantasie: #ffeb3e;
+    --sprookjes: #335d2d;
+    --dieren-en-natuur: #a1eda5;
+    --spanning: #fc6c6c;
+    --griezelig: #04009a;
+    --vriendschap-en-verliefd: #ba135d;
+    --alle-genres: #90c2c4;
+    --mijn-favorieten: #9d9aff;
+}
+
+@media(min-width: 900px){
+    .bookcard{
+        max-width: 15rem;
+        height: 10vh;
+        transition: .5s all;
+    }
+
+    .bookcard:hover{
+        transform: scale(1.2);
+    }
+
+    .bookcard__cover{
+        max-width: 18rem;
+        height: 25rem;
+        transition: .5s all;
+    }
+
+    .like{
+        margin-right: 18rem;
+    }
+
+    .genre{
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 45rem;
+        height: 5rem;
+    }
+
+    .slick-slider{
+        padding: 0;
+        height: 30rem;
+    }
+    
+    .slick-list{
+        height: 40rem;
+    }
+
+    .slick-slider:active{
+        -webkit-tap-highlight-color: #eee;
+    }
+
+    .slick-slider{
+        -webkit-tap-highlight-color: #eee;
+    }
+
+    .slick-prev:before{
+        color: #212121;
+    }
+
+    .slick-next:before{
+        color: white;
+        z-index: 3;
+    }
+
+    .slick-next{
+        margin-right: 3.5rem;
+        margin-top: .4rem;
+        padding: 12.5rem 5rem;
+        background-color: #212121;
+        opacity: .8;
+    }
+
+    .slick-next:hover, .slick-list:active{
+        background-color: #212121;
+        opacity: .8;
+    }
+}

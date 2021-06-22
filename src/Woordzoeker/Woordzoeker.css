@@ -1,0 +1,164 @@
+.woordzoeker{
+  max-width: 100rem;
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-areas:
+    'matrix'
+    'invoer'
+    'bericht'
+    'geraden';
+  grid-row-gap: 1rem;
+  grid-column-gap: 1rem;
+}
+
+.container{
+  width: 100%;
+}
+
+.woordzoeker__matrix{
+  position: relative;
+  grid-area: matrix;
+  outline: solid .3rem black;
+  outline-offset: -.1rem;
+  overflow:hidden;
+}
+
+
+
+.woordzoeker__invoer{
+  grid-area: invoer;
+}
+
+.woordzoeker__bericht{
+  grid-area: bericht;
+}
+
+.woordzoeker__geraden{
+  grid-area: geraden;
+}
+
+.woordzoeker__matrix__lijst{
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  list-style: none;
+}
+
+.woordzoeker__matrix_letter{
+  background-color: white;
+  border: solid .1rem black;
+  font-size: 1.8rem;
+  height: 100%;
+  padding: 20% 0rem;
+  text-align: center;
+  transition: 1s;
+}
+
+.woordzoeker__bericht_fout,.woordzoeker__bericht_goed,.woordzoeker__bericht_gedaan{
+  display: none;
+}
+
+.woordzoeker__bericht__hint{
+  display: none;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: var(--primary-color);
+  border: solid .3rem var(--secondary-color);
+  box-shadow: .2rem .2rem 0 var(--secondary-color);
+  font-size: 1.6rem;
+  transition: 1s;
+}
+
+.woordzoeker__bericht__tekst{
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  font-size: 1.6rem;
+}
+
+
+.woordzoeker__invoer{
+  padding: 1rem 0rem;
+}
+
+.woordzoeker__invoer__titel{
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.woordzoeker__invoer__aantal{
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.woordzoeker__invoer__invoerTekst{
+  background-color: white;
+  font-size: 1.6rem;
+  width: 75%;
+  text-align: left !important;
+  border: solid .3rem var(--disabled1-color);
+  padding: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-top-left-radius: 1rem;
+  box-shadow: .2rem .2rem 0 var(--disabled1-color);
+}
+
+.woordzoeker__invoer__invoerTekst:focus{
+  outline-color: blue;
+}
+
+.woordzoeker__invoer__knop{
+  background-color: var(--primary-color);
+  font-size: 1.6rem;
+  font-weight: bold;
+  box-shadow: .2rem .2rem 0 var(--secondary-color);
+  width: 25%;
+  border: solid .3rem var(--secondary-color);
+  padding: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-top-right-radius: 1rem;
+  transition: .5s;
+}
+
+.button_blue:hover{
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  border-color: var(--primary-color);
+}
+
+.button_blue:active{
+  box-shadow: none;
+  transform: translateY(.1rem);
+}
+
+.woordzoeker__geraden{
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.woordzoeker__geraden__lijst{
+  list-style: none;
+  font-size: 1.6rem;
+}
+
+.woordzoeker__geraden__titel{
+  font-size: 1.8rem;
+}
+
+@media only screen and (min-width: 58rem){
+  .woordzoeker__matrix_letter{
+    font-size: 2rem;
+  }
+  .woordzoeker{
+    grid-template-columns: 80% 20%;
+    grid-template-areas:
+    'matrix geraden'
+    'invoer bericht';
+  }
+}

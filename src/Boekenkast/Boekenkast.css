@@ -1,0 +1,47 @@
+.boekenkast{
+  width: 300px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.boekenkastSection--top{
+  width: 100%;
+  height: 94%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.boekenkastSection--bottom{
+  width: 100%;
+  height: 6%;
+
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 85% 100%, 80% 0%, 20% 0%, 15% 100%, 0% 100%)
+}
+
+.boekenkastButtonSection{
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  margin: 0 auto;
+
+  max-width: 600px;
+}
+
+.boekenkastButtonSection__button{
+  display: block;
+  width: 20rem;
+  padding: 1rem 0;
+
+  font-size: 2.4rem;
+  font-weight: bold;
+
+  border-radius: 2rem;
+  background-color: var(--primary-color);
+  border: 6px solid var(--secondary-color);
+}
+
+.boekenkastButtonSection__button:hover{
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  border: 6px solid var(--primary-color);
+}

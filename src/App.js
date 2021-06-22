@@ -1,18 +1,64 @@
 import React from "react";
+
+import WelkomPagina from "./WelkomPagina/WelkomPagina"
+
 import './App.css';
 import Winkel from './Winkel/Winkel';
+import Boekenlijst from "./boekenlijst/Boekenlijst";
+import Genre from "./Bibliotheek/Genre";
+import Bibliotheek from "./Bibliotheek/Bibliotheek";
+import BibliotheekDesktop from './Bibliotheek/BibliotheekDesktop';
+import Details from "./Bibliotheek/Details";
+import Woordzoeker from "./Woordzoeker/Woordzoeker";
+import Gefeliciteerd from "./Gefeliciteerd/Gefeliciteerd";
+import Boekenkast from "./Boekenkast/Boekenkast";
+import Header from "./UniverseelComponents/MobileHeader"
+import DesktopNav from "./Navigatie/DesktopNavigatie"
 
-class App extends React.Component {
+import { Switch, Route, BrowserRouter as Router, Link } from "react-router-dom";
 
-
-  render(){
-
-    return ([
-      <section>
-        <Winkel user_id='1' />
-      </section>
-    ]);
-  }
+//state = groep variabelen die van waarde kan veranderen.
+class App extends React.Component{
+    render() {
+      return (
+        <Router>
+          <Switch>
+            <Route path="/genre">
+              <DesktopNav />
+              <Genre />
+            </Route>
+            <Route path="/bibliotheek/">
+              <Header />
+              <Link to="/genre">Terug</Link>
+              <Bibliotheek />
+            </Route>
+            <Route path="/details/">
+              <Link to="/genre">Terug</Link>
+              <Details />
+            </Route>
+            <Route path="/woordzoeker">
+              <Link to="/boekenlijst">Terug</Link>
+              <Woordzoeker/>
+            </Route>
+            <Route path="/gefeliciteerd">
+              <Gefeliciteerd user_id='1' />
+            </Route>
+            <Route path="/boekenkast">
+              <Link to="/">Terug</Link>
+              <Boekenkast user_id='1'/>
+            </Route>
+            <Route path="/boekenlijst/">
+              <Boekenlijst user_id='4'/>
+            </Route>
+            <Route path="/winkel/">
+              <Boekenlijst user_id='1'/>
+            </Route>
+            <Route path="/">
+              <WelkomPagina />
+            </Route>
+          </Switch>
+        </Router>
+      )
+    }
 }
-
 export default App;
