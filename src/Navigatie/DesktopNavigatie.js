@@ -13,11 +13,37 @@ class DesktopNav extends React.Component {
                 <DesktopNavItem link="/genre" p="Bibliotheek" />
                 <DesktopNavItem link="/boekenkast" p="Boekenkast" />
                 <DesktopNavItem link="/winkel" p="Winkel" />
-                <section className="desktopNav__hulp">
+                <section id="js--openModal" className="desktopNav__hulp" onClick={openModal}>
                     <p className="desktopNav__hulp__p">Hulp</p>
+                </section>
+                <section id="js--myModal" className="desktopNav__modal">
+                    <section className="desktopNav__modal__content">
+                        <figure className="close">&times;</figure>
+                        <section>
+                            <h2>Hoi</h2>
+                        </section>
+                    </section>
                 </section>
             </section>
         );
+    }
+}
+
+const openModal = () => {
+    var modal = document.getElementById("js--myModal");
+    var btnModal = document.getElementById("js--openModal");
+    var figure = document.getElementsByClassName("close")[0];
+
+    btnModal && (btnModal.onclick = function () {
+        modal.style.display = "block";
+    });
+    figure && (figure.onclick = function () {
+        modal.style.display = "none";
+    });
+    window.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
     }
 }
 
