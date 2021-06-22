@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 class Boekcard extends React.Component {
 
     render(){
+
         return(
             <article className="boekencard">
                 <section className="boekencard__imagesection">
@@ -17,10 +18,10 @@ class Boekcard extends React.Component {
                     <h3 className="boekencard__header__auteur"> {this.props.auteur || "Auteur"} </h3>
                 </header>
                 <section className="boekencard__voortgangsectie">
-                    <p className="boekencard__voortgangsectie__hoofdstukken"> {this.props.voortgang || "Voortgang hoofdstukken"} </p>
+                    <p className="boekencard__voortgangsectie__hoofdstukken"></p>
                 </section>
                 <section className="boekencard__buttonsection">
-                    <Link to={"/boekenlijst/" + this.props.id} className="boekencard__buttonsection__button"> {this.props.buttonTekst || "naar detail boek"} </Link>
+                    <Link to={"/boekenlijst/detail/" + this.props.id} className="boekencard__buttonsection__button"> {this.props.buttonTekst || "naar detail boek"} </Link>
                 </section>
             </article>
         );

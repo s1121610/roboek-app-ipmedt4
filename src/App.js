@@ -5,6 +5,7 @@ import WelkomPagina from "./WelkomPagina/WelkomPagina"
 import './App.css';
 import Winkel from './Winkel/Winkel';
 import Boekenlijst from "./boekenlijst/Boekenlijst";
+import BoekDetail from "./boekenlijst/BoekDetail";
 import Genre from "./Bibliotheek/Genre";
 import Bibliotheek from "./Bibliotheek/Bibliotheek";
 import BibliotheekDesktop from './Bibliotheek/BibliotheekDesktop';
@@ -38,7 +39,7 @@ class App extends React.Component{
               <Link to="/genre">Terug</Link>
               <Details />
             </Route>
-            <Route path="/woordzoeker">
+            <Route path="/boekenlijst/detail/Woordzoeker/">
               <Navigatie titel="Woordzoeker" />
               <Link to="/boekenlijst">Terug</Link>
               <Woordzoeker/>
@@ -51,9 +52,13 @@ class App extends React.Component{
               <Navigatie titel="Mijn Boekenkast" />
               <Boekenkast user_id='1'/>
             </Route>
+            <Route path="/boekenlijst/detail/">
+              <Link to="/boekenlijst">Terug</Link>
+              <BoekDetail  user_id='1'/>
+            </Route>
             <Route path="/boekenlijst/">
-              <Navigatie titel="" />
-              <Boekenlijst user_id='4'/>
+              <Navigatie titel="Boekenlijst" />
+              <Boekenlijst user_id='1'/>
             </Route>
             <Route path="/winkel/">
               <Navigatie titel="Winkel" />
