@@ -9,7 +9,7 @@ class HulpWinkel extends React.Component {
         return (
             <section className="section__hulpWinkel">
                 <section className="section__hulpWinkel__onderdeel">
-                    <h2>Geld</h2>
+                    <h2 className="hulpSectionTitel">Geld</h2>
                     <HulpItem
                         imgSrc="../img/Money.svg"
                         p="Dit geeft de hoeveelheid geld die je hebt aan. Het getal verschilt bij iedereen"

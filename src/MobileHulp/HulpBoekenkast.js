@@ -7,7 +7,7 @@ class HulpBoekenkast extends React.Component {
         return (
             <section className="section__hulpBoekenkast">
                 <section className="section__hulpboekenkast__onderdeel">
-                    <h2>BoekenkastSlider</h2>
+                    <h2 className="hulpSectionTitel">BoekenkastSlider</h2>
                     <HulpItem
                         imgSrc="../img/BoekenSliderR.svg"
                         p="Klik erop om de andere kanten van jou boekenkast te zien"
@@ -15,7 +15,7 @@ class HulpBoekenkast extends React.Component {
                     />
                 </section>
                 <section className="section__hulpboekenkast__onderdeel">
-                    <h2>Personaliseer</h2>
+                    <h2 className="hulpSectionTitel">Personaliseer</h2>
                     <HulpItem
                         imgSrc="../img/PasAanKnop.svg"
                         p="Klik erop om je medailles te personaliseren"

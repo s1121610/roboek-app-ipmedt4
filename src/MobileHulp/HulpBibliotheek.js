@@ -7,7 +7,7 @@ class HulpBibliotheek extends React.Component {
         return (
             <section className="section__hulpBibliotheek">
                 <section className="section__hulpBibliotheek__onderdeel">
-                    <h2>Boekenslider</h2>
+                    <h2 className="hulpSectionTitel">Boekenslider</h2>
                     <HulpItem
                         imgSrc="../img/BoekenSliderR.svg"
                         p="Hiermee kan je het volgende boek bekijken"
@@ -15,7 +15,7 @@ class HulpBibliotheek extends React.Component {
                     />
                 </section>
                 <section className="section__hulpBibliotheek__onderdeel">
-                    <h2>Favorieten</h2>
+                    <h2 className="hulpSectionTitel">Favorieten</h2>
                     <HulpItem
                         imgSrc="../img/HartKnop.svg"
                         p="Voeg het boek toe aan je favorieten"
@@ -29,7 +29,7 @@ class HulpBibliotheek extends React.Component {
                     />
                 </section>
                 <section className="section__hulpBibliotheek__onderdeel">
-                    <h2>Lezen</h2>
+                    <h2 className="hulpSectionTitel">Lezen</h2>
                     <HulpItem
                         imgSrc="../img/OntdekMijKnop.svg"
                         p="Je gaat naar de detailpagina van het boek"
