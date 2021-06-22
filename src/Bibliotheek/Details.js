@@ -1,8 +1,8 @@
 import React from 'react';
-import './Details.css';
 import axios from "axios";
 
 import { Link } from "react-router-dom";
+import './Details.css';
 
 
 
@@ -11,7 +11,9 @@ class Details extends React.Component{
         gekozen_boeken: [],
         persons: [],
         boek_id: '',
-        buttonText: ""
+        buttonText: "",
+        popup: "none",
+        popupText: ""
       }
       updateButton = (props) =>{
         const id = this.state.boek_id;
@@ -52,9 +54,9 @@ class Details extends React.Component{
           const boeken = res.data;
           const id = boeken.boeken[0].id;
           if(boeken.gekozen.includes(id) === true){
-            this.setState({buttonText: "Dit boek niet meer lezen"});
+            this.setState({popup: "block"});
           }else{
-            this.setState({buttonText: "Dit boek lezen"});
+            this.setState({buttonText: "Dit boek lezen", popup: "none"});
           }
         });
       }else{
@@ -63,38 +65,70 @@ class Details extends React.Component{
           const boeken = res.data;
           const id = boeken.boeken[0].id;
           if(boeken.gekozen.includes(id) === true){
-            this.setState({buttonText: "Dit boek niet meer lezen"});
+            this.setState({popup: "block"});
           }else{
-            this.setState({buttonText: "Dit boek lezen"});
+            this.setState({buttonText: "Dit boek lezen", popup: "none"});
           }
         });
       }
       
     };
+//onClick={() => this.handleClick()}
     render(){
-      let addButton;
+      const setButtonState = () => {
+        this.setState({buttonText: "Dit boek niet meer lezen"});
+      }
 
-      if(this.state.buttonText !== ""){
-        addButton = <button className="u-button" onClick={this.handleClick}>{this.state.buttonText}</button>
+      const closePopup = () => {
+        this.setState({popup: "none"});
+      }
+
+      const showPopup = () => {
+        this.setState({popup: "block"});
+      }
+
+      let addButton;
+      let popup;
+      let overlay;
+
+      if(this.state.buttonText === "Dit boek lezen"){
+        addButton = <button className="u-button" onClick={() => this.handleClick()}>{this.state.buttonText}</button>;
+        overlay = <div className="u-overlay" style={{display: this.state.popup}}></div>;
+        popup = <section className="bibliotheek__popup" style={{display: this.state.popup}}>
+          <button onClick={() =>{setButtonState(); closePopup()}}>X</button>
+          <h2 className="bibliotheek__popup__title">Het boek is toegevoegd aan je boekenlijst.</h2>
+          <Link className="u-button" onClick={() => setButtonState()} to="/boekenlijst">Bekijk boekenlijst</Link>
+        </section>;
+      }else{
+        addButton = <button className="u-button" onClick={() =>this.setState({ popup: "block" }) }>{this.state.buttonText}</button>;
+        overlay = <div className="u-overlay" style={{display: this.state.popup}}></div>;
+        popup = <section className="bibliotheek__popup" style={{display: this.state.popup}}>;
+          <h2 className="bibliotheek__popup__title">Weet je zeker dat je boek niet meer wilt lezen?</h2>
+          <section className="bibliotheek__popup__buttonsection">
+            <button className="u-button" onClick={this.handleClick}>{this.state.buttonText}</button>
+            <button className="u-button" onClick={() =>this.setState({ popup: "none" }) }>Toch wel!</button>
+          </section>
+        </section>;
       }
 
       return (
       <section>
         <h1>Bibliotheek</h1>
+        {overlay}
+        {popup}
         {this.state.persons.map(boek => <div>
-          <article className="bookcard--details" onLoad={() =>this.setState({ boek_id: boek.id }) }>
-              <header>
-                <div className="genre">
+          <article className="bookcard--details u-grid--bookcard" onLoad={() =>this.setState({ boek_id: boek.id }) }>
+                <div className="u-grid--bookcard__genre genre">
                   <p data-genre={boek.genre_naam} className="genre__naam">{boek.genre_naam}</p>
                 </div>
-                <img className="bookcard__cover bookcard__cover--details" src={"/bibliotheek/" + boek.image} alt="cover {boek.titel}"/>
-                <h2>{boek.titel}</h2>
-                <p>{boek.auteur}</p>
-              </header>
-              <section>
-                <p>{boek.beschrijving}</p>
+                <img className="u-grid--bookcard__cover bookcard__cover--details" src={"/bibliotheek/" + boek.image} alt="cover {boek.titel}"/>
+                <h2 className="u-grid--bookcard__title bookcard--details__title">{boek.titel}</h2>
+                <p className="u-grid--bookcard__author bookcard--details__author">{boek.auteur}</p>
+              <section className="u-grid--bookcard__description bookcard__description">
+                <h3 className="bookcard__description__title">Waar gaat het boek over?</h3>
+                <p className="bookcard__description__text">{boek.beschrijving}</p>
               </section>
-              <section className="u-buttonSection">
+              <section className="u-grid--bookcard__button">
                 {addButton}
               </section>
           </article>

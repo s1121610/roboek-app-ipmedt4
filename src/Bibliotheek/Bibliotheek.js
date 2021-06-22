@@ -25,6 +25,7 @@ class Bibliotheek extends React.Component{
         .then(res => {
           const boeken = res.data.boeken;
           const favorieten = res.data.favorieten;
+          console.log(favorieten);
           this.setState({ persons: boeken, liked: favorieten});
           console.log(this.state.liked);
         })
@@ -33,6 +34,7 @@ class Bibliotheek extends React.Component{
       .then(res => {
         const boeken = res.data.boeken;
         const favorieten = res.data.favorieten;
+        console.log(favorieten);
         this.setState({ persons: boeken, liked: favorieten});
         console.log(this.state.liked);
       })
@@ -93,34 +95,13 @@ class Bibliotheek extends React.Component{
         </span>
       );
     }
-    
-    const addToFavorites = (id) =>{
-      this.setState({ boek_id: id, bgColor: "red" })
-      console.log(this.state.bgColor);
-      axios.post('http://127.0.0.1:8000/api/bibliotheek/favorite/' + id, {"id": id})
-        .then(res => {  
-          const favorite = res.data
-          this.setState({ boek_id: favorite })
-          console.log(this.state.boek_id);
-          console.log(res);
-        });
-    }
 
-    const DeleteFromFavorites = (id) =>{
-      this.setState({ boek_id: id })
-      console.log("boek id = " + this.state.boek_id);
-      axios.delete('http://127.0.0.1:8000/api/bibliotheek/favorite/' + id, {"id": id})
-        .then(res => {  
-          const favorite = res.data
-          this.setState({ boek_id: favorite })
-          console.log(this.state.boek_id);
-          console.log(res);
-        });
-    }
-
-    const setBoekIdState = (id) => {
-      console.log(id);
-      this.setState({boek_id: id});
+    let checkIfLiked = (id) => {
+      if(this.state.liked.includes(id) === true){
+        return true;
+      }else{
+        return false;
+      }
     }
 
     return (
@@ -132,20 +113,14 @@ class Bibliotheek extends React.Component{
         <Slider {...settings}>
             {this.state.persons.map(boek => <div>
                 <article className="bookcard">
-                <figure className="like">
-                  <button 
-                    className="hartje"
-                    id="js--hartje"
-                    data-liked = {this.state.heartColor}
-                    onClick={() => {setBoekIdState(boek.id); this.handleClick();}}
-                  ></button></figure>
-                  <Link to={"/details/" + boek.id}>
-                    <img className="bookcard__cover" src={boek.image} alt="cover {boek.titel}" />
-                  </Link>
-                  <section className="u-buttonSection">
-                      <Link to={"/details/" + boek.id} className="u-button">Ontdek mij</Link>
-                  </section>
-                  </article>
+                <Favoriet boek_id={boek.id} favorieten={this.state.liked} liked={checkIfLiked(boek.id)}/>
+                <Link to={"/details/" + boek.id}>
+                  <img className="bookcard__cover" src={boek.image} alt={"cover " + boek.titel + " " + boek.genre_naam} />
+                </Link>
+                <section className="u-buttonSection">
+                    <Link to={"/details/" + boek.id} className="u-button">Ontdek mij</Link>
+                </section>
+                </article>
             </div>)}
         </Slider>
       </section>

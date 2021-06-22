@@ -38,10 +38,6 @@
         transition: .5s all;
     }
 
-    .bookcard__cover--details:hover{
-        transform: scale(1.2);
-    }
-
     .like{
         margin-right: 18rem;
     }
@@ -60,6 +56,14 @@
     
     .slick-list{
         height: 40rem;
+    }
+
+    .slick-slider:active{
+        -webkit-tap-highlight-color: #eee;
+    }
+
+    .slick-slider{
+        -webkit-tap-highlight-color: #eee;
     }
 
     .slick-prev:before{
