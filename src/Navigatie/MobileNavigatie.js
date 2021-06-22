@@ -30,7 +30,7 @@ class MobileNavigatie extends React.Component {
                 <section className="navigatie__knopSectie">
                     <img id="js--openModal" className="navigatie__knopSectie__btn" src="/img/MenuLogo.png" alt="Roboek robot die de navigatie opent" onClick={openModal} />
                 </section>
-                <section id="js--myModal" className="navigatie__modal" onClick={() => { this.setState({ visibleKeuzes: !this.state.visibleKeuzes }) }}>
+                <section id="js--myModal" className="navigatie__modal" >
                     <section className="navigatie__modal__content">
                         <figure className="close">&times;</figure>
                         <section className="navigatie__modal__content__link margintop--groot">
