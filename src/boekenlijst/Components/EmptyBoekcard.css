@@ -3,13 +3,19 @@
 
     margin: 0 auto;
     width: 80%;
+
+    font-family: var(--fnt-assistant);
 }
 
 .emptyBoekcard_section__titel{
-    padding-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    font-size: 2rem;
-    text-align: center;
+    padding-bottom: 2.5rem;
+
+    font-size: 2.2rem;
+    font-weight: bold;
 }
 
 .emptyBoekcard_section__linksection{

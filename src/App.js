@@ -39,7 +39,7 @@ class App extends React.Component{
               <Link to="/genre">Terug</Link>
               <Details />
             </Route>
-            <Route path="/boekenlijst/detail/Woordzoeker/">
+            <Route path="/boekenlijst/detail/woordzoeker">
               <Navigatie titel="Woordzoeker" />
               <Link to="/boekenlijst">Terug</Link>
               <Woordzoeker/>
@@ -53,6 +53,7 @@ class App extends React.Component{
               <Boekenkast user_id='1'/>
             </Route>
             <Route path="/boekenlijst/detail/">
+              <Navigatie titel="Boekenlijst" />
               <Link to="/boekenlijst">Terug</Link>
               <BoekDetail  user_id='1'/>
             </Route>

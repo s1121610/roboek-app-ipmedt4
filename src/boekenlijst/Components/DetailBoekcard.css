@@ -1,0 +1,57 @@
+.detailboek{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+
+    margin: 0 auto;
+    padding-bottom: 2rem;
+
+    width: 95%;
+
+    font-family: var(--fnt-assistant);
+}
+
+.detailboekcard{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.detailboekcard__imagesection{
+
+    order: 1;
+    flex-grow: 1;
+
+    padding-right: 1rem;
+    max-width: 40%;
+}
+
+.detailboekcard__imagesection__figure__img{
+    width: 100%;
+    height: auto;
+}
+
+.detailboekcard__header{
+
+    order: 2;
+    flex-grow: 1;
+}
+
+.detailboekcard__header__titel{
+
+    font-size: 2.2rem;
+}
+
+.detailboekcard__header__auteur{
+
+    font-size: 1.8rem;
+    font-weight: lighter;
+}
+
+
+.detailboekcard__header__hoofdstukken{
+    padding-top: 2rem;
+
+    font-size: 1.4rem;
+}

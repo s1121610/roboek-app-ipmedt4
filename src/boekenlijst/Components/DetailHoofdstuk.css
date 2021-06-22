@@ -1,0 +1,172 @@
+.detailboekhoofdstuk__titel{
+    padding-top: 1rem;;
+    font-size: 1.8rem;
+}
+
+.detailboekhoofdstuk__lijst{
+    width: 95vw;
+    max-width: 1000px;
+}
+
+.detailboekhoofdstuk__lijst__element{
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+
+}
+
+.afvinksection{
+    display: flex;
+    flex-direction: row;
+
+    padding-bottom: 1rem;
+    padding-right: 2rem;
+}
+
+.afvinksection__titel{
+    order: 2;
+
+    padding-left: 1rem;
+
+    font-size: 1.6rem;
+    font-weight: lighter;
+}
+
+.afvinksection__checkbox{
+    display: block;
+    position: relative;
+
+    padding-left: 2.5rem;
+    margin-bottom: 1.2rem;
+
+    cursor: pointer;
+
+    font-size: 2.2rem;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.afvinksection__checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    
+    height: 0;
+    width: 0;
+}
+
+.afvinksection__checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 1.8rem;
+    width: 1.8rem;
+
+    background-color: #eee;
+    border:solid 0.1rem var(--secondary-color);
+    border-radius: 1rem;
+}
+
+
+.afvinksection__checkbox:hover input ~ .afvinksection__checkmark {
+    background-color: #ccc;
+}
+
+.afvinksection__checkbox input:checked ~ .afvinksection__checkmark {
+    background-color: var(--success-dark-color);
+}
+  
+.afvinksection__checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.afvinksection__checkbox input:checked ~ .afvinksection__checkmark:after {
+    display: block;
+}
+
+.afvinksection__checkbox .afvinksection__checkmark:after {
+    left: .6rem;
+    top: .25rem;
+    width: .5rem;
+    height: 10px;
+    border: solid white;
+    border-width: 0 .3rem .3rem 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.uitdaging{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 10rem;
+    height: 2.2rem;
+
+    font-size: 1.6rem;
+    font-weight: lighter;
+    font-family: var(--fnt-assistant);
+    text-align: center;
+    text-decoration: none;
+    color: black;
+
+    cursor: pointer;
+
+    background-color: var(--primary-color);
+    border: solid 0.3rem var(--secondary-color);
+    border-radius: 1.5rem;
+    box-shadow: 0.1rem 0.2rem 0 #2B7679;
+}
+
+.uitdaging:hover{
+    background-color: var(--secondary-color);
+    border-color: var(--primary-color);
+}
+
+.uitdaging:active{
+    background-color: var(--secondary-color);
+    border-color: var(--primary-color);
+    box-shadow: none;
+}
+
+.verwijderboek{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
+    
+    width: 16rem;
+    height: 4rem;
+
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+
+    background-color: var(--try-again-color);
+    border: solid 0.3rem var(--tertiary-color);
+    border-radius: 2rem;
+    box-shadow: 0.1rem 0.2rem 0 var(--tertiary-color);
+}
+
+.verwijderboek:hover{
+    background-color: var(--tertiary-color);
+    border-color: var(--try-again-color);
+}
+
+.verwijderboek:active{
+    background-color: var(--tertiary-color);
+    border-color: var(--try-again-color);
+    box-shadow: none;
+}
+

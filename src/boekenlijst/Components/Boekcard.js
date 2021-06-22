@@ -17,11 +17,8 @@ class Boekcard extends React.Component {
                     <h2 className="boekencard__header__titel"> {this.props.titel || "Titel"} </h2>
                     <h3 className="boekencard__header__auteur"> {this.props.auteur || "Auteur"} </h3>
                 </header>
-                <section className="boekencard__voortgangsectie">
-                    <p className="boekencard__voortgangsectie__hoofdstukken"></p>
-                </section>
                 <section className="boekencard__buttonsection">
-                    <Link to={"/boekenlijst/detail/" + this.props.id} className="boekencard__buttonsection__button"> {this.props.buttonTekst || "naar detail boek"} </Link>
+                    <Link to={"/boekenlijst/detail/" + this.props.id} className="boekencard__buttonsection__link"> {this.props.buttonTekst || "naar detail boek"} </Link>
                 </section>
             </article>
         );

@@ -15,7 +15,7 @@ class BoekcardList extends React.Component {
                     auteur={boek.auteur}
                     gelezenHoofdstukken={this.props.gelezenHoofdstukken}
                     aantalHoofdstukken={this.props.aantalHoofdstukken}
-                    buttonTekst=">"
+                    buttonTekst="&#707;"
                     img= {"/bibliotheek/" + boek.image}
                     figcaption= {"Het boek " + boek.titel}
                     id={boek.id}
