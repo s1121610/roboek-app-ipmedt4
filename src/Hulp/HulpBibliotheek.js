@@ -24,7 +24,8 @@ class HulpBibliotheek extends React.Component {
                     <HulpItem
                         imgSrc="../img/MijnFavorietenKnop.svg"
                         p="Ga naar al je favorieten boeken toe"
-                        className="section__contentHulp"
+                        className="flex--column section__contentHulp"
+                        id="width--groot"
                     />
                 </section>
                 <section className="section__hulpBibliotheek__onderdeel">
@@ -32,17 +33,20 @@ class HulpBibliotheek extends React.Component {
                     <HulpItem
                         imgSrc="../img/OntdekMijKnop.svg"
                         p="Je gaat naar de detailpagina van het boek"
-                        className="section__contentHulp"
+                        className="flex--column section__contentHulp"
+                        id="width--groot"
                     />
                     <HulpItem
                         imgSrc="../img/AlleBoekenKnop.svg"
                         p="Knop waarna je alle boeken kan zien"
-                        className="section__contentHulp"
+                        className="flex--column section__contentHulp"
+                        id="width--groot"
                     />
                     <HulpItem
                         imgSrc="../img/BoekLezenKnop.svg"
                         p="Boek toevoegen aan je bibliotheek"
-                        className="section__contentHulp"
+                        className="flex--column section__contentHulp"
+                        id="width--groot"
                     />
                 </section>
             </section>
