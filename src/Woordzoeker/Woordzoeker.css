@@ -11,7 +11,6 @@
     'geraden';
   grid-row-gap: 1rem;
   grid-column-gap: 1rem;
-
 }
 
 .container{
@@ -19,8 +18,14 @@
 }
 
 .woordzoeker__matrix{
+  position: relative;
   grid-area: matrix;
+  outline: solid .3rem black;
+  outline-offset: -.1rem;
+  overflow:hidden;
 }
+
+
 
 .woordzoeker__invoer{
   grid-area: invoer;
@@ -42,6 +47,7 @@
 }
 
 .woordzoeker__matrix_letter{
+  background-color: white;
   border: solid .1rem black;
   font-size: 1.8rem;
   height: 100%;
@@ -91,6 +97,7 @@
 }
 
 .woordzoeker__invoer__invoerTekst{
+  background-color: white;
   font-size: 1.6rem;
   width: 75%;
   text-align: left !important;
@@ -99,6 +106,10 @@
   border-bottom-left-radius: 1rem;
   border-top-left-radius: 1rem;
   box-shadow: .2rem .2rem 0 var(--disabled1-color);
+}
+
+.woordzoeker__invoer__invoerTekst:focus{
+  outline-color: blue;
 }
 
 .woordzoeker__invoer__knop{
@@ -114,13 +125,13 @@
   transition: .5s;
 }
 
-.button:hover{
+.button_blue:hover{
   cursor: pointer;
   background-color: var(--secondary-color);
   border-color: var(--primary-color);
 }
 
-.button:active{
+.button_blue:active{
   box-shadow: none;
   transform: translateY(.1rem);
 }

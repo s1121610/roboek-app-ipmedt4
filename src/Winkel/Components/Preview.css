@@ -1,0 +1,11 @@
+.winkelSection__previewSection {
+    height: 45vh;
+    padding: 2rem;
+  }
+  
+  .winkelSection__previewSection__preview {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }

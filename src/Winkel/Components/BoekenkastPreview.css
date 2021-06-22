@@ -1,0 +1,108 @@
+/* boekenkast */
+
+.boekenkastPreview{
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+  }
+
+  .boekenkastSection--top{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #38290f;
+  }
+
+  .itemsSection__container{
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  .itemsSection__bookshelf__preview{
+    display: flex;
+    gap: 2%;
+    align-items: flex-end;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #110d05;
+  }
+
+  .itemSection__shelfBook{
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: .1rem;
+  }
+
+  .itemsSection__shelfBook__Label--high{
+    width: 100%;
+    height: 1.4rem;
+    margin-top: 30%;
+    align-self: flex-start;
+    background: white;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+
+  .itemsSection__shelfBook__Label--low{
+    width: 100%;
+    height: 1rem;
+    margin-bottom: 30%;
+    align-self: flex-end;
+    background: white;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+
+  .itemsSection__shelfBook--red{
+    width: 2.6rem;
+    height: 80%;
+    background: var(--book-color-red);
+  }
+
+  .itemsSection__shelfBook--yellow{
+    width: 2.8rem;
+    height: 90%;
+    background: var(--book-color-yellow);
+  }
+
+  .itemsSection__shelfBook--green{
+    width: 2.6rem;
+    height: 60%;
+    background: var(--book-color-green);
+  }
+
+  .itemsSection__shelfBook--blue{
+    width: 2.6rem;
+    height: 70%;
+    background: var(--book-color-blue);
+  }
+
+  .itemsSection__shelfBook--purple{
+    width: 2.6rem;
+    height: 85%;
+    background: var(--book-color-purple);
+  }
+
+  .itemsSection__shelfBook--tilted{
+    margin: 0 3%;
+    transform: rotate(-12deg);
+  }
+
+  .itemsSection__itemshelf{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 70%;
+    padding: 0 4%;
+
+    clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%, 0% 55%, 0% 100%, 100% 100%, 100% 55%, 0% 55%);
+  }

@@ -2,19 +2,18 @@ import React from 'react';
 import "./Woordzoeker.css";
 import "../App.css";
 import axios from "axios";
-import WoordzoekerMatrix from "./WoordzoekerMatrix";
-import WoordzoekerInvoer from "./WoordzoekerInvoer";
-import WoordzoekerGevonden from "./WoordzoekerGevonden";
-import WoordzoekerBericht from "./WoordzoekerBericht";
+import WoordzoekerMatrix from "./components/WoordzoekerMatrix";
+import WoordzoekerInvoer from "./components/WoordzoekerInvoer";
+import WoordzoekerGevonden from "./components/WoordzoekerGevonden";
+import WoordzoekerBericht from "./components/WoordzoekerBericht";
 
 const letters = "abcdefghijklmnopqrstuvwxyz";
 const lijst = document.getElementsByClassName("woordzoeker__matrix_letter")
+var puzzelId;
 var woordenMatrix;
-var woordzoekerMatrix = [];
 var geradenWoorden = [];
 var aantalGeradenWoorden = geradenWoorden.length;
 var result = ""
-var aantalGevondenWoorden = 0;
 var aantalFout = 0;
 var telOp = true;
 var lengteWoord;
@@ -24,6 +23,7 @@ var aantalWoorden;
 
 class WoordzoekerPuzzel extends React.Component {
   state = {
+    puzzelId: "",
     bericht: "",
     list: [],
     gevonden: 0,
@@ -33,7 +33,7 @@ class WoordzoekerPuzzel extends React.Component {
   };
 
 
-
+//Haalt de informatie uit de API
   componentDidMount() {
     const BASE_URL = 'http://127.0.0.1:8000/api/puzzel/'
     let puzzelId = window.location.pathname.split('/')[4];
@@ -42,7 +42,7 @@ class WoordzoekerPuzzel extends React.Component {
       .then(res => {
         if(res.data){
           if(res.data.soort === "Woordzoeker"){
-            this.setState({matrix: res.data.vraag, antwoorden: res.data.antwoorden})
+            this.setState({matrix: res.data.vraag, antwoorden: res.data.antwoorden, puzzelId: res.data.id})
             this.flipMatrixAxis(this.state.matrix)
             this.maakMatrix()
           } else {
@@ -55,8 +55,9 @@ class WoordzoekerPuzzel extends React.Component {
       })
   }
 
-
+//Maakt de matrix op basis van de API invoer
   maakMatrix = () => {
+    puzzelId = this.state.puzzelId
     woordenMatrix = this.state.matrix;
     teGeradenWoorden = this.state.antwoorden.split(" ");
     aantalWoorden = teGeradenWoorden.length;
@@ -74,7 +75,7 @@ class WoordzoekerPuzzel extends React.Component {
     }
   }
 
-
+//Laat de hint knop zien na paar keer fout antwoord ingevoerd te hebben
   showHint = () => {
     if(aantalFout === 2){
       document.getElementById("js--hint-button").style.display = "block";
@@ -84,6 +85,7 @@ class WoordzoekerPuzzel extends React.Component {
     }
   }
 
+//Geeft een hint als de hint knop wordt ingedrukt
   geefHint = () => {
     for(var i = 0; i < aantalWoorden; i++){
       var antwoorden = this.state.antwoorden.split(" ")
@@ -97,8 +99,8 @@ class WoordzoekerPuzzel extends React.Component {
     }
   }
 
+//Checkt of het woord in de woordzoeker zit
   checkWoord = (event) => {
-    var input = document.getElementById("woord");
     var antwoorden = this.state.antwoorden.split(" ")
       if(event.key === "Enter" || event === "Enter" ){
         var ingevoerdeWoord = document.getElementById("woord").value;
@@ -134,13 +136,11 @@ class WoordzoekerPuzzel extends React.Component {
                 this.streepDoorHorizontaal(ingevoerdeWoord);
                 this.streepDoorVerticaal(ingevoerdeWoord);
                 aantalFout = 0;
-
-                if(aantalGeradenWoorden === this.aantalWoorden){
-                  console.log("DONE")
+                if(aantalGeradenWoorden === aantalWoorden){
+                  setTimeout(function(){ window.location.replace("/gefeliciteerd/" + puzzelId); }, 1000);
                 } else {
-                  console.log("NOT DONE")
+                  console.log(puzzelId)
                 }
-
                 break;
               }
             } else {
@@ -155,17 +155,23 @@ class WoordzoekerPuzzel extends React.Component {
         if(telOp){
           {this.showHint()};
         }
-
       }
-
-
-
   }
-
+//Geeft de kleur van de hint
   veranderKleur = (kleur, hint) => {
     document.getElementById("js--bericht").style.background = kleur;
   }
 
+//Draait de code van de matrix om zodat hij te lezen is voor verticaal
+  flipMatrixAxis = (horizontalMatrix, width = 10, height = 10) => {
+      for (let widthIndex = 0; widthIndex < width; widthIndex++) {
+          for (let heightIndex = 0; heightIndex < height; heightIndex++) {
+              result += horizontalMatrix[(heightIndex * height) + widthIndex]
+          }
+      }
+  }
+
+//Zoekt het woord of hij verticaal is en streept hem door
   streepDoorVerticaal = (woord, hint) => {
     var positie;
     lengteWoord = woord.length;
@@ -192,14 +198,7 @@ class WoordzoekerPuzzel extends React.Component {
     }
   }
 
-  flipMatrixAxis = (horizontalMatrix, width = 10, height = 10) => {
-      for (let widthIndex = 0; widthIndex < width; widthIndex++) {
-          for (let heightIndex = 0; heightIndex < height; heightIndex++) {
-              result += horizontalMatrix[(heightIndex * height) + widthIndex]
-          }
-      }
-  }
-
+//Zoekt het woord of hij horizontaal is en streept hem door
   streepDoorHorizontaal = (woord, hint) => {
     lengteWoord = woord.length;
     var plekInHorizontaal = this.state.matrix.search(woord);
@@ -214,20 +213,20 @@ class WoordzoekerPuzzel extends React.Component {
           } else {
             this.geefKleur(plekInLijstHorizontaal, "groen");
           }
-
         }
     }
   }
 
+//Geeft de kleur in de woordzoeker
   geefKleur = (plekInLijst, kleur) => {
     if(kleur === "groen"){
       lijst.item(plekInLijst).style.backgroundColor = "#A1EDA5";
     } else {
       lijst.item(plekInLijst).style.backgroundColor = "#FF8847";
     }
-
   }
 
+//rendert de html
   render(){
     return (
       <article className="woordzoeker">
@@ -238,7 +237,5 @@ class WoordzoekerPuzzel extends React.Component {
       </article>
     )
   }
-
-
 }
 export default WoordzoekerPuzzel;

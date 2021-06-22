@@ -1,0 +1,21 @@
+.winkelSection__saldoSection {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.winkelSection__saldoSection__header{
+  font-size: 7rem;
+}
+
+.winkelSection__saldoSection__figure{
+  width: auto;
+  height: 100%;
+}
+
+.winkelSection__saldoSection__image{
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+}

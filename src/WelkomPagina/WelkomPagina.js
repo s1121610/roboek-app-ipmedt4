@@ -24,12 +24,10 @@ class WelkomPagina extends React.Component {
             return (
                 <section>
                     <MobileHeader titel="Welkom Bij Roboek" />
+                    <MobileNavigatie />
                     <WelkomTekst />
                     <WelkomButtonList />
-                    <section className="flex--row">
-                        <SpeechBubble />
-                        <MobileNavigatie />
-                    </section>
+                    <SpeechBubble />
                 </section>
             )
         }
