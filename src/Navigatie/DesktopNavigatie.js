@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 import DesktopNavItem from './DesktopNavItem';
 import DesktopHulpBoekenLijst from '../DesktopHulp/DesktopHulpBoekenlijst';
@@ -8,9 +9,20 @@ import '../App.css';
 import './DesktopNavigatie.css'
 
 class DesktopNav extends React.Component {
+    
     render() {
+        let backButton;
+
+        if (this.props.link) {
+            backButton = <Link to={this.props.link}>
+                <h1 className="desktopNav__backButton">
+                    <i className="icon-angle-left"></i>
+                </h1>
+            </Link>
+        }
         return (
             <section className="desktopNav" id="css--desktopNav">
+                {backButton}
                 <figure className="desktopNav__figure">
                   <img className="desktopNav__image" src="/img/MenuLogo.png" alt="Roboek robot die de navigatie opent"/>
                 </figure>

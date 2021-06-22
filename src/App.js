@@ -30,39 +30,35 @@ class App extends React.Component{
               <Genre />
             </Route>
             <Route path="/bibliotheek/">
-              <Navigatie titel="Bibliotheek" />
-              <Header />
+              <Navigatie titel="Bibliotheek"/>
               <Bibliotheek />
             </Route>
             <Route path="/details/">
-              <Navigatie titel="Details" />
-              <Link to="/genre">Terug</Link>
+              <Navigatie titel="Details" link="/genre"/>
               <Details />
             </Route>
             <Route path="/boekenlijst/detail/woordzoeker">
-              <Navigatie titel="Woordzoeker" />
-              <Link to="/boekenlijst">Terug</Link>
+              <Navigatie titel="Woordzoeker" link="/boekenlijst"/>
               <Woordzoeker/>
             </Route>
             <Route path="/gefeliciteerd">
-              <Navigatie titel="Uitdaging" />
-              <Gefeliciteerd user_id='1' />
+              <Navigatie titel="Uitdaging" link="/boekenlijst"/>
+              <Gefeliciteerd user_id='1'/>
             </Route>
             <Route path="/boekenkast">
-              <Navigatie titel="Mijn Boekenkast" />
+              <Navigatie titel="Mijn Boekenkast"/>
               <Boekenkast user_id='1'/>
             </Route>
             <Route path="/boekenlijst/detail/">
-              <Navigatie titel="Boekenlijst" />
-              <Link to="/boekenlijst">Terug</Link>
+              <Navigatie titel="Boekenlijst" link="/boekenlijst"/>
               <BoekDetail  user_id='1'/>
             </Route>
             <Route path="/boekenlijst/">
-              <Navigatie titel="Boekenlijst" />
+              <Navigatie titel="Boekenlijst"/>
               <Boekenlijst user_id='1'/>
             </Route>
             <Route path="/winkel/">
-              <Navigatie titel="Winkel" />
+              <Navigatie titel="Winkel" link="/boekenkast"/>
               <Winkel user_id='1'/>
             </Route>
             <Route path="/">

@@ -1,11 +1,28 @@
 section.titel{
+  font-family: var(--fnt-roboto);
   text-align: center;
   padding: 2rem;
   background-color: var(--primary-color);
 }
 
-section.titel h1{
-  font-family: var(--fnt-roboto);
+.titel__heading{
   font-size: 3.6rem;
   font-weight: 400;
+}
+
+.titel__backButton {
+position: absolute;
+left: 10%;
+
+color: black;
+font-size: 8rem;
+transform: translateY(-30%);
+}
+
+.titel__backButton:hover {
+  cursor: pointer;
+}
+
+.titel__figure__img--displaynone {
+  display: none;
 }

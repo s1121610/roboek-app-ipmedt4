@@ -9,6 +9,11 @@ section.desktopNav {
     background-color: var(--primary-color);
 }
 
+.desktopNav__backButton{
+    color: black;
+    transform: scale(2.4);
+}
+
 .desktopNav__figure {
     display: flex;
     padding: .4rem;
