@@ -1,9 +1,9 @@
 import React from 'react';
 import MobileNavItem from './MobileNavItem'
-import HulpBoekenLijst from '../Hulp/HulpBoekenlijst';
-import HulpBibliotheek from '../Hulp/HulpBibliotheek';
-import HulpBoekenkast from '../Hulp/HulpBoekenkast';
-import HulpWinkel from '../Hulp/HulpWinkel';
+import HulpBoekenLijst from '../MobileHulp/HulpBoekenlijst';
+import HulpBibliotheek from '../MobileHulp/HulpBibliotheek';
+import HulpBoekenkast from '../MobileHulp/HulpBoekenkast';
+import HulpWinkel from '../MobileHulp/HulpWinkel';
 
 import './MobileNavigatie.css';
 
