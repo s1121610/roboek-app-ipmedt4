@@ -24,6 +24,7 @@ article.navigatie {
   top: 0;
   width: 100%;
   height: 100%;
+  overflow: auto;
   background-color: rgba(0,0,0,0.85);
 }
 
@@ -56,7 +57,7 @@ article.navigatie {
   margin-top: 2rem;
   border: 0.2rem solid var(--secondary-color);
   border-radius: 1.2rem;
-  overflow: hidden;
+  overflow: visible;
   background-color: white;
 }
 
@@ -77,7 +78,7 @@ article.navigatie {
 .eclipse {
   border: 0.2rem solid var(--secondary-color);
   border-radius: 50%;
-  position: fixed;
+  position: absolute;
   right: 10%;
   height: 5.5rem;
   width: 5.5rem;
@@ -85,6 +86,7 @@ article.navigatie {
   justify-content: center;
   align-items: center;
   background-color: white;
+  transform: translateX(100%);
 }
 
 .navigatie__modal__content__link__img {
@@ -103,4 +105,31 @@ article.navigatie {
 .display--block {
   display: block;
   opacity: 1;
+}
+.hulp__section__keuze__boekenlijst__h2,
+.hulp__section__keuze__bibliotheek__h2,
+.hulp__section__keuze__boekenkast__h2,
+.hulp__section__keuze__winkel__h2 {
+    text-decoration: none;
+    font-family: var(--fnt-assistant);
+    font-weight: 400;
+    font-size: 1.5rem;
+    background-color: var(--primary-color);
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-radius: 2rem;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media (min-width: 600px) {
+    .navigatie__modal__content {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .hulp__section__keuze {
+        width: 85%;
+        margin: 0 auto;
+    }
 }

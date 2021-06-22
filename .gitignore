@@ -23,4 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 package-lock.json
 node_modules\.cache\.eslintcache
-\node_modules\.cache\.eslintcache
+node_modules/.cache/.eslintcache

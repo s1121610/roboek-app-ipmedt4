@@ -1,13 +1,15 @@
-.section__hulpBoekenlijst__onderdeel {
+.section__hulpBoekenlijst__onderdeel,
+.section__hulpBibliotheek__onderdeel,
+.section__hulpBoekenkast__onderdeel,
+.section__hulpWinkel__onderdeel {
     margin-bottom: 1rem;
     margin-right: 1rem;
 }
 
-/*h2 {
+.hulpSectionTitel {
     font-family: var(--fnt-assistant);
     font-size: 1.5rem;
     margin-left: 1rem;
     font-weight: 400;
     text-decoration: underline;
 }
-*/

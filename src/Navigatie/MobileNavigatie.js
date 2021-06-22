@@ -1,6 +1,9 @@
 import React from 'react';
 import MobileNavItem from './MobileNavItem'
-import HulpBoekenLijst from '../Hulp/HulpBoekenlijst';
+import HulpBoekenLijst from '../MobileHulp/HulpBoekenlijst';
+import HulpBibliotheek from '../MobileHulp/HulpBibliotheek';
+import HulpBoekenkast from '../MobileHulp/HulpBoekenkast';
+import HulpWinkel from '../MobileHulp/HulpWinkel';
 
 import './MobileNavigatie.css';
 
@@ -12,8 +15,14 @@ class MobileNavigatie extends React.Component {
 
     render () {
         let hulpBoekenLijst;
+        let hulpBibliotheek;
+        let hulpBoekenkast;
+        let hulpWinkel;
         if (this.state.visibleKeuzes !== false) {
             hulpBoekenLijst = <HulpBoekenLijst />;
+            hulpBibliotheek = <HulpBibliotheek />;
+            hulpBoekenkast = <HulpBoekenkast />;
+            hulpWinkel = <HulpWinkel />
         }
 
         return (
@@ -21,7 +30,7 @@ class MobileNavigatie extends React.Component {
                 <section className="navigatie__knopSectie">
                     <img id="js--openModal" className="navigatie__knopSectie__btn" src="/img/MenuLogo.png" alt="Roboek robot die de navigatie opent" onClick={openModal} />
                 </section>
-                <section id="js--myModal" className="navigatie__modal">
+                <section id="js--myModal" className="navigatie__modal" onClick={() => { this.setState({ visibleKeuzes: !this.state.visibleKeuzes }) }}>
                     <section className="navigatie__modal__content">
                         <figure className="close">&times;</figure>
                         <section className="navigatie__modal__content__link margintop--groot">
@@ -32,10 +41,22 @@ class MobileNavigatie extends React.Component {
                                 </section>
                             </section>
                             {this.state.visibleKeuzes ?
-                                <section className="hulp__section__keuze display--block"> {/*Deze is op none*/}
+                                <section className="hulp__section__keuze">
                                     <section className="hulp__section__keuze__boekenlijst">
-                                        <h2>Mijn Boekenlijst</h2>
-                                        {hulpBoekenLijst} {/*Deze is op none*/}
+                                        <h2 className="hulp__section__keuze__boekenlijst__h2">Mijn Boekenlijst</h2>
+                                        {hulpBoekenLijst}
+                                    </section>
+                                    <section className="hulp__section__keuze__bibliotheek">
+                                        <h2 className="hulp__section__keuze__bibliotheek__h2">Bibliotheek</h2>
+                                        {hulpBibliotheek}
+                                    </section>
+                                    <section className="hulp__section__keuze__boekenkast">
+                                        <h2 className="hulp__section__keuze__boekenkast__h2">Boekenkast</h2>
+                                        {hulpBoekenkast}
+                                    </section>
+                                    <section className="hulp__section__keuze__winkel">
+                                        <h2 className="hulp__section__keuze__winkel__h2">Winkel</h2>
+                                        {hulpWinkel}
                                     </section>
                                     {/*Hieronder komen de anderen keuzes*/}
                                 </section>

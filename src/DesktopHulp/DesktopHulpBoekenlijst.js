@@ -1,15 +1,15 @@
 import React from 'react';
 
-import HulpItem from './HulpItem';
+import HulpItem from '../MobileHulp/HulpItem';
 
-import './HulpBoekenlijst.css';
+import '../MobileHulp/HulpBoekenlijst.css';
 
-class HulpBoekenLijst extends React.Component {
+class DesktopHulpBoekenLijst extends React.Component {
     render() {
         return (
             <section className="section__hulpBoekenlijst">
                 <section className="section__hulpBoekenlijst__onderdeel">
-                    <h2>Uitdaging knop</h2>
+                    <h2 className="hulpSectionTitel">Uitdaging knop</h2>
                     <HulpItem
                         imgSrc="../img/UitdagingBtnLock.svg"
                         p="Je kan de uitdaging nog niet doen"
@@ -21,13 +21,13 @@ class HulpBoekenLijst extends React.Component {
                         className="section__contentHulp"
                     />
                     <HulpItem
-                        imgSrc=""
+                        imgSrc="../img/UitdagingBtnUnlock.svg"
                         p="Je hebt de uitdaging gedaan"
                         className="section__contentHulp"
                     />
                 </section>
                 <section className="section__hulpBoekenlijst__onderdeel">
-                    <h2>Afvinken hoofdstukken</h2>
+                    <h2 className="hulpSectionTitel">Afvinken hoofdstukken</h2>
                     <HulpItem
                         imgSrc="../img/Checkbox.svg"
                         p="Je hebt het hoofdstuk nog niet gelezen"
@@ -42,7 +42,7 @@ class HulpBoekenLijst extends React.Component {
                     />
                 </section>
                 <section className="section__hulpBoekenlijst__onderdeel">
-                    <h2>Voortgang boek  </h2>
+                    <h2 className="hulpSectionTitel">Voortgang boek  </h2>
                     <HulpItem
                         imgSrc="../img/ProgressieBalk.svg"
                         p="Dit laat zien hoeveel hoofdstukken je hebt gelezen van het boek"
@@ -55,4 +55,4 @@ class HulpBoekenLijst extends React.Component {
     }
 }
 
-export default HulpBoekenLijst;
+export default DesktopHulpBoekenLijst;

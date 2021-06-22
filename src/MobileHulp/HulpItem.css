@@ -3,12 +3,15 @@
     align-items: center;
     justify-content: flex-start;
     flex-direction: row;
+    gap: 1rem;
     margin-left: 1rem;
     margin-bottom: 0.5rem;;
 }
 
 .section__contentHulp img {
     width: 10%;
+    max-width: 10rem;
+    max-height: 2rem;
 }
 
 .section__contentHulp {
@@ -26,6 +29,21 @@
     width: 5%;
 }
 
+#width--mid {
+    width: 24%;
+}
+
 #width--groot {
     width: 60%;
+}
+
+@media (min-width: 600px) {
+    .flex--column {
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+    #width--mid {
+        width: auto;
+    }
 }
