@@ -11,6 +11,7 @@ import Details from "./Bibliotheek/Details";
 import Woordzoeker from "./Woordzoeker/Woordzoeker"
 import Boekenkast from "./Boekenkast/Boekenkast";
 import Header from "./UniverseelComponents/MobileHeader"
+import DesktopNav from "./Navigatie/DesktopNavigatie"
 
 import { Switch, Route, BrowserRouter as Router, Link } from "react-router-dom";
 
@@ -21,7 +22,7 @@ class App extends React.Component{
         <Router>
           <Switch>
             <Route path="/genre">
-              <Link to="/">Terug</Link>
+              <DesktopNav />
               <Genre />
             </Route>
             <Route path="/bibliotheek/">
