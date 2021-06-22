@@ -1,6 +1,7 @@
 import React from 'react';
 
 import DesktopNavItem from './DesktopNavItem';
+import DesktopHulpBoekenLijst from '../DesktopHulp/DesktopHulpBoekenlijst';
 
 import './DesktopNavigatie.css'
 
@@ -19,8 +20,12 @@ class DesktopNav extends React.Component {
                 <section id="js--myModal" className="desktopNav__modal">
                     <section className="desktopNav__modal__content">
                         <figure className="close">&times;</figure>
-                        <section>
-                            <h2>Hoi</h2>
+                        <section className="desktopNav__modal__content__onderdelen">
+                            <section className="desktopNav__modal__content__onderdelen__onderdeel">
+                                {/* Hier komt per onderdeel alle hulpmiddelen */}
+                                <DesktopHulpBoekenLijst />
+                            </section>
+                            {/* Hieronder komen de andere secties */}
                         </section>
                     </section>
                 </section>
