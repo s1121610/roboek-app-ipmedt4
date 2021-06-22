@@ -2,6 +2,7 @@ import React from 'react';
 import MobileNavItem from './MobileNavItem'
 import HulpBoekenLijst from '../Hulp/HulpBoekenlijst';
 import HulpBibliotheek from '../Hulp/HulpBibliotheek';
+import HulpBoekenkast from '../Hulp/HulpBoekenkast';
 
 import './MobileNavigatie.css';
 
@@ -14,9 +15,11 @@ class MobileNavigatie extends React.Component {
     render () {
         let hulpBoekenLijst;
         let hulpBibliotheek;
+        let hulpBoekenkast;
         if (this.state.visibleKeuzes !== false) {
             hulpBoekenLijst = <HulpBoekenLijst />;
             hulpBibliotheek = <HulpBibliotheek />;
+            hulpBoekenkast = <HulpBoekenkast />;
         }
 
         return (
@@ -43,6 +46,10 @@ class MobileNavigatie extends React.Component {
                                     <section className="hulp__section__keuze__bibliotheek">
                                         <h2 className="hulp__section__keuze__bibliotheek__h2">Bibliotheek</h2>
                                         {hulpBibliotheek}
+                                    </section>
+                                    <section className="hulp__section__keuze__boekenkast">
+                                        <h2 className="hulp__section__keuze__boekenkast__h2">Boekenkast</h2>
+                                        {hulpBoekenkast}
                                     </section>
                                     {/*Hieronder komen de anderen keuzes*/}
                                 </section>

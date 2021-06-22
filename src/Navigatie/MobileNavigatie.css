@@ -100,7 +100,8 @@ article.navigatie {
 }
 
 .hulp__section__keuze__boekenlijst__h2,
-.hulp__section__keuze__bibliotheek__h2 {
+.hulp__section__keuze__bibliotheek__h2,
+.hulp__section__keuze__boekenkast__h2 {
     text-decoration: none;
     background-color: var(--primary-color);
     padding-bottom: 0.5rem;
