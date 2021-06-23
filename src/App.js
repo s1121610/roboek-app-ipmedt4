@@ -26,15 +26,15 @@ class App extends React.Component{
         <Router>
           <Switch>
             <Route path="/genre">
-              <Navigatie titel="Genre" />
+              <Navigatie titel="Genre" link="/"/>
               <Genre />
             </Route>
             <Route path="/bibliotheek/">
-              <Navigatie titel="Bibliotheek" />
+              <Navigatie titel="Bibliotheek" link="/genre"/>
               <Bibliotheek />
             </Route>
             <Route path="/details/">
-              <Navigatie titel="Details" link="/genre"/>
+              <Navigatie titel="Details" link="/bibliotheek"/>
               <Details />
             </Route>
             <Route path="/boekenlijst/detail/woordzoeker">
