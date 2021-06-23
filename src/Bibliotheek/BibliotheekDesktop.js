@@ -20,10 +20,9 @@ class BibliotheekDesktop extends React.Component{
             <article>
                 <Avontuur />
                 <DierenEnNatuur />
-                <Fantasie />
                 <Griezelig />
                 <Humor />
-                <Spanning />
+                {/* <Spanning /> */}
                 <Sprookjes />
                 <VriendschapEnVerliefd />
             </article>

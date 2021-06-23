@@ -18,7 +18,7 @@ class BibliotheekDesktop extends React.Component{
     }
 
     componentDidMount = (props) => {
-      axios.get(`http://127.0.0.1:8000/api/bibliotheek/`)
+      axios.get(`http://127.0.0.1:8000/api/bibliotheek/Griezelverhaal`)
         .then(res => {
           const boeken = res.data.boeken;
           const favorieten = res.data.favorieten;
@@ -87,7 +87,7 @@ class BibliotheekDesktop extends React.Component{
         return(
             <section>
                 <section className="genre">
-                    <p data-genre="Griezelig" className="genre__naam">Griezelig</p>
+                    <p data-genre="Griezelverhaal" className="genre__naam">Griezelig</p>
                 </section>                
                 <Slider {...settings}>
                     {this.state.boeken.map(boek => <ul>

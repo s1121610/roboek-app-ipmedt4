@@ -18,7 +18,7 @@ class BibliotheekDesktop extends React.Component{
     }
 
     componentDidMount = (props) => {
-      axios.get(`http://127.0.0.1:8000/api/bibliotheek/`)
+      axios.get(`http://127.0.0.1:8000/api/bibliotheek/Humor`)
         .then(res => {
           const boeken = res.data.boeken;
           const favorieten = res.data.favorieten;
