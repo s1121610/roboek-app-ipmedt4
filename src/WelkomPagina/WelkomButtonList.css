@@ -64,9 +64,3 @@ button.submitBtn:active {
     flex-wrap: nowrap
   }
 }
-
-@media (min-width: 1500px) {
-  section.naamInput {
-    width: 50%;
-  }
-}
