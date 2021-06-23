@@ -12,7 +12,6 @@ class DetailBoekHoofdstuk extends React.Component {
 
     checkAfgevinkt = (id, soort, uitdagingId) => {
 
-        console.log(document.getElementById(id).checked);
         if(document.getElementById(id).checked){
             window.location.replace(soort + "/" + uitdagingId);
         }
@@ -21,7 +20,7 @@ class DetailBoekHoofdstuk extends React.Component {
 
     //voor elk hoofdstuk, maak een component Detailhoofdstuk
     render(){
-        
+
         return(
             <section className="detailboekhoofdstuk">
                 <h2 className="detailboekhoofdstuk__titel">Hoofdstukken</h2>
@@ -36,9 +35,9 @@ class DetailBoekHoofdstuk extends React.Component {
                         />
 
                         {this.props.uitdagingen.map(uitdaging =>
-                            
+
                             {if(hoofdstuk.id === uitdaging.hoofdstuk_id){
-                                return <DetailUitdaging 
+                                return <DetailUitdaging
                                         key={hoofdstuk.id}
                                         checkAfgevinkt={this.checkAfgevinkt}
                                         id={hoofdstuk.id}
@@ -46,9 +45,9 @@ class DetailBoekHoofdstuk extends React.Component {
                                         uitdagingId={uitdaging.id}
                                 />
                             }}
-                        )} 
+                        )}
                     </li>
-                    
+
                     )}
                 </ol>
             </section>

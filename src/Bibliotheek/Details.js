@@ -24,7 +24,7 @@ class Details extends React.Component{
           this.setState({buttonText: "Dit boek lezen"});
         }
       }
-     
+
       componentDidMount = (props) => {
         let idReq = window.location.pathname.split('/')[2];
         axios.get(`http://127.0.0.1:8000/api/bibliotheek/details/` + idReq)
@@ -39,9 +39,9 @@ class Details extends React.Component{
               this.setState({buttonText: "Dit boek lezen"});
             }
           });
-        
+
       }
-    
+
     constructor(props) {
       super(props);
       this.handleClick = this.handleClick.bind(this);
@@ -50,7 +50,6 @@ class Details extends React.Component{
     handleClick() {
       if(this.state.buttonText === "Dit boek lezen"){
         axios.post('http://127.0.0.1:8000/api/boekenlijst/add/' + this.state.boek_id, {"id": this.state.boek_id}).then(res => {
-          console.log(res);
           const boeken = res.data;
           const id = boeken.boeken[0].id;
           if(boeken.gekozen.includes(id) === true){
@@ -61,7 +60,6 @@ class Details extends React.Component{
         });
       }else{
         axios.delete('http://127.0.0.1:8000/api/boekenlijst/delete/' + this.state.boek_id, {"id": this.state.boek_id}).then(res => {
-          console.log(res);
           const boeken = res.data;
           const id = boeken.boeken[0].id;
           if(boeken.gekozen.includes(id) === true){
@@ -71,7 +69,7 @@ class Details extends React.Component{
           }
         });
       }
-      
+
     };
 //onClick={() => this.handleClick()}
     render(){
@@ -113,7 +111,6 @@ class Details extends React.Component{
 
       return (
       <section>
-        <h1>Bibliotheek</h1>
         {overlay}
         {popup}
         {this.state.persons.map(boek => <div>

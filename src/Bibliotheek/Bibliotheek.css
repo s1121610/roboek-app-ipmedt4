@@ -25,7 +25,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
     width: 100%;
     height: 50vh;
     margin: 5% auto;
@@ -46,7 +46,7 @@
 }
 
 .genre{
-    margin-top: 5%;
+  padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,7 +56,6 @@
     padding: 1rem 4rem;
     font-size: 1.8rem;
     border-radius: 5rem;
-    width: 50%;
 
     text-decoration: none;
     font-weight: bold;
@@ -69,6 +68,31 @@
 li > .genre__naam[data-genre="Avontuur"] {
     box-shadow: 0px 5px 0px 0px rgba(161,47,236, 1);
 }
+li > .genre__naam[data-genre="Dieren en natuur"] {
+    box-shadow: 0px 5px 0px 0px #47b960;
+}
+li > .genre__naam[data-genre="Fantasie"] {
+    box-shadow: 0px 5px 0px 0px #8d8e2a;
+}
+li > .genre__naam[data-genre="Griezelverhaal"] {
+    box-shadow: 0px 5px 0px 0px #130d6f;
+}
+li > .genre__naam[data-genre="Humor"] {
+    box-shadow: 0px 5px 0px 0px #694b14;
+}
+li > .genre__naam[data-genre="Spanning"] {
+    box-shadow: 0px 5px 0px 0px #970f41;
+}
+li > .genre__naam[data-genre="Sprookjes"] {
+    box-shadow: 0px 5px 0px 0px #1f4a19;
+}
+li > .genre__naam[data-genre="Vriendschap en Verliefd"] {
+    box-shadow: 0px 5px 0px 0px #690b4c;
+}
+li > .genre__naam[data-genre="Alle_boeken"] {
+    box-shadow: 0px 5px 0px 0px #369090;
+}
+
 .genre__naam[data-genre="Avontuur"] {
     background-color: var(--avontuur);
     color: #212121;
@@ -85,8 +109,8 @@ li > .genre__naam[data-genre="Avontuur"] {
 }
 
 .genre__naam[data-genre="Griezelverhaal"] {
-    background-color: var(--griezelig);
-    color: var(--background-color);
+    background-color: #8a9ee8;
+    color: #212121;
 }
 
 .genre__naam[data-genre="Humor"] {
@@ -100,18 +124,18 @@ li > .genre__naam[data-genre="Avontuur"] {
 }
 
 .genre__naam[data-genre="Sprookjes"] {
-    background-color: var(--sprookjes);
-    color: var(--background-color);
+    background-color: #59b54c;
+    color: #212121;
 }
 
 .genre__naam[data-genre="Vriendschap%20en%20Verliefd"] {
-    background-color: var(--vriendschap-en-verliefd);
-    color: var(--background-color);
+    background-color: #f95aa1;
+    color: #212121;
 }
 
 .genre__naam[data-genre="Vriendschap en Verliefd"] {
-    background-color: var(--vriendschap-en-verliefd);
-    color: var(--background-color);
+    background-color: #f95aa1;
+    color: #212121;
 }
 
 .genre__naam[data-genre="Fantasie"] {

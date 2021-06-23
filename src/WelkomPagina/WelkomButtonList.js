@@ -30,7 +30,7 @@ export default class WelkomButtonList extends React.Component {
     };
 
     let config = {
-      headers: { 
+      headers: {
         "Content-Type": "application/json",
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS'
@@ -47,17 +47,18 @@ export default class WelkomButtonList extends React.Component {
       });
 
     this.setState({ voornaam: "", leukenaam: "" })
+    window.location.replace("/boekenlijst")
   }
 
   render() {
     return (
       <section className="naamInput" >
         <form className="naamInput__form" onSubmit={this.onSubmit}>
-          <input type="text" id="voornaam" placeholder="Voer hier je naam in" className="naamInput__form__input" 
-            onChange={this.onChangeVoornaam} 
+          <input type="text" id="voornaam" placeholder="Voer hier je naam in" className="naamInput__form__input"
+            onChange={this.onChangeVoornaam}
             value={this.state.voornaam}
           />
-          <input type="text" id="leukenaam" placeholder="Vul een leuke naam in" className="naamInput__form__input" 
+          <input type="text" id="leukenaam" placeholder="Vul een leuke naam in" className="naamInput__form__input"
             onChange={this.onChangeLeukenaam}
             value={this.state.leukenaam}
           />

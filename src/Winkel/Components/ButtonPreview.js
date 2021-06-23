@@ -23,7 +23,6 @@ class ButtonPreview extends React.Component {
     }
 
     checkIfAffordable = (item) => {
-        console.log(item);
         let userSaldo = this.props.user.saldo;
         if(userSaldo < item.prijs) {
             return {display: "none"};
@@ -42,7 +41,6 @@ class ButtonPreview extends React.Component {
         const item = this.props.item;
         const behaaldeItems = this.props.behaaldeItems;
         let Button;
-        console.log(item);
         if (Object.keys(item).length == 0 || item.soort === "Kastdecoratie" && behaaldeItems.some(behaaldeItem => behaaldeItem.item_id === item.id)){
             Button = "";
         } else if(behaaldeItems.some(behaaldeItem => behaaldeItem.item_id === item.id)) {

@@ -99,7 +99,6 @@ class BoekDetail extends React.Component {
         axios.delete(VERWIJDER_URL).then(res =>{
             window.location.replace("/boekenlijst/");
         })
-        console.log(VERWIJDER_URL);
     }
 
 
@@ -132,5 +131,5 @@ class BoekDetail extends React.Component {
     }
 
 }
-    
+
 export default BoekDetail;
