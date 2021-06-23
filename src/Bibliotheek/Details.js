@@ -93,9 +93,11 @@ class Details extends React.Component{
         addButton = <button className="u-button" onClick={() => this.handleClick()}>{this.state.buttonText}</button>;
         overlay = <div className="u-overlay" style={{display: this.state.popup}}></div>;
         popup = <section className="bibliotheek__popup" style={{display: this.state.popup}}>
-          <button onClick={() =>{setButtonState(); closePopup()}}>X</button>
+          <button className="u-button--close bibliotheek__popup__close-button" onClick={() =>{setButtonState(); closePopup()}}>X</button>
           <h2 className="bibliotheek__popup__title">Het boek is toegevoegd aan je boekenlijst.</h2>
-          <Link className="u-button" onClick={() => setButtonState()} to="/boekenlijst">Bekijk boekenlijst</Link>
+          <section className="bibliotheek__popup__buttonsection">
+            <Link className="u-button bibliotheek__popup__buttonsection__button" onClick={() => setButtonState()} to="/boekenlijst">Bekijk boekenlijst</Link>
+          </section>
         </section>;
       }else{
         addButton = <button className="u-button" onClick={() =>this.setState({ popup: "block" }) }>{this.state.buttonText}</button>;
@@ -103,8 +105,8 @@ class Details extends React.Component{
         popup = <section className="bibliotheek__popup" style={{display: this.state.popup}}>;
           <h2 className="bibliotheek__popup__title">Weet je zeker dat je boek niet meer wilt lezen?</h2>
           <section className="bibliotheek__popup__buttonsection">
-            <button className="u-button" onClick={this.handleClick}>{this.state.buttonText}</button>
-            <button className="u-button" onClick={() =>this.setState({ popup: "none" }) }>Toch wel!</button>
+            <button className="u-button bibliotheek__popup__buttonsection__button" onClick={this.handleClick}>{this.state.buttonText}</button>
+            <button className="u-button bibliotheek__popup__buttonsection__button" onClick={() =>this.setState({ popup: "none" }) }>Toch wel!</button>
           </section>
         </section>;
       }

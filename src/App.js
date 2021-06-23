@@ -34,7 +34,7 @@ class App extends React.Component{
               <Bibliotheek />
             </Route>
             <Route path="/details/">
-              <Navigatie titel="Details" link="/bibliotheek"/>
+              <Navigatie titel="Details" link="/genre"/>
               <Details />
             </Route>
             <Route path="/boekenlijst/detail/woordzoeker">
