@@ -31,12 +31,10 @@ class Winkel extends React.Component {
                             behaaldeItems: behaalde_items,
                             user: res.data.user,
                             boekenkast: res.data.boekenkast});
-            console.log(this.state.boekenkast);
         })
     };
 
     refreshWinkel = () => {
-      console.log("refreshWinkel");
       const BASE_URL = "http://localhost:8000/api/winkel/";
       axios.get(BASE_URL + this.props.user_id).then(res => {
           let behaalde_items = res.data.behaalde_items.filter(obj => obj.user_id == this.props.user_id);
@@ -51,23 +49,18 @@ class Winkel extends React.Component {
     }
 
     updateColor = (item_id, user_id) => {
-        console.log("Boekenkast van " + user_id + " updaten met item_id " + item_id);
         const BASE_URL = "http://localhost:8000/api/winkel/update/color/";
         axios.put(BASE_URL + user_id, {"item_id": item_id, _method: 'patch'})
             .then(res => {
-                console.log("na item geupdate" + res.data)
         });
         setTimeout(this.refreshWinkel, 500);
 
     }
 
     koopItem = (item_id, user_id, item_prijs) => {
-        console.log("behaalde items voor kopen" , this.state.behaaldeItems);
-        console.log("user " + user_id + " item_id " + item_id);
         const BASE_URL = "http://localhost:8000/api/winkel/koop/item/";
         axios.post(BASE_URL + user_id, {"item_id": item_id, "item_prijs": item_prijs})
             .then(res => {
-                console.log("na item gekocht" , res.data);
         });
         setTimeout(this.refreshWinkel, 500);
     }

@@ -34,7 +34,6 @@ class Boekenkast extends React.Component{
   }
 
   refreshBoekenkast = () => {
-    console.log("refreshBoekenkast");
     const BASE_URL = "http://localhost:8000/api/boekenkast/";
     axios.get(BASE_URL + this.props.user_id).then(res => {
       this.setState({
@@ -77,7 +76,7 @@ class Boekenkast extends React.Component{
       case(3):
         buttonTextLeft = "Voorwerpen";
         buttonTextRight = "Medailles";
-        boekenkast = <BoekenkastProfiel kast_kleur_primary={this.state.boekenkast.kast_kleur_primary || "#38290f"} kast_kleur_secondary={this.state.boekenkast.kast_kleur_secondary || "#110d05"} naam={this.state.eigenaar.naam} saldo={this.state.eigenaar.saldo} aantal_medailles={this.state.eigenaar.aantal_medailles} aantal_boeken={this.state.eigenaar.aantal_boeken} />;
+        boekenkast = <BoekenkastProfiel kast_kleur_primary={this.state.boekenkast.kast_kleur_primary || "#38290f"} kast_kleur_secondary={this.state.boekenkast.kast_kleur_secondary || "#110d05"} naam={this.state.eigenaar.naam} saldo={this.state.eigenaar.saldo} aantal_medailles={this.state.eigenaar.aantal_medailles} aantal_boeken={this.state.eigenaar.aantal_boeken} behaalde_medailles={this.state.behaalde_medailles}/>;
         break;
       default:
         break;

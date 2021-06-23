@@ -41,7 +41,7 @@ class BoekenkastProfiel extends React.Component{
                       </figure>
                       <section>
                         <h1 className="profielSection__listItem__header"> Medailles </h1>
-                        <p className="profielSection__listItem__text"> {this.props.aantal_medailles} </p>
+                        <p className="profielSection__listItem__text"> {this.props.behaalde_medailles.length-1} </p>
                       </section>
                     </article>
                   </li>

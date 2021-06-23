@@ -31,7 +31,6 @@ class Items extends React.Component {
     }
 
     checkIfBehaald(item) {
-        console.log("voor mapping" , this.props.behaaldeItems);
         let behaaldeItems = this.props.behaaldeItems;
         let behaald;
         if(behaaldeItems.some(behaaldeItem => behaaldeItem.item_id === item.id)) {

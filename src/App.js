@@ -34,13 +34,11 @@ class App extends React.Component{
               <Bibliotheek />
             </Route>
             <Route path="/details/">
-              <Navigatie titel="Details" />
-              <Link to="/genre">Terug</Link>
+              <Navigatie titel="Details" link="/genre"/>
               <Details />
             </Route>
             <Route path="/boekenlijst/detail/woordzoeker">
-              <Navigatie titel="Woordzoeker" />
-              <Link to="/boekenlijst">Terug</Link>
+              <Navigatie titel="Woordzoeker" link="/boekenlijst"/>
               <Woordzoeker/>
             </Route>
             <Route path="/gefeliciteerd">
@@ -52,8 +50,7 @@ class App extends React.Component{
               <Boekenkast user_id='1'/>
             </Route>
             <Route path="/boekenlijst/detail/">
-              <Navigatie titel="Boekenlijst" />
-              <Link to="/boekenlijst">Terug</Link>
+              <Navigatie titel="Boekenlijst" link="/boekenlijst"/>
               <BoekDetail  user_id='1'/>
             </Route>
             <Route path="/boekenlijst/">
@@ -61,7 +58,7 @@ class App extends React.Component{
               <Boekenlijst user_id='1'/>
             </Route>
             <Route path="/winkel/">
-              <Navigatie titel="Winkel" />
+              <Navigatie titel="Winkel"/>
               <Winkel user_id='1'/>
             </Route>
             <Route path="/">

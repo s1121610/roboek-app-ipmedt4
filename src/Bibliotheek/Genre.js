@@ -5,6 +5,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import BibliotheekDesktop from './BibliotheekDesktop';
 
+
 class Genre extends React.Component{
     state = {
         genres: []
@@ -20,22 +21,20 @@ class Genre extends React.Component{
     render(){
         if(window.innerWidth <= 900){
             return(
-                <main>
-                    <h2>Kies een genre!</h2>
                     <ul>
+                        <h1 className="genre__header"> Kies een Genre! </h1>
                         {this.state.genres.map(genre => <li className="genre">
                             <Link className="genre__naam" data-genre={genre.naam} to={'/bibliotheek/' + genre.naam}>{genre.naam}</Link>
                         </li>)}
                         <li className="genre"><Link className="genre__naam" data-genre="Alle_boeken" to={'/bibliotheek/'}>Alle boeken</Link></li>
                     </ul>
-                </main>
             );
         }else{
             return(
                 <BibliotheekDesktop />
             );
         }
-        
+
     }
 }
 
