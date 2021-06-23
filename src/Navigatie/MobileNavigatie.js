@@ -13,6 +13,18 @@ class MobileNavigatie extends React.Component {
         visibleKeuzes: false,
     };
 
+    closeModal = () => {
+      console.log("closeModal aangeroepen");
+      var modal = document.getElementById("js--myModal");
+      modal.style.display = "none";
+      this.setState({visibleKeuzes: false});
+    }
+
+    openModal = () => {
+      var modal = document.getElementById("js--myModal");
+      modal.style.display = "block";
+    }
+
     render () {
         let hulpBoekenLijst;
         let hulpBibliotheek;
@@ -28,11 +40,11 @@ class MobileNavigatie extends React.Component {
         return (
             <article className="navigatie">
                 <section className="navigatie__knopSectie">
-                    <img id="js--openModal" className="navigatie__knopSectie__btn" src="/img/MenuLogo.png" alt="Roboek robot die de navigatie opent" onClick={openModal} />
+                    <img id="js--openModal" className="navigatie__knopSectie__btn" src="/img/MenuLogo.png" alt="Roboek robot die de navigatie opent" onClick={this.openModal} />
                 </section>
-                <section id="js--myModal" className="navigatie__modal" >
+                <section id="js--myModal" className="navigatie__modal">
                     <section className="navigatie__modal__content">
-                        <figure className="close">&times;</figure>
+                        <figure onClick={this.closeModal} className="close">&times;</figure>
                         <section className="navigatie__modal__content__link margintop--groot">
                             <section className="hulp__section" onClick={() => {this.setState({visibleKeuzes: !this.state.visibleKeuzes})}}>
                                 <p>Hulp</p>
@@ -64,31 +76,31 @@ class MobileNavigatie extends React.Component {
                             }
                         </section>
                         <MobileNavItem
-                            closeModal={closeModal}
+                            closeModal={this.closeModal}
                             link="/winkel"
                             p="Winkel"
                             imgSrc="/img/Winkel.svg"
                         />
                         <MobileNavItem
-                            closeModal={closeModal}
+                            closeModal={this.closeModal}
                             link="/genre"
                             p="Bibliotheek"
                             imgSrc="/img/Bibliotheek.svg"
                         />
                         <MobileNavItem
-                            closeModal={closeModal}
+                            closeModal={this.closeModal}
                             link="/boekenlijst"
                             p="Mijn Boekenlijst"
                             imgSrc="/img/Boekenlijst.svg"
                         />
                         <MobileNavItem
-                            closeModal={closeModal}
+                            closeModal={this.closeModal}
                             link="/boekenkast"
                             p="Mijn Boekenkast"
                             imgSrc="/img/Boekenkast.svg"
                         />
                         <section className="navigatie__knopSectie navigatie__knopSectie__btn__modal">
-                            <img id="js--openModal" className="navigatie__knopSectie__btn" src="/img/MenuLogo.png" alt="Roboek robot die de navigatie opent" onClick={closeModal} />
+                            <img id="js--openModal" className="navigatie__knopSectie__btn" src="/img/MenuLogo.png" alt="Roboek robot die de navigatie opent" onClick={this.closeModal} />
                         </section>
                     </section>
                 </section>
@@ -97,32 +109,7 @@ class MobileNavigatie extends React.Component {
     }
 }
 
-const openModal = () => {
-  var modal = document.getElementById("js--myModal");
-  var btnModal = document.getElementById("js--openModal");
-  var figure = document.getElementsByClassName("close")[0];
 
-  btnModal && (btnModal.onclick = function () {
-      modal.style.display = "block";
-  });
-  figure && (figure.onclick = function () {
-      modal.style.display = "none";
-  });
-  window.onclick = function (event) {
-      if (event.target === modal) {
-          modal.style.display = "none";
-      }
-  }
-}
 
-const closeModal = () => {
-  console.log("closeModal aangeroepen");
-  var modal = document.getElementById("js--myModal");
-  modal.style.display = "none";
-}
-
-const dropDown = (stateHulpKeuze) => {
-    stateHulpKeuze.setState({ visible: true });
-}
 
 export default MobileNavigatie;

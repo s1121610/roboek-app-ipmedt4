@@ -1,7 +1,10 @@
 .winkelSection__previewSection__btnSection {
-    height: 20%;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
-  
+
   .previewSection__btnSection__button {
     display: block;
     font-size: 2rem;
@@ -11,16 +14,15 @@
     border: 6px solid var(--secondary-color);
     margin: 0 auto;
   }
-  
+
   .button--koop {
-    width: 10rem;
-    padding: 1rem 0;
+    padding: 1rem;
   }
-  
+
   .button--select {
     padding: 1rem;
   }
-  
+
   .previewSection__btnSection__button:hover {
     cursor: pointer;
     background-color: var(--secondary-color);

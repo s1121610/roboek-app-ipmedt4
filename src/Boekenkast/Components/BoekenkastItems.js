@@ -77,7 +77,7 @@ class BoekenkastItems extends React.Component{
                     <figure className="itemsPopup__itemCard__figure">
                       <img className="itemsPopup__itemCard__image" src={item.image} alt={item.naam + " Medaille"} />
                     </figure>
-                    <section className="itemsPopup__itemsCard__beschrijving">
+                    <section className="itemsPopup__itemCard__beschrijving">
                       <h1 className="itemsPopup__itemCard__beschrijving__header"> {item.naam} </h1>
                       <p className="itemsPopup__itemCard__beschrijving__text"> {item.beschrijving} </p>
                     </section>

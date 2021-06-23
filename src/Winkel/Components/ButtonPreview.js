@@ -46,9 +46,9 @@ class ButtonPreview extends React.Component {
         if (Object.keys(item).length == 0 || item.soort === "Kastdecoratie" && behaaldeItems.some(behaaldeItem => behaaldeItem.item_id === item.id)){
             Button = "";
         } else if(behaaldeItems.some(behaaldeItem => behaaldeItem.item_id === item.id)) {
-            Button = <button className = "previewSection__btnSection__button button--select" style = {this.checkIfEquipped(item)} onClick = {() => this.props.updateColor(item.id, this.props.user_id)}>Selecteer</button>;
+            Button = <button className = "previewSection__btnSection__button button--select" style = {this.checkIfEquipped(item)} onClick = {() => this.props.updateColor(item.id, this.props.user_id)}>{this.props.item.naam + " selecteren"}</button>;
         } else {
-            Button = <button className = "previewSection__btnSection__button button--koop" style = {this.checkIfAffordable(item)} onClick = {this.onClickKoop}>Koop</button>;
+            Button = <button className = "previewSection__btnSection__button button--koop" style = {this.checkIfAffordable(item)} onClick = {this.onClickKoop}>{this.props.item.naam + " kopen"}</button>;
         }
 
         return (

@@ -16,6 +16,10 @@ article.navigatie {
   transform: translateX(-20%);
 }
 
+.navigatie__knopSectie__btn:hover{
+  cursor: pointer;
+}
+
 .navigatie__modal {
   display: none;
   position: fixed;
@@ -105,6 +109,10 @@ article.navigatie {
 .display--block {
   display: block;
   opacity: 1;
+}
+
+.hulp__section:hover{
+  cursor: pointer;
 }
 .hulp__section__keuze__boekenlijst__h2,
 .hulp__section__keuze__bibliotheek__h2,
