@@ -24,8 +24,11 @@ class App extends React.Component{
     render() {
       return (
         <Router>
-          <HashRouter basename="/">
-            <Route path="/genre">
+          <HashRouter>
+            <Route exact path="/">
+              <WelkomPagina />
+            </Route>
+            <Route exact path="/genre">
               <Navigatie titel="Genre" link="/boekenlijst"/>
               <Genre />
             </Route>
@@ -37,15 +40,15 @@ class App extends React.Component{
               <Navigatie titel="Details" link="/genre"/>
               <Details />
             </Route>
-            <Route path="/boekenlijst/detail/woordzoeker">
+            <Route exact path="/boekenlijst/detail/woordzoeker">
               <Navigatie titel="Woordzoeker" link="/boekenlijst"/>
               <Woordzoeker/>
             </Route>
-            <Route path="/gefeliciteerd">
+            <Route exact path="/gefeliciteerd">
               <Navigatie titel="Uitdaging" />
               <Gefeliciteerd user_id='1' />
             </Route>
-            <Route path="/boekenkast">
+            <Route exact path="/boekenkast">
               <Navigatie titel="Mijn Boekenkast" />
               <Boekenkast user_id='1'/>
             </Route>
@@ -53,21 +56,21 @@ class App extends React.Component{
               <Navigatie titel="Boekenlijst" link="/boekenlijst"/>
               <BoekDetail  user_id='1'/>
             </Route>
-            <Route path="/boekenlijst/">
+            <Route exact path="/boekenlijst">
               <Navigatie titel="Boekenlijst" />
               <Boekenlijst user_id='1'/>
             </Route>
-            <Route path="/winkel/">
+            <Route exact path="/winkel/">
               <Navigatie titel="Winkel"/>
               <Winkel user_id='1'/>
             </Route>
-            <Route path="/home">
+            
+          </HashRouter>
+          {/* <Switch>
+            <Route exact path="/">
               <WelkomPagina />
             </Route>
-            {/* <Route path="/">
-              <WelkomPagina />
-            </Route> */}
-          </HashRouter>
+          </Switch> */}
         </Router>
       )
     }
