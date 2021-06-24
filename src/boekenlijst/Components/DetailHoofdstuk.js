@@ -19,7 +19,7 @@ class DetailHoofdstuk extends React.Component {
                 
             </section>
         );
-        }
+    }
 }
 
 export default DetailHoofdstuk;
