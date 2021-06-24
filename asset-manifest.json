@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/roboek-app-ipmedt4/static/css/main.3f3e16e6.chunk.css",
-    "main.js": "/roboek-app-ipmedt4/static/js/main.ff116abd.chunk.js",
-    "main.js.map": "/roboek-app-ipmedt4/static/js/main.ff116abd.chunk.js.map",
+    "main.js": "/roboek-app-ipmedt4/static/js/main.5f774bc1.chunk.js",
+    "main.js.map": "/roboek-app-ipmedt4/static/js/main.5f774bc1.chunk.js.map",
     "runtime-main.js": "/roboek-app-ipmedt4/static/js/runtime-main.90a291df.js",
     "runtime-main.js.map": "/roboek-app-ipmedt4/static/js/runtime-main.90a291df.js.map",
     "static/js/2.3119730d.chunk.js": "/roboek-app-ipmedt4/static/js/2.3119730d.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.90a291df.js",
     "static/js/2.3119730d.chunk.js",
     "static/css/main.3f3e16e6.chunk.css",
-    "static/js/main.ff116abd.chunk.js"
+    "static/js/main.5f774bc1.chunk.js"
   ]
 }
