@@ -24,7 +24,7 @@ class App extends React.Component{
     render() {
       return (
         <Router>
-          <HashRouter>
+          <HashRouter basename="/">
             <Route path="/genre">
               <Navigatie titel="Genre" link="/boekenlijst"/>
               <Genre />
