@@ -51,7 +51,7 @@ class Details extends React.Component{
 
     handleClick() {
       if(this.state.buttonText === "Dit boek lezen"){
-        axios.post('http://127.0.0.1:8000/api/boekenlijst/add/' + this.state.boek_id, {"id": this.state.boek_id}).then(res => {
+        axios.post('https://warm-escarpment-39872.herokuapp.com/api/boekenlijst/add/' + this.state.boek_id, {"id": this.state.boek_id}).then(res => {
           const boeken = res.data;
           const id = boeken.boeken[0].id;
           if(boeken.gekozen.includes(id) === true){
@@ -61,7 +61,7 @@ class Details extends React.Component{
           }
         });
       }else{
-        axios.delete('http://127.0.0.1:8000/api/boekenlijst/delete/' + this.state.boek_id, {"id": this.state.boek_id}).then(res => {
+        axios.delete('https://warm-escarpment-39872.herokuapp.com/api/boekenlijst/delete/' + this.state.boek_id, {"id": this.state.boek_id}).then(res => {
           const boeken = res.data;
           const id = boeken.boeken[0].id;
           if(boeken.gekozen.includes(id) === true){
