@@ -79,28 +79,28 @@ class MobileNavigatie extends React.Component {
                             closeModal={this.closeModal}
                             link="/winkel"
                             p="Winkel"
-                            imgSrc="../roboek-app-ipmedt4/img/Winkel.svg"
+                            imgSrc="img/Winkel.svg"
                         />
                         <MobileNavItem
                             closeModal={this.closeModal}
                             link="/genre"
                             p="Bibliotheek"
-                            imgSrc="../roboek-app-ipmedt4/img/Bibliotheek.svg"
+                            imgSrc="img/Bibliotheek.svg"
                         />
                         <MobileNavItem
                             closeModal={this.closeModal}
                             link="/boekenlijst"
                             p="Mijn Boekenlijst"
-                            imgSrc="../roboek-app-ipmedt4/img/Boekenlijst.svg"
+                            imgSrc="img/Boekenlijst.svg"
                         />
                         <MobileNavItem
                             closeModal={this.closeModal}
                             link="/boekenkast"
                             p="Mijn Boekenkast"
-                            imgSrc="../roboek-app-ipmedt4/img/Boekenkast.svg"
+                            imgSrc="img/Boekenkast.svg"
                         />
                         <section className="navigatie__knopSectie navigatie__knopSectie__btn__modal">
-                            <img id="js--openModal" className="navigatie__knopSectie__btn" src="../roboek-app-ipmedt4/img/MenuLogo.png" alt="Roboek robot die de navigatie opent" onClick={this.closeModal} />
+                            <img id="js--openModal" className="navigatie__knopSectie__btn" src="/roboek-app-ipmedt4/img/MenuLogo.png" alt="Roboek robot die de navigatie opent" onClick={this.closeModal} />
                         </section>
                     </section>
                 </section>
