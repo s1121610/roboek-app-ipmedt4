@@ -6,7 +6,7 @@ class HulpItem extends React.Component {
     render() {
         return (
             <section  className={ this.props.className }>
-                <img src={"/roboek-app-ipmedt4/" + this.props.imgSrc} id={ this.props.id } alt="img van hulp middel"/>
+                <img src={"../roboek-app-ipmedt4/" + this.props.imgSrc} id={ this.props.id } alt="img van hulp middel"/>
                 <p>{ this.props.p }</p>
             </section>
         );

@@ -55,7 +55,7 @@ class BoekenkastItems extends React.Component{
                   <li slot={index+1} className="itemsSection__itemslot" key={index}>
                     <a className="itemsSection__button" onClick={() => this.togglePopup(index+1)}>
                       <figure className="itemsSection__itemslot__figure">
-                        <img className="itemsSection__itemslot__image" src={"/roboek-app-ipmedt4" + item.image} alt={item.naam} />
+                        <img className="itemsSection__itemslot__image" src={"/roboek-app-ipmedt4/" + item.image} alt={item.naam} />
                       </figure>
                     </a>
                   </li>
@@ -74,7 +74,7 @@ class BoekenkastItems extends React.Component{
                 <li slot={index+1} className="itemsPopup__listItem" key={index}>
                   <a className="itemsPopup__itemCard" onClick={() => this.updateItem(this.state.selectedSlot, item.id)}>
                     <figure className="itemsPopup__itemCard__figure">
-                      <img className="itemsPopup__itemCard__image" src={"/roboek-app-ipmedt4" + item.image} alt={item.naam + " Medaille"} />
+                      <img className="itemsPopup__itemCard__image" src={"/roboek-app-ipmedt4/" + item.image} alt={item.naam + " Medaille"} />
                     </figure>
                     <section className="itemsPopup__itemCard__beschrijving">
                       <h1 className="itemsPopup__itemCard__beschrijving__header"> {item.naam} </h1>

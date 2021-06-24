@@ -9,7 +9,7 @@ class HulpBoekenkast extends React.Component {
                 <section className="section__hulpboekenkast__onderdeel">
                     <h2 className="hulpSectionTitel">BoekenkastSlider</h2>
                     <HulpItem
-                        imgSrc="/roboek-app-ipmedt4/img/BoekenSliderR.svg"
+                        imgSrc="../roboek-app-ipmedt4/img/BoekenSliderR.svg"
                         p="Klik erop om de andere kanten van jou boekenkast te zien"
                         className="section__contentHulp"
                     />
@@ -17,7 +17,7 @@ class HulpBoekenkast extends React.Component {
                 <section className="section__hulpboekenkast__onderdeel">
                     <h2 className="hulpSectionTitel">Personaliseer</h2>
                     <HulpItem
-                        imgSrc="/roboek-app-ipmedt4/img/PasAanKnop.svg"
+                        imgSrc="../roboek-app-ipmedt4/img/PasAanKnop.svg"
                         p="Klik erop om je medailles te personaliseren"
                         className="flex--column section__contentHulp"
                         id="width--mid"

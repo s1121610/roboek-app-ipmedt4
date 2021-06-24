@@ -39,7 +39,7 @@ class BoekenkastMedailles extends React.Component{
                     <li slot={index+1} className="medaillesSection__listItem" key={index}>
                       <a className="medailleSection__button" onClick={() => this.togglePopup(index+1)}>
                         <figure className="medaillesSection__medailleslot">
-                          <img className="medaillesSection__medailleslot__image" src={"/roboek-app-ipmedt4" + medaille.image} alt={medaille.naam + " Medaille"} />
+                          <img className="medaillesSection__medailleslot__image" src={"/roboek-app-ipmedt4/" + medaille.image} alt={medaille.naam + " Medaille"} />
                         </figure>
                       </a>
                     </li>
@@ -58,7 +58,7 @@ class BoekenkastMedailles extends React.Component{
                   <li slot={index+1} className="medaillesPopup__listItem" key={index}>
                     <a className="medaillesPopup__medailleCard" onClick={() => this.updateMedaille(this.state.selectedSlot, medaille.id)}>
                       <figure className="medaillesPopup__medailleCard__figure">
-                        <img className="medaillesPopup__medailleCard__image" src={medaille.image} alt={medaille.naam + " Medaille"} />
+                        <img className="medaillesPopup__medailleCard__image" src={"/roboek-app-ipmedt4/" + medaille.image} alt={medaille.naam + " Medaille"} />
                       </figure>
                       <section className="medaillesPopup__medailleCard__beschrijving">
                         <h1 className="medaillesPopup__medailleCard__beschrijving__header"> {medaille.naam} </h1>
