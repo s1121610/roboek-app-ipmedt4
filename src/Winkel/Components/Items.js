@@ -49,15 +49,15 @@ class Items extends React.Component {
 
         switch(soort){
             case("kastkleur"):
-                shopitems = <ul className = "winkelSection__itemList">{items.kastkleuren.map(kastkleur =><li key={kastkleur.id} className = "winkelSection__item"><figure style = {this.checkIfEquipped(kastkleur)} className = "item__figure"><input item-id={kastkleur.id} onClick={this.onItemClick} type="image" className = "item__img" src={kastkleur.image} style = {{backgroundColor: kastkleur.kleur_primary}} /></figure><p className = "item__text">{this.checkIfBehaald(kastkleur)}</p></li>)}</ul>
+                shopitems = <ul className = "winkelSection__itemList">{items.kastkleuren.map(kastkleur =><li key={kastkleur.id} className = "winkelSection__item"><figure style = {this.checkIfEquipped(kastkleur)} className = "item__figure"><input item-id={kastkleur.id} onClick={this.onItemClick} type="image" className = "item__img" src={"/roboek-app-ipmedt4/" + kastkleur.image} style = {{backgroundColor: kastkleur.kleur_primary}} /></figure><p className = "item__text">{this.checkIfBehaald(kastkleur)}</p></li>)}</ul>
                 style = {backgroundColor: "#A1EDA5"};
                 break;
             case("robotkleur"):
-                shopitems = <ul className = "winkelSection__itemList">{items.robotkleuren.map(robotkleur =><li key={robotkleur.id} className = "winkelSection__item"><figure style = {this.checkIfEquipped(robotkleur)} className = "item__figure"><input item-id={robotkleur.id} onClick={this.onItemClick} type="image" className = "item__img" src={robotkleur.image} style = {{backgroundColor: robotkleur.kleur_primary}} /></figure><p className = "item__text">{this.checkIfBehaald(robotkleur)}</p></li>)}</ul>
+                shopitems = <ul className = "winkelSection__itemList">{items.robotkleuren.map(robotkleur =><li key={robotkleur.id} className = "winkelSection__item"><figure style = {this.checkIfEquipped(robotkleur)} className = "item__figure"><input item-id={robotkleur.id} onClick={this.onItemClick} type="image" className = "item__img" src={"/roboek-app-ipmedt4/" + robotkleur.image} style = {{backgroundColor: robotkleur.kleur_primary}} /></figure><p className = "item__text">{this.checkIfBehaald(robotkleur)}</p></li>)}</ul>
                 style = {backgroundColor: "#369093"};
                 break;
             case("kastdecoratie"):
-                shopitems = <ul className = "winkelSection__itemList">{items.kastdecoraties.map(kastdecoratie =><li key={kastdecoratie.id} className = "winkelSection__item"><figure className = "item__figure"><input item-id={kastdecoratie.id} onClick={this.onItemClick} type="image" className = "item__img img--radius" src={kastdecoratie.image} /></figure><p className = "item__text">{this.checkIfBehaald(kastdecoratie)}</p></li>)}</ul>
+                shopitems = <ul className = "winkelSection__itemList">{items.kastdecoraties.map(kastdecoratie =><li key={kastdecoratie.id} className = "winkelSection__item"><figure className = "item__figure"><input item-id={kastdecoratie.id} onClick={this.onItemClick} type="image" className = "item__img img--radius" src={"/roboek-app-ipmedt4/" + kastdecoratie.image} /></figure><p className = "item__text">{this.checkIfBehaald(kastdecoratie)}</p></li>)}</ul>
                 style = {backgroundColor: "#E35E16"};
                 break;
         }

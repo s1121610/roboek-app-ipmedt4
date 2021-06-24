@@ -40,7 +40,7 @@ class MobileNavigatie extends React.Component {
         return (
             <article className="navigatie">
                 <section className="navigatie__knopSectie">
-                    <img id="js--openModal" className="navigatie__knopSectie__btn" src="/img/MenuLogo.png" alt="Roboek robot die de navigatie opent" onClick={this.openModal} />
+                    <img id="js--openModal" className="navigatie__knopSectie__btn" src="/roboek-app-ipmedt4/img/MenuLogo.png" alt="Roboek robot die de navigatie opent" onClick={this.openModal} />
                 </section>
                 <section id="js--myModal" className="navigatie__modal">
                     <section className="navigatie__modal__content">
@@ -49,7 +49,7 @@ class MobileNavigatie extends React.Component {
                             <section className="hulp__section" onClick={() => {this.setState({visibleKeuzes: !this.state.visibleKeuzes})}}>
                                 <p>Hulp</p>
                                 <section className="eclipse">
-                                    <img className="navigatie__modal__content__link__img" src="/img/Help.svg" alt="img van een nav item" />
+                                    <img className="navigatie__modal__content__link__img" src="/roboek-app-ipmedt4/img/Help.svg" alt="img van een nav item" />
                                 </section>
                             </section>
                             {this.state.visibleKeuzes ?
@@ -79,28 +79,28 @@ class MobileNavigatie extends React.Component {
                             closeModal={this.closeModal}
                             link="/winkel"
                             p="Winkel"
-                            imgSrc="/img/Winkel.svg"
+                            imgSrc="/roboek-app-ipmedt4/img/Winkel.svg"
                         />
                         <MobileNavItem
                             closeModal={this.closeModal}
                             link="/genre"
                             p="Bibliotheek"
-                            imgSrc="/img/Bibliotheek.svg"
+                            imgSrc="/roboek-app-ipmedt4/img/Bibliotheek.svg"
                         />
                         <MobileNavItem
                             closeModal={this.closeModal}
                             link="/boekenlijst"
                             p="Mijn Boekenlijst"
-                            imgSrc="/img/Boekenlijst.svg"
+                            imgSrc="/roboek-app-ipmedt4/img/Boekenlijst.svg"
                         />
                         <MobileNavItem
                             closeModal={this.closeModal}
                             link="/boekenkast"
                             p="Mijn Boekenkast"
-                            imgSrc="/img/Boekenkast.svg"
+                            imgSrc="/roboek-app-ipmedt4/img/Boekenkast.svg"
                         />
                         <section className="navigatie__knopSectie navigatie__knopSectie__btn__modal">
-                            <img id="js--openModal" className="navigatie__knopSectie__btn" src="/img/MenuLogo.png" alt="Roboek robot die de navigatie opent" onClick={this.closeModal} />
+                            <img id="js--openModal" className="navigatie__knopSectie__btn" src="/roboek-app-ipmedt4/img/MenuLogo.png" alt="Roboek robot die de navigatie opent" onClick={this.closeModal} />
                         </section>
                     </section>
                 </section>

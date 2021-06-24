@@ -113,7 +113,7 @@ class Details extends React.Component{
         </section>;
       }
 
-      const audio = new Audio("/bibliotheek/" + this.state.audio);
+      const audio = new Audio("/roboek-app-ipmedt4/bibliotheek/" + this.state.audio);
 
       const start = () => {
         audio.play();
@@ -129,7 +129,7 @@ class Details extends React.Component{
                 <div className="u-grid--bookcard__genre genre">
                   <p data-genre={boek.genre_naam} className="genre__naam">{boek.genre_naam}</p>
                 </div>
-                <img className="u-grid--bookcard__cover bookcard__cover--details" src={"/bibliotheek/" + boek.image} alt="cover {boek.titel}"/>
+                <img className="u-grid--bookcard__cover bookcard__cover--details" src={"/roboek-app-ipmedt4/bibliotheek/" + boek.image} alt="cover {boek.titel}"/>
                 <h2 className="u-grid--bookcard__title bookcard--details__title">{boek.titel}</h2>
                 <p className="u-grid--bookcard__author bookcard--details__author">{boek.auteur}</p>
               <section className="u-grid--bookcard__description bookcard__description">

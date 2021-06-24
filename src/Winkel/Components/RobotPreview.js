@@ -8,7 +8,7 @@ class RobotPreview extends React.Component {
 
         return(
             <figure className = "winkelSection__previewSection__preview__figure">
-                <img className = "winkelSection__previewSection__preview__image" src = "img/robot_icon_preview.png" style={{background: this.props.primaryColor}}/>
+                <img className = "winkelSection__previewSection__preview__image" src = "/roboek-app-ipmedt4/img/robot_icon_preview.png" style={{background: this.props.primaryColor}}/>
             </figure>
         )
     }

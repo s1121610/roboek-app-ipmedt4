@@ -8,7 +8,7 @@ const WelkomTekst = () => {
           <p>Hallo! Ik ben Roboek en ik ga je alles vertellen over deze app!</p>
           <p>Hoe heet jij?</p>
         </section>
-        <img className="welkomtekst__menu_img" src="/img/MenuLogo.png" alt="Roboek robot"/>
+        <img className="welkomtekst__menu_img" src="/roboek-app-ipmedt4/img/MenuLogo.png" alt="Roboek robot"/>
       </section>
     );
 }

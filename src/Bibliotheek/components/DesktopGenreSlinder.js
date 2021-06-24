@@ -92,7 +92,7 @@ class Genre extends React.Component{
                         <li className="bookcard">
                             <Favoriet boek_id={boek.id} favorieten={this.state.liked} liked={checkIfLiked(boek.id)}/>
                             <Link to={"/details/" + boek.id}>
-                                <img className="bookcard__cover" src={boek.image} alt={"Omslag van boek " + boek.titel} />
+                                <img className="bookcard__cover" src={"/roboek-app-ipmedt4/" + boek.image} alt={"Omslag van boek " + boek.titel} />
                             </Link>
                         </li>
                 </ul>)}

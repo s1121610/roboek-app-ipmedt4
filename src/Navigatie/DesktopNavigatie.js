@@ -27,7 +27,7 @@ class DesktopNav extends React.Component {
           <React.Fragment>
               <section className="desktopNav" id="css--desktopNav">
                   <figure className="desktopNav__figure">
-                    <img className="desktopNav__image" src="/img/MenuLogo.png" alt="Roboek robot die de navigatie opent"/>
+                    <img className="desktopNav__image" src="/roboek-app-ipmedt4/img/MenuLogo.png" alt="Roboek robot die de navigatie opent"/>
                   </figure>
                   <DesktopNavItem link="/boekenlijst" p="Boekenlijst"/>
                   <DesktopNavItem link="/genre" p="Bibliotheek" />
