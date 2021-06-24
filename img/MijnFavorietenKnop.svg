@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="35" viewBox="0 0 192 35">
+  <g id="Group_17" data-name="Group 17" transform="translate(-92 -634)">
+    <g id="Secondary_Button_verder" data-name="Secondary Button verder" transform="translate(92 634)">
+      <rect id="Rectangle_31" data-name="Rectangle 31" width="192" height="32" rx="16" transform="translate(0 3)" fill="#369093"/>
+      <rect id="Rectangle_9" data-name="Rectangle 9" width="192" height="32" rx="16" fill="#90c2c4"/>
+      <text id="Mijn_favorieten" data-name="Mijn favorieten" transform="translate(13 23)" font-size="18" font-family="ArialRoundedMTBold, Arial Rounded MT"><tspan x="0" y="0">Mijn favorieten</tspan></text>
+    </g>
+    <path id="Icon_ionic-ios-heart-empty" data-name="Icon ionic-ios-heart-empty" d="M17.26,3.938h-.046a5.152,5.152,0,0,0-4.339,2.47,5.152,5.152,0,0,0-4.339-2.47H8.49A5.272,5.272,0,0,0,3.375,9.305a11.861,11.861,0,0,0,2.183,6.3,38.908,38.908,0,0,0,7.317,7.329,38.908,38.908,0,0,0,7.317-7.329,11.861,11.861,0,0,0,2.183-6.3A5.272,5.272,0,0,0,17.26,3.938Zm1.9,10.887a35.712,35.712,0,0,1-6.285,6.441A35.767,35.767,0,0,1,6.59,14.82,10.511,10.511,0,0,1,4.654,9.305a4.1,4.1,0,0,1,1.124-2.84A3.785,3.785,0,0,1,8.5,5.272h.041a3.715,3.715,0,0,1,1.877.513,4.059,4.059,0,0,1,1.388,1.354,1.256,1.256,0,0,0,2.147,0,4.1,4.1,0,0,1,1.388-1.354,3.715,3.715,0,0,1,1.877-.513h.041a3.793,3.793,0,0,1,2.722,1.192,4.091,4.091,0,0,1,1.124,2.84A10.643,10.643,0,0,1,19.16,14.825Z" transform="translate(252.163 638.063)"/>
+  </g>
+</svg>
