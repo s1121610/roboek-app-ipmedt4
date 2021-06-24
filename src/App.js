@@ -24,7 +24,7 @@ class App extends React.Component{
     render() {
       return (
         <Router>
-          <HashRouter basename="/">
+          <HashRouter basename="/home">
             <Route path="/genre">
               <Navigatie titel="Genre" link="/boekenlijst"/>
               <Genre />
@@ -61,9 +61,12 @@ class App extends React.Component{
               <Navigatie titel="Winkel"/>
               <Winkel user_id='1'/>
             </Route>
-            <Route path="/">
+            <Route path="/home">
               <WelkomPagina />
             </Route>
+            {/* <Route path="/">
+              <WelkomPagina />
+            </Route> */}
           </HashRouter>
         </Router>
       )
