@@ -7,7 +7,7 @@ import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import Favoriet from './Favoriet';
 
-class BibliotheekDesktop extends React.Component{
+class Genre extends React.Component{
     state = {
         boeken: [],
         boek_id: 0,
@@ -18,7 +18,7 @@ class BibliotheekDesktop extends React.Component{
     }
 
     componentDidMount = (props) => {
-      axios.get(`http://127.0.0.1:8000/api/bibliotheek/Avontuur`)
+      axios.get(`http://127.0.0.1:8000/api/bibliotheek/` + this.props.genre)
         .then(res => {
           const boeken = res.data.boeken;
           const favorieten = res.data.favorieten;
@@ -28,8 +28,6 @@ class BibliotheekDesktop extends React.Component{
         });
       
     }
-
-    
 
     render(){
         const settings = {
@@ -87,7 +85,7 @@ class BibliotheekDesktop extends React.Component{
         return(
             <section>
                 <section className="genre">
-                    <p data-genre="Avontuur" className="genre__naam">Avontuur</p>
+                    <p data-genre={this.props.genre} className={"genre__naam " + this.props.cssData}>{this.props.genre}</p>
                 </section>                
                 <Slider {...settings}>
                     {this.state.boeken.map(boek => <ul>
@@ -104,4 +102,4 @@ class BibliotheekDesktop extends React.Component{
     }
 }
 
-export default BibliotheekDesktop;
+export default Genre;
