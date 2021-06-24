@@ -9,7 +9,7 @@ class Boekcard extends React.Component {
             <article className="boekencard">
                 <section className="boekencard__imagesection">
                     <figure className="boekencard__imagesection__figure">
-                        <img className="boekencard__imagesection__figure__img" src={this.props.img}  alt="afbeelding van cover" />
+                        <img className="boekencard__imagesection__figure__img" src={"/roboek-app-ipmedt4/" + this.props.img}  alt="afbeelding van cover" />
                         <figcaption className="boekencard__imagesection__figure__figcaption"></figcaption>
                     </figure>
                 </section>
