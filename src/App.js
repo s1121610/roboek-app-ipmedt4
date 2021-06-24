@@ -17,14 +17,14 @@ import Navigatie from "./Navigatie/Navigatie";
 import Header from "./UniverseelComponents/MobileHeader";
 import DesktopNav from "./Navigatie/DesktopNavigatie";
 
-import { Switch, Route, BrowserRouter as Router, Link } from "react-router-dom";
+import { Switch, Route, BrowserRouter as Router, Link, HashRouter } from "react-router-dom";
 
 //state = groep variabelen die van waarde kan veranderen.
 class App extends React.Component{
     render() {
       return (
         <Router>
-          <Switch>
+          <HashRouter>
             <Route path="/genre">
               <Navigatie titel="Genre" link="/boekenlijst"/>
               <Genre />
@@ -64,7 +64,7 @@ class App extends React.Component{
             <Route path="/">
               <WelkomPagina />
             </Route>
-          </Switch>
+          </HashRouter>
         </Router>
       )
     }
