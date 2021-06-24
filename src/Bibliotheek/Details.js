@@ -147,7 +147,7 @@ class Details extends React.Component{
             </section>
             <section className="u-grid--bookExtra__mainchar bookExtra__mainchar">
               <h2 className="bookExtra__mainchar__title">Wie is {boek.hoofdpersoon}?</h2>
-              <img className="bookExtra__mainchar__image" src={"/bibliotheek/" + boek.hoofdpersoon_image} alt={"Plaatje van " + boek.hoofdpersoon} onClick={start}></img>
+              <img className="bookExtra__mainchar__image" src={"/roboek-app-ipmedt4/bibliotheek/" + boek.hoofdpersoon_image} alt={"Plaatje van " + boek.hoofdpersoon} onClick={start}></img>
               <p className="bookExtra__mainchar__description">
                 {boek.hoofdpersoon_beschrijving}
               </p>

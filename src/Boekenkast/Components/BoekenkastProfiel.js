@@ -15,7 +15,7 @@ class BoekenkastProfiel extends React.Component{
                   <li className="profielSection__listItem">
                     <article className="profielSection__listItem__infoSection">
                       <figure className="profielSection__listItem__figure">
-                        <img className="profielSection__listItem__image" src="img/default_icon_profile.png" alt="Icon" />
+                        <img className="profielSection__listItem__image" src="/roboek-app-ipmedt4/img/default_icon_profile.png" alt="Icon" />
                       </figure>
                       <section>
                         <h1 className="profielSection__listItem__header"> Naam </h1>
@@ -26,7 +26,7 @@ class BoekenkastProfiel extends React.Component{
                   <li className="profielSection__listItem">
                     <article className="profielSection__listItem__infoSection">
                       <figure className="profielSection__listItem__figure">
-                        <img className="profielSection__listItem__image" src="img/default_icon_coins.png" alt="Icon" />
+                        <img className="profielSection__listItem__image" src="/roboek-app-ipmedt4/img/default_icon_coins.png" alt="Icon" />
                       </figure>
                       <section>
                         <h1 className="profielSection__listItem__header"> Munten </h1>
@@ -37,7 +37,7 @@ class BoekenkastProfiel extends React.Component{
                   <li className="profielSection__listItem">
                     <article className="profielSection__listItem__infoSection">
                       <figure className="profielSection__listItem__figure">
-                        <img className="profielSection__listItem__image" src="img/default_icon_medal.png" alt="Icon" />
+                        <img className="profielSection__listItem__image" src="/roboek-app-ipmedt4/img/default_icon_medal.png" alt="Icon" />
                       </figure>
                       <section>
                         <h1 className="profielSection__listItem__header"> Medailles </h1>
@@ -48,7 +48,7 @@ class BoekenkastProfiel extends React.Component{
                   <li className="profielSection__listItem">
                     <article className="profielSection__listItem__infoSection">
                       <figure className="profielSection__listItem__figure">
-                        <img className="profielSection__listItem__image" src="img/default_icon_books.png" alt="Icon" />
+                        <img className="profielSection__listItem__image" src="/roboek-app-ipmedt4/img/default_icon_books.png" alt="Icon" />
                       </figure>
                       <section>
                         <h1 className="profielSection__listItem__header"> Gelezen Boeken </h1>

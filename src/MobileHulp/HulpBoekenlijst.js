@@ -11,17 +11,17 @@ class HulpBoekenLijst extends React.Component {
                 <section className="section__hulpBoekenlijst__onderdeel">
                     <h2 className="hulpSectionTitel">Uitdaging knop</h2>
                     <HulpItem
-                        imgSrc="../img/UitdagingBtnLock.svg"
+                        imgSrc="/roboek-app-ipmedt4/img/UitdagingBtnLock.svg"
                         p="Je kan de uitdaging nog niet doen"
                         className="section__contentHulp"
                     />
                     <HulpItem
-                        imgSrc="../img/UitdagingBtnUnlock.svg"
+                        imgSrc="/roboek-app-ipmedt4/img/UitdagingBtnUnlock.svg"
                         p="Je kan de uitdaging doen"
                         className="section__contentHulp"
                     />
                     <HulpItem
-                        imgSrc="../img/UitdagingBtnUnlock.svg"
+                        imgSrc="/roboek-app-ipmedt4/img/UitdagingBtnUnlock.svg"
                         p="Je hebt de uitdaging gedaan"
                         className="section__contentHulp"
                     />
@@ -29,13 +29,13 @@ class HulpBoekenLijst extends React.Component {
                 <section className="section__hulpBoekenlijst__onderdeel">
                     <h2 className="hulpSectionTitel">Afvinken hoofdstukken</h2>
                     <HulpItem
-                        imgSrc="../img/Checkbox.svg"
+                        imgSrc="/roboek-app-ipmedt4/img/Checkbox.svg"
                         p="Je hebt het hoofdstuk nog niet gelezen"
                         className="section__contentHulp"
                         id="width--klein"
                     />
                     <HulpItem
-                        imgSrc="../img/CheckboxFull.svg"
+                        imgSrc="/roboek-app-ipmedt4/img/CheckboxFull.svg"
                         p="Je hebt het hoofdstuk gelezen"
                         className="section__contentHulp"
                         id="width--klein"
@@ -44,7 +44,7 @@ class HulpBoekenLijst extends React.Component {
                 <section className="section__hulpBoekenlijst__onderdeel">
                     <h2 className="hulpSectionTitel">Voortgang boek  </h2>
                     <HulpItem
-                        imgSrc="../img/ProgressieBalk.svg"
+                        imgSrc="/roboek-app-ipmedt4/img/ProgressieBalk.svg"
                         p="Dit laat zien hoeveel hoofdstukken je hebt gelezen van het boek"
                         className="flex--column section__contentHulp"
                         id="width--groot"
