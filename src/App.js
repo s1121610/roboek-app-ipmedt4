@@ -28,8 +28,8 @@ class App extends React.Component{
             <Route exact path="/">
               <WelkomPagina />
             </Route>
-            <Route exact path="/genre">
-              <Navigatie titel="Genre" link="/boekenlijst"/>
+            <Route path="/genre">
+              <Navigatie titel="Genre" link="/"/>
               <Genre />
             </Route>
             <Route path="/bibliotheek/">
@@ -40,15 +40,15 @@ class App extends React.Component{
               <Navigatie titel="Details" link="/genre"/>
               <Details />
             </Route>
-            <Route exact path="/boekenlijst/detail/woordzoeker">
+            <Route path="/boekenlijst/detail/woordzoeker">
               <Navigatie titel="Woordzoeker" link="/boekenlijst"/>
               <Woordzoeker/>
             </Route>
-            <Route exact path="/gefeliciteerd">
+            <Route path="/gefeliciteerd">
               <Navigatie titel="Uitdaging" />
               <Gefeliciteerd user_id='1' />
             </Route>
-            <Route exact path="/boekenkast">
+            <Route path="/boekenkast">
               <Navigatie titel="Mijn Boekenkast" />
               <Boekenkast user_id='1'/>
             </Route>
@@ -56,15 +56,14 @@ class App extends React.Component{
               <Navigatie titel="Boekenlijst" link="/boekenlijst"/>
               <BoekDetail  user_id='1'/>
             </Route>
-            <Route exact path="/boekenlijst">
+            <Route path="/boekenlijst/">
               <Navigatie titel="Boekenlijst" />
               <Boekenlijst user_id='1'/>
             </Route>
-            <Route exact path="/winkel/">
+            <Route path="/winkel/">
               <Navigatie titel="Winkel"/>
               <Winkel user_id='1'/>
             </Route>
-            
           </HashRouter>
           {/* <Switch>
             <Route exact path="/">

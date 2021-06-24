@@ -27,7 +27,8 @@ class Details extends React.Component{
       }
 
       componentDidMount = (props) => {
-        let idReq = window.location.pathname.split('/')[2];
+        let idReq = window.location.pathname.split('/')[4];
+        console.log(window.location.pathname);
         axios.get(`https://warm-escarpment-39872.herokuapp.com/api/bibliotheek/details/` + idReq)
           .then(res => {
             const boeken = res.data;
