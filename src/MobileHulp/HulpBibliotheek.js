@@ -9,7 +9,7 @@ class HulpBibliotheek extends React.Component {
                 <section className="section__hulpBibliotheek__onderdeel">
                     <h2 className="hulpSectionTitel">Boekenslider</h2>
                     <HulpItem
-                        imgSrc="..../roboek-app-ipmedt4/img/BoekenSliderR.svg"
+                        imgSrc="../roboek-app-ipmedt4/img/BoekenSliderR.svg"
                         p="Hiermee kan je het volgende boek bekijken"
                         className="section__contentHulp"
                     />
