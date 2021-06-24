@@ -71,7 +71,7 @@ class BoekDetail extends React.Component {
 
     //afvinken van hoofdstuk update de gelezen_hoofdstukken table
     cardClicked = id => {
-        let boekId = window.location.href.split('/')[3];
+        let boekId = window.location.href.split('/')[7];
         console.log(boekId);
         var AFVINKEN_URL = 'https://warm-escarpment-39872.herokuapp.com/api/hoofdstukken/gelezen/' + boekId + "/" + id + "/" + this.props.user_id;
 

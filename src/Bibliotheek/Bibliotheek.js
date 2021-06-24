@@ -15,12 +15,13 @@ class Bibliotheek extends React.Component{
   }
 
   componentDidMount() {
-    let pathname = window.location.pathname.split('/')[2];
+    let pathname = window.location.href.split('/')[6];
+    console.log(pathname);
     if(pathname !== undefined){
       this.setState({
-        genre: window.location.pathname.split('/')[2]
+        genre: window.location.href.split('/')[6]
       })
-      let genreReq = window.location.pathname.split('/')[2];
+      let genreReq = window.location.href.split('/')[6];
       axios.get(`https://warm-escarpment-39872.herokuapp.com/api/bibliotheek/` + genreReq)
         .then(res => {
           const boeken = res.data.boeken;
