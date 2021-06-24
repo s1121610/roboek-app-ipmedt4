@@ -13,7 +13,8 @@ class Details extends React.Component{
         boek_id: '',
         buttonText: "",
         popup: "none",
-        popupText: ""
+        popupText: "",
+        audio: ""
       }
       updateButton = (props) =>{
         const id = this.state.boek_id;
@@ -31,8 +32,9 @@ class Details extends React.Component{
           .then(res => {
             const boeken = res.data;
             this.setState({ persons: boeken.boeken });
-            this.setState({ gekozen_boeken: boeken.gekozen })
+            this.setState({ gekozen_boeken: boeken.gekozen, audio: res.data.boeken[0].audio })
             const id = boeken.boeken[0].id;
+            console.log(res.data.boeken[0].audio);
             if(boeken.gekozen.includes(id) === true){
               this.setState({buttonText: "Dit boek niet meer lezen"});
             }else{
@@ -81,9 +83,9 @@ class Details extends React.Component{
         this.setState({popup: "none"});
       }
 
-      const showPopup = () => {
-        this.setState({popup: "block"});
-      }
+      // const showPopup = () => {
+      //   this.setState({popup: "block"});
+      // }
 
       let addButton;
       let popup;
@@ -111,6 +113,13 @@ class Details extends React.Component{
         </section>;
       }
 
+      const audio = new Audio("/bibliotheek/" + this.state.audio);
+
+      const start = () => {
+        audio.play();
+        console.log(this.state.audio);
+      }
+
       return (
       <section>
         {overlay}
@@ -130,6 +139,19 @@ class Details extends React.Component{
               <section className="u-grid--bookcard__button">
                 {addButton}
               </section>
+          </article>
+          <article className="bookExtra">
+            <section className="u-grid--bookExtra__video bookExtra__video">
+              <h2 className="bookExtra__video__title">Bekijk deze video over {boek.hoofdpersoon}!</h2>
+              <iframe className="bookExtra__video__frame" width="380" height="200" src={boek.videolink} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </section>
+            <section className="u-grid--bookExtra__mainchar bookExtra__mainchar">
+              <h2 className="bookExtra__mainchar__title">Wie is {boek.hoofdpersoon}?</h2>
+              <img className="bookExtra__mainchar__image" src={"/bibliotheek/" + boek.hoofdpersoon_image} alt={"Plaatje van " + boek.hoofdpersoon} onClick={start}></img>
+              <p className="bookExtra__mainchar__description">
+                {boek.hoofdpersoon_beschrijving}
+              </p>
+            </section>
           </article>
         </div>)}
       </section>
