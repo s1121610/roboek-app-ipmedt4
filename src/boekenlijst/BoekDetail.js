@@ -55,11 +55,11 @@ class BoekDetail extends React.Component {
         axios.get(GELEZEN_URL).then(res =>{
             this.setState({
                 gelezenHoofdstukken: res.data.gelezenHoofdstukken,
-                gelezenHoofdstukkenTeller: res.length,
+                gelezenHoofdstukkenTeller: res.data.gelezenHoofdstukken.length,
             })
 
             //gelezen hoofdstukken die gelijk zijn aan hoofdstukken, afvinken
-            console.log(document.getElementById(this.state.gelezenHoofdstukken[0].hoofdstuk_id))
+            console.log(this.state.gelezenHoofdstukken.hoofdstuk_id);
             for(let i = 0; i < this.state.gelezenHoofdstukkenTeller; i++){
                 document.getElementById(this.state.gelezenHoofdstukken[i].hoofdstuk_id).checked=true;
                 if(document.getElementById(i + "K")){
