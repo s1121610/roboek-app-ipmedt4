@@ -50,15 +50,17 @@ class BoekDetail extends React.Component {
         });
 
         //informatie ophalen van gelezen hoofdstukken
-        var GELEZEN_URL = 'https://warm-escarpment-39872.herokuapp.com/api/hoofdstukken/gelezen/' + boekId + '/' + this.props.user_id;
+        let GELEZEN_URL = 'https://warm-escarpment-39872.herokuapp.com/api/hoofdstukken/gelezen/' + boekId + '/' + this.props.user_id;
+        console.log(GELEZEN_URL);
         axios.get(GELEZEN_URL).then(res =>{
             this.setState({
                 gelezenHoofdstukken: res.data.gelezenHoofdstukken,
-                gelezenHoofdstukkenTeller: res.data.gelezenHoofdstukken.length,
+                gelezenHoofdstukkenTeller: res.length,
             })
 
             //gelezen hoofdstukken die gelijk zijn aan hoofdstukken, afvinken
-            for(var i = 0; i < this.state.gelezenHoofdstukkenTeller; i++){
+            console.log(document.getElementById(this.state.gelezenHoofdstukken[0].hoofdstuk_id))
+            for(let i = 0; i < this.state.gelezenHoofdstukkenTeller; i++){
                 document.getElementById(this.state.gelezenHoofdstukken[i].hoofdstuk_id).checked=true;
                 if(document.getElementById(i + "K")){
                     document.getElementById(i + "K").innerHTML="uitdaging";
@@ -72,7 +74,7 @@ class BoekDetail extends React.Component {
     cardClicked = id => {
         let boekId = window.location.href.split('/')[7];
         console.log(boekId);
-        var AFVINKEN_URL = 'https://warm-escarpment-39872.herokuapp.com/api/hoofdstukken/gelezen/' + boekId + "/" + id + "/" + this.props.user_id;
+        let AFVINKEN_URL = 'https://warm-escarpment-39872.herokuapp.com/api/hoofdstukken/gelezen/' + boekId + "/" + id + "/" + this.props.user_id;
 
         //check=true, is toevoegen, check=false, is verwijderen
         //gelezenHoofdstukkenTeller wordt geupdate bij elke checkbox die aangeklikt wordt
@@ -97,7 +99,7 @@ class BoekDetail extends React.Component {
 
     //verwijder boek in database
     verwijderBoek = id => {
-        var VERWIJDER_URL = 'https://warm-escarpment-39872.herokuapp.com/api/boekenlijst/delete/' + id + "/" + this.props.user_id;
+        let VERWIJDER_URL = 'https://warm-escarpment-39872.herokuapp.com/api/boekenlijst/delete/' + id + "/" + this.props.user_id;
         axios.delete(VERWIJDER_URL).then(res =>{
             window.location.replace("/roboek-app-ipmedt4/#/boekenlijst/");
         })
