@@ -36,7 +36,8 @@ class WoordzoekerPuzzel extends React.Component {
 //Haalt de informatie uit de API
   componentDidMount() {
     const BASE_URL = 'https://warm-escarpment-39872.herokuapp.com/api/puzzel/'
-    let puzzelId = window.location.pathname.split('/')[4];
+    let puzzelId = window.location.href.split('/')[7];
+    console.log(puzzelId);
     axios.get(BASE_URL+ puzzelId)
       .then(res => {
         if(res.data){

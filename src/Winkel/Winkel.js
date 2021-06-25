@@ -23,7 +23,7 @@ class Winkel extends React.Component {
     componentDidMount = () => {
         const BASE_URL = "https://warm-escarpment-39872.herokuapp.com/api/winkel/";
         axios.get(BASE_URL + this.props.user_id).then(res => {
-            let behaalde_items = res.data.behaalde_items.filter(obj => obj.user_id == this.props.user_id);
+            let behaalde_items = res.data.behaalde_items.filter(obj => obj.user_id === this.props.user_id);
             this.setState({allItems: res.data.items,
                             kastkleuren: res.data.kastkleuren,
                             robotkleuren: res.data.robotkleuren,
@@ -37,7 +37,7 @@ class Winkel extends React.Component {
     refreshWinkel = () => {
         const BASE_URL = "https://warm-escarpment-39872.herokuapp.com/api/winkel/";
       axios.get(BASE_URL + this.props.user_id).then(res => {
-          let behaalde_items = res.data.behaalde_items.filter(obj => obj.user_id == this.props.user_id);
+          let behaalde_items = res.data.behaalde_items.filter(obj => obj.user_id === this.props.user_id);
           this.setState({allItems: res.data.items,
                           kastkleuren: res.data.kastkleuren,
                           robotkleuren: res.data.robotkleuren,

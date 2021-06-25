@@ -47,7 +47,7 @@ export default class WelkomButtonList extends React.Component {
       });
 
     this.setState({ voornaam: "", leukenaam: "" })
-    window.location.replace("/boekenlijst")
+    window.location.replace("/roboek-app-ipmedt4/#/boekenlijst/")
   }
 
   render() {
