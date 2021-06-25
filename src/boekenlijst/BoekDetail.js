@@ -59,8 +59,9 @@ class BoekDetail extends React.Component {
             })
 
             //gelezen hoofdstukken die gelijk zijn aan hoofdstukken, afvinken
-            console.log(this.state.gelezenHoofdstukken.hoofdstuk_id);
-            for(let i = 0; i < this.state.gelezenHoofdstukkenTeller; i++){
+            console.log(this.state.gelezenHoofdstukken[0].hoofdstuk_id);
+            console.log(this.state.gelezenHoofdstukkenTeller);
+            for(var i = 0; i < this.state.gelezenHoofdstukkenTeller; i++){
                 document.getElementById(this.state.gelezenHoofdstukken[i].hoofdstuk_id).checked=true;
                 if(document.getElementById(i + "K")){
                     document.getElementById(i + "K").innerHTML="uitdaging";
