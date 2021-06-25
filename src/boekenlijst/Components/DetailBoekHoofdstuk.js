@@ -13,7 +13,7 @@ class DetailBoekHoofdstuk extends React.Component {
     checkAfgevinkt = (id, soort, uitdagingId) => {
 
         if(document.getElementById(id).checked){
-            window.location.replace(soort + "/" + uitdagingId);
+            window.location.replace("/roboek-app-ipmedt4/#/" + soort + "/" + uitdagingId);
         }
     }
 

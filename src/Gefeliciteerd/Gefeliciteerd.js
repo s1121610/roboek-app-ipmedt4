@@ -33,9 +33,10 @@ class Gefeliciteerd extends React.Component{
   componentDidMount() {
       //haalt de puzzel op en daarbij het aantal muntjes die je kan verdienen
     const BASE_URL = 'https://warm-escarpment-39872.herokuapp.com/api/puzzel/'
-      let puzzelId = window.location.pathname.split('/')[2];
+      let puzzelId = window.location.href.split('/')[6];
+      console.log(puzzelId);
       if(puzzelId === ""){
-        window.location.replace("/");
+        window.location.replace("/roboek-app-ipmedt4/#/boekenlijst/");
       } else {
         axios.get(BASE_URL+ puzzelId)
           .then(res => {
@@ -63,7 +64,7 @@ class Gefeliciteerd extends React.Component{
                 document.getElementById("js--medaille").style.display = "none";
               }
             } else {
-              window.location.replace("/");
+              window.location.replace("/roboek-app-ipmedt4/#/boekenlijst");
             }
           })
       }
@@ -77,7 +78,7 @@ class Gefeliciteerd extends React.Component{
     }
     var URL = 'https://warm-escarpment-39872.herokuapp.com/api/puzzelklaar/' + this.props.user_id + "/" + this.state.muntjes;
     axios.patch(URL)
-    window.location.replace("/");
+    window.location.replace("/roboek-app-ipmedt4/#/boekenlijst/");
   }
 
   //rendert alle html

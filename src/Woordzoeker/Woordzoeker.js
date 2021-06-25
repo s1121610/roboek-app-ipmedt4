@@ -36,7 +36,7 @@ class WoordzoekerPuzzel extends React.Component {
 //Haalt de informatie uit de API
   componentDidMount() {
     const BASE_URL = 'https://warm-escarpment-39872.herokuapp.com/api/puzzel/'
-    let puzzelId = window.location.href.split('/')[7];
+    let puzzelId = window.location.href.split('/')[8];
     console.log(puzzelId);
     axios.get(BASE_URL+ puzzelId)
       .then(res => {
@@ -137,7 +137,7 @@ class WoordzoekerPuzzel extends React.Component {
                 this.streepDoorVerticaal(ingevoerdeWoord);
                 aantalFout = 0;
                 if(aantalGeradenWoorden === aantalWoorden){
-                  setTimeout(function(){ window.location.replace("/gefeliciteerd/" + puzzelId); }, 1000);
+                  setTimeout(function(){ window.location.replace("/roboek-app-ipmedt4/#/gefeliciteerd/" + puzzelId); }, 1000);
                 }
                 break;
               }

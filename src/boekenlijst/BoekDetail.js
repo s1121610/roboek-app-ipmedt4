@@ -28,7 +28,6 @@ class BoekDetail extends React.Component {
         const BASE_URL = 'https://warm-escarpment-39872.herokuapp.com/api/boekenlijst/detail/';
         let boekId = window.location.href.split('/')[7];
         console.log(boekId);
-        console.log(window.location);
         axios.get(BASE_URL + boekId).then(res =>{
             this.setState({
                 titel: res.data.titel,
