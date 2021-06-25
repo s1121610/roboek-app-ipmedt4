@@ -50,23 +50,21 @@ class BoekDetail extends React.Component {
         });
 
         //informatie ophalen van gelezen hoofdstukken
-        let GELEZEN_URL = 'https://warm-escarpment-39872.herokuapp.com/api/hoofdstukken/gelezen/' + boekId + '/' + this.props.user_id;
-        console.log(GELEZEN_URL);
+        var GELEZEN_URL = 'https://warm-escarpment-39872.herokuapp.com/api/hoofdstukken/gelezen/' + boekId + '/' + this.props.user_id;
         axios.get(GELEZEN_URL).then(res =>{
             this.setState({
                 gelezenHoofdstukken: res.data.gelezenHoofdstukken,
                 gelezenHoofdstukkenTeller: res.data.gelezenHoofdstukken.length,
+            }, () => {
+                setTimeout(() => {
+                    for(var i = 0; i < this.state.gelezenHoofdstukkenTeller; i++){
+                        document.getElementById(this.state.gelezenHoofdstukken[i].hoofdstuk_id).checked=true;
+                        if(document.getElementById(i + "K")){
+                            document.getElementById(i + "K").innerHTML="uitdaging";
+                        }
+                    }
+                }, 1000);
             })
-
-            //gelezen hoofdstukken die gelijk zijn aan hoofdstukken, afvinken
-            console.log(this.state.gelezenHoofdstukken[0].hoofdstuk_id);
-            console.log(this.state.gelezenHoofdstukkenTeller);
-            for(let i = 0; i < this.state.gelezenHoofdstukkenTeller; i++){
-                document.getElementById(this.state.gelezenHoofdstukken[i].hoofdstuk_id).checked=true;
-                if(document.getElementById(i + "K")){
-                    document.getElementById(i + "K").innerHTML="uitdaging";
-                }
-            }
         });
 
     }
