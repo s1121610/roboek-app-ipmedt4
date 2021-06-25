@@ -100,7 +100,7 @@ class BoekDetail extends React.Component {
     verwijderBoek = id => {
         var VERWIJDER_URL = 'https://warm-escarpment-39872.herokuapp.com/api/boekenlijst/delete/' + id + "/" + this.props.user_id;
         axios.delete(VERWIJDER_URL).then(res =>{
-            window.location.replace("/boekenlijst/");
+            window.location.replace("/roboek-app-ipmedt4/#/boekenlijst/");
         })
     }
 
